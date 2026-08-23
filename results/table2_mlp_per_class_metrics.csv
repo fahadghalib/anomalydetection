@@ -1,0 +1,21 @@
+class_id,class_name,precision_pct,recall_pct,f1_pct,support
+0,Benign (Normal Traffic),83.6,95.0,88.9,569910
+1,Constant Attack,62.0,84.3,71.5,13053
+2,Constant Position Attack,61.6,73.6,67.0,13121
+3,Constant Speed Attack,69.8,45.8,55.3,13199
+4,Random Attack,77.6,36.4,49.5,12701
+5,Random Position Attack,58.3,81.2,67.9,12619
+6,Random Speed Attack,71.2,99.3,82.9,13357
+7,Eventual Attack,65.3,44.9,53.2,12809
+8,Eventual Position Attack,87.2,73.8,80.0,12927
+9,Eventual Speed Attack,47.4,92.8,62.8,12776
+10,Disruptive Attack,39.7,1.5,3.0,12927
+11,Disruptive Position Attack,36.5,0.7,1.5,13342
+12,Disruptive Speed Attack,58.2,66.5,62.1,12906
+13,Data Replay Attack,55.0,23.1,32.6,39689
+14,Denial of Service (DoS),81.8,98.8,89.5,37967
+15,Distributed DoS (DDoS),73.6,1.8,3.5,38659
+16,Sybil Attack,98.1,77.3,86.5,52203
+17,Sybil Position Attack,45.0,67.0,53.8,13327
+18,Sybil Speed Attack,88.4,97.8,92.9,26202
+19,Mixed / Other Misbehavior,76.4,40.7,53.1,24747

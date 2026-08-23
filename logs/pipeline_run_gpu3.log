@@ -1,0 +1,93 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786972064.793797   15297 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1786972066.133365   15297 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786972071.186950   15297 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Loading training data from /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/data/VeReMi_train_data.csv ...
+  train shape: X=(2236367, 28), y=(2236367,), classes=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+======================================================================
+FOLD 1/5
+======================================================================
+[fold 1] resampling training fold (1789093 rows)...
+[fold 1] resampled 1789093 -> 2120046 rows in 1528.3s (ADASYN fallback to RandomOverSampler for classes [18, 19])
+I0000 00:00:1786973649.782046   15297 gpu_device.cc:2043] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5563 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 4060 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.9
+[fold 1] training on 2120046 rows...
+I0000 00:00:1786973684.070881   15442 cuda_dnn.cc:461] Loaded cuDNN version 92400
+W0000 00:00:1786973692.262747   15438 bfc_allocator.cc:311] Allocator (GPU_0_bfc) ran out of memory trying to allocate 6.54GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+W0000 00:00:1786974000.190353   15428 bfc_allocator.cc:311] Allocator (GPU_0_bfc) ran out of memory trying to allocate 5.20GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+[fold 1] epoch 1: loss=1.2169 val_loss=1.7696 (359.8s)
+[fold 1] epoch 2: loss=0.9373 val_loss=0.6682 (185.0s)
+[fold 1] epoch 3: loss=0.8590 val_loss=0.6012 (181.0s)
+[fold 1] epoch 4: loss=0.8067 val_loss=0.5743 (182.4s)
+[fold 1] epoch 5: loss=0.7765 val_loss=0.5611 (184.0s)
+[fold 1] epoch 6: loss=0.7589 val_loss=0.5432 (189.1s)
+[fold 1] epoch 7: loss=0.7588 val_loss=0.5417 (181.1s)
+[fold 1] epoch 8: loss=0.7342 val_loss=0.5293 (181.2s)
+[fold 1] epoch 9: loss=0.7244 val_loss=0.5337 (177.5s)
+[fold 1] epoch 10: loss=0.7281 val_loss=0.5280 (177.6s)
+[fold 1] epoch 11: loss=0.7124 val_loss=0.5236 (180.4s)
+[fold 1] epoch 12: loss=0.7080 val_loss=0.5162 (178.8s)
+[fold 1] epoch 13: loss=0.7034 val_loss=0.5124 (178.5s)
+[fold 1] epoch 14: loss=0.6996 val_loss=0.5083 (179.8s)
+[fold 1] epoch 15: loss=0.6983 val_loss=0.5088 (177.3s)
+[fold 1] epoch 16: loss=0.6944 val_loss=0.5077 (178.9s)
+[fold 1] epoch 17: loss=0.6934 val_loss=0.5060 (179.2s)
+[fold 1] epoch 18: loss=0.6923 val_loss=0.5057 (182.1s)
+[fold 1] epoch 19: loss=0.6919 val_loss=0.5061 (177.5s)
+[fold 1] epoch 20: loss=0.6931 val_loss=0.5153 (180.2s)
+[fold 1] epoch 21: loss=0.7134 val_loss=0.5081 (178.5s)
+[fold 1] epoch 22: loss=0.6914 val_loss=0.5008 (177.5s)
+[fold 1] epoch 23: loss=0.6846 val_loss=0.5011 (181.4s)
+[fold 1] epoch 24: loss=0.6781 val_loss=0.4971 (176.6s)
+[fold 1] epoch 25: loss=0.6750 val_loss=0.4999 (210.3s)
+[fold 1] epoch 26: loss=0.6783 val_loss=0.4971 (328.5s)
+[fold 1] epoch 27: loss=0.6674 val_loss=0.4897 (328.0s)
+[fold 1] epoch 28: loss=0.6672 val_loss=0.4843 (321.3s)
+[fold 1] epoch 29: loss=0.6579 val_loss=0.4822 (321.4s)
+[fold 1] epoch 30: loss=0.6542 val_loss=0.4819 (322.0s)
+[fold 1] epoch 31: loss=0.6517 val_loss=0.4894 (322.2s)
+[fold 1] epoch 32: loss=0.6494 val_loss=0.4766 (324.4s)
+[fold 1] epoch 33: loss=0.6456 val_loss=0.4737 (327.5s)
+[fold 1] epoch 34: loss=0.6432 val_loss=0.4759 (321.6s)
+[fold 1] epoch 35: loss=0.6403 val_loss=0.4754 (323.1s)
+[fold 1] epoch 36: loss=0.6397 val_loss=0.4661 (324.4s)
+[fold 1] epoch 37: loss=0.6360 val_loss=0.4722 (324.1s)
+[fold 1] epoch 38: loss=0.6339 val_loss=0.4673 (323.1s)
+[fold 1] epoch 39: loss=0.6317 val_loss=0.4662 (327.6s)
+[fold 1] epoch 40: loss=0.6300 val_loss=0.4640 (326.9s)
+[fold 1] epoch 41: loss=0.6288 val_loss=0.4640 (325.6s)
+[fold 1] epoch 42: loss=0.6272 val_loss=0.4595 (331.1s)
+[fold 1] epoch 43: loss=0.6260 val_loss=0.4615 (326.8s)
+[fold 1] epoch 44: loss=0.6240 val_loss=0.4613 (308.1s)
+[fold 1] epoch 45: loss=0.6228 val_loss=0.4600 (330.0s)
+[fold 1] epoch 46: loss=0.6211 val_loss=0.4599 (339.8s)
+[fold 1] epoch 47: loss=0.6201 val_loss=0.4566 (334.0s)
+[fold 1] epoch 48: loss=0.6194 val_loss=0.4576 (341.6s)
+[fold 1] epoch 49: loss=0.6184 val_loss=0.4570 (299.9s)
+[fold 1] epoch 50: loss=0.6176 val_loss=0.4566 (308.8s)
+[fold 1] epoch 51: loss=0.6170 val_loss=0.4548 (239.9s)
+[fold 1] epoch 52: loss=0.6164 val_loss=0.4548 (208.8s)
+[fold 1] epoch 53: loss=0.6160 val_loss=0.4557 (246.7s)
+[fold 1] epoch 54: loss=0.6151 val_loss=0.4544 (332.9s)
+W0000 00:00:1786987514.726829   15443 op_kernel.cc:1845] INTERNAL: 'cuLaunchKernel(function, gridX, gridY, gridZ, blockX, blockY, blockZ, 0, reinterpret_cast<CUstream>(stream), params, nullptr)' failed with 'CUDA_ERROR_UNKNOWN'
+W0000 00:00:1786987514.749517   15443 local_rendezvous.cc:412] Local rendezvous is aborting with status: INTERNAL: 'cuLaunchKernel(function, gridX, gridY, gridZ, blockX, blockY, blockZ, 0, reinterpret_cast<CUstream>(stream), params, nullptr)' failed with 'CUDA_ERROR_UNKNOWN'
+	 [[{{function_node cnn_bigru_attention_1_bigru_1_backward_gru_1_while_body_7047_grad_8274}}{{node gradient_tape/cnn_bigru_attention_1/bigru_1/backward_gru_1/while/gradients/cnn_bigru_attention_1/bigru_1/backward_gru_1/while/gru_cell_1/mul_2_grad/Mul}}]]
+W0000 00:00:1786987514.767234   15443 op_kernel.cc:1858] OP_REQUIRES failed at matmul_op_impl.h:831 : INTERNAL: an internal operation failed
+W0000 00:00:1786987514.771214   15443 op_kernel.cc:1858] OP_REQUIRES failed at matmul_op_impl.h:831 : INTERNAL: an internal operation failed
+F0000 00:00:1786987514.789324   15443 reduction_gpu_kernels.cu.h:841] Check failed: (::tsl::TfCheckOkDeprecationMarker(), GpuLaunchKernel( ColumnReduceKernel<IN_T, T*, Op>, grid_dim, block_dim, 0, cu_stream, in, (T*)temp_storage.flat<int8_t>().data(), extent_x, extent_y, op, init)) is OK (INTERNAL: unknown error) 
+*** Check failure stack trace: ***
+    @     0x7bd460d1d314  absl::lts_20250814::log_internal::LogMessage::SendToLog()
+    @     0x7bd460d1d296  absl::lts_20250814::log_internal::LogMessage::Flush()
+    @     0x7bd447c8a43f  tensorflow::functor::LaunchColumnReduction_LTE4096Cols<>()
+    @     0x7bd447c82adc  tensorflow::functor::ReduceImpl<>()
+    @     0x7bd447c82ca6  tensorflow::functor::ReduceFunctor<>::Reduce<>()
+    @     0x7bd447bfab5e  tensorflow::ReductionOp<>::Compute()
+    @     0x7bd460d876bc  tensorflow::BaseGPUDevice::Compute()
+    @     0x7bd45fd47a29  tensorflow::(anonymous namespace)::ExecutorState<>::Process()
+    @     0x7bd4609a8594  Eigen::ThreadPoolTempl<>::WorkerLoop()
+    @     0x7bd4609a8411  std::__invoke_impl<>()
+    @     0x7bd460994edf  tsl::(anonymous namespace)::PThread::ThreadFn()
+    @     0x7bd4968a407a  (unknown)
+    @     0x7bd49693772c  (unknown)

@@ -1,0 +1,39 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786963847.997624     346 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1786963848.778064     346 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786963852.454502     346 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Loading training data from /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/data/VeReMi_train_data.csv ...
+  train shape: X=(2236367, 28), y=(2236367,), classes=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+======================================================================
+FOLD 1/5
+======================================================================
+[fold 1] resampling training fold (1789093 rows)...
+[fold 1] resampled 1789093 -> 2120046 rows in 1542.9s (ADASYN fallback to RandomOverSampler for classes [18, 19])
+I0000 00:00:1786965424.508252     346 gpu_device.cc:2043] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5563 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 4060 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.9
+[fold 1] training on 2120046 rows...
+I0000 00:00:1786965443.946350     738 cuda_dnn.cc:461] Loaded cuDNN version 92400
+W0000 00:00:1786965452.142971     734 bfc_allocator.cc:311] Allocator (GPU_0_bfc) ran out of memory trying to allocate 6.54GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+W0000 00:00:1786965734.313843     731 bfc_allocator.cc:311] Allocator (GPU_0_bfc) ran out of memory trying to allocate 5.20GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+[fold 1] epoch 1: loss=1.2292 val_loss=1.4459 (326.7s)
+[fold 1] epoch 2: loss=0.9457 val_loss=0.7117 (331.5s)
+[fold 1] epoch 3: loss=0.8687 val_loss=0.6383 (328.7s)
+[fold 1] epoch 4: loss=0.8233 val_loss=0.5827 (229.5s)
+[fold 1] epoch 5: loss=0.7984 val_loss=0.5662 (261.6s)
+[fold 1] epoch 6: loss=0.7741 val_loss=0.5524 (233.3s)
+[fold 1] epoch 7: loss=0.7571 val_loss=0.5436 (235.9s)
+[fold 1] epoch 8: loss=0.7460 val_loss=0.5364 (220.1s)
+[fold 1] epoch 9: loss=0.7373 val_loss=0.5287 (221.5s)
+[fold 1] epoch 10: loss=0.7274 val_loss=0.5240 (221.8s)
+[fold 1] epoch 11: loss=0.7218 val_loss=0.5229 (236.5s)
+[fold 1] epoch 12: loss=0.7154 val_loss=0.5221 (226.6s)
+[fold 1] epoch 13: loss=0.7123 val_loss=0.5176 (237.6s)
+[fold 1] epoch 14: loss=0.7084 val_loss=0.5149 (231.6s)
+[fold 1] epoch 15: loss=0.7057 val_loss=0.5122 (235.4s)
+[fold 1] epoch 16: loss=0.7038 val_loss=0.5119 (235.8s)
+[fold 1] epoch 17: loss=0.7021 val_loss=0.5113 (230.7s)
+[fold 1] epoch 18: loss=0.7012 val_loss=0.5109 (240.8s)
+[fold 1] epoch 19: loss=0.7008 val_loss=0.5109 (237.8s)
+[fold 1] epoch 20: loss=0.7015 val_loss=0.5452 (238.4s)

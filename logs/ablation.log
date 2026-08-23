@@ -1,0 +1,117 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1787259260.460668  101467 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1787259261.379457  101467 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1787259264.886549  101467 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Loading training data from /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/data/VeReMi_train_data.csv ...
+  train shape: X=(2236367, 32), y=(2236367,), classes=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+======================================================================
+M1_no_bigru  (n_features=32)
+======================================================================
+[M1_no_bigru] train rows: 1789093 -> 2127845
+I0000 00:00:1787260485.829723  101467 gpu_device.cc:2043] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5563 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 4060 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.9
+I0000 00:00:1787260490.519011  101616 service.cc:153] XLA service 0x60f3d3f37af0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1787260490.519052  101616 service.cc:161]   StreamExecutor [0]: NVIDIA GeForce RTX 4060 Laptop GPU, Compute Capability 8.9 (Driver: 12.7.0; Runtime: 12.9.0; Toolkit: 12.5.0; DNN: 9.24.0)
+I0000 00:00:1787260490.631707  101616 dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+I0000 00:00:1787260491.192063  101616 cuda_dnn.cc:461] Loaded cuDNN version 92400
+I0000 00:00:1787260491.241973  101616 dot_merger.cc:481] Merging Dots in computation: a_inference_one_step_on_data_5228__.38
+E0000 00:00:1787260623.615067  101726 slow_operation_alarm.cc:73] 
+********************************
+[Compiling module a_inference_one_step_on_data_5228__.38 for GPU] Very slow compile? If you want to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+********************************
+I0000 00:00:1787262283.430130  101616 subprocess_compilation.cc:348] ptxas warning : Registers are spilled to local memory in function 'fusion_78', 79708 bytes spill stores, 110140 bytes spill loads
+ptxas warning : Registers are spilled to local memory in function 'fusion_82', 79708 bytes spill stores, 110140 bytes spill loads
+ptxas warning : Registers are spilled to local memory in function 'fusion_80', 81412 bytes spill stores, 110920 bytes spill loads
+
+E0000 00:00:1787262283.540384  101616 slow_operation_alarm.cc:140] The operation took 29m39.925678209s
+
+********************************
+[Compiling module a_inference_one_step_on_data_5228__.38 for GPU] Very slow compile? If you want to file a bug, run with envvar XLA_FLAGS=--xla_dump_to=/tmp/foo and attach the results.
+********************************
+I0000 00:00:1787262283.542323  101616 device_compiler.h:208] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+I0000 00:00:1787262399.040195  101615 dot_merger.cc:481] Merging Dots in computation: a_inference_one_step_on_data_5228__.38
+[M1_no_bigru] acc=0.7844 macro_recall=0.5399 macro_f1=0.5214 (108.0 min)
+[ablation] saved progress (1/6) to /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/ablation_table_y.json
+
+======================================================================
+M2_no_attention  (n_features=32)
+======================================================================
+[M2_no_attention] train rows: 1789093 -> 2127845
+[M2_no_attention] acc=0.9009 macro_recall=0.7860 macro_f1=0.7842 (157.8 min)
+[ablation] saved progress (2/6) to /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/ablation_table_y.json
+
+======================================================================
+M3_no_multiscale  (n_features=32)
+======================================================================
+[M3_no_multiscale] train rows: 1789093 -> 2127845
+[M3_no_multiscale] acc=0.9010 macro_recall=0.7911 macro_f1=0.7883 (140.9 min)
+[ablation] saved progress (3/6) to /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/ablation_table_y.json
+
+======================================================================
+M4_no_focal_loss  (n_features=32)
+======================================================================
+[M4_no_focal_loss] train rows: 1789093 -> 2127845
+[M4_no_focal_loss] acc=0.9192 macro_recall=0.7798 macro_f1=0.8016 (126.3 min)
+[ablation] saved progress (4/6) to /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/ablation_table_y.json
+
+======================================================================
+M5_no_adasyn  (n_features=32)
+======================================================================
+[M5_no_adasyn] train rows: 1789093 -> 1789093
+[M5_no_adasyn] acc=0.9098 macro_recall=0.7777 macro_f1=0.7903 (111.2 min)
+[ablation] saved progress (5/6) to /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/ablation_table_y.json
+
+======================================================================
+M6_no_temporal_features  (n_features=28)
+======================================================================
+[M6_no_temporal_features] train rows: 1789093 -> 2119971
+[M6_no_temporal_features] acc=0.7797 macro_recall=0.5297 macro_f1=0.5085 (177.3 min)
+[ablation] saved progress (6/6) to /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/ablation_table_y.json
+
+Ablation study complete.
+[
+  {
+    "variant": "M1_no_bigru",
+    "val_accuracy": 0.7843693127702482,
+    "val_macro_recall": 0.5398948488877897,
+    "val_macro_f1": 0.5213739677751026,
+    "elapsed_sec": 6477.224535226822
+  },
+  {
+    "variant": "M2_no_attention",
+    "val_accuracy": 0.900868371512764,
+    "val_macro_recall": 0.7860182274474548,
+    "val_macro_f1": 0.784151877567129,
+    "elapsed_sec": 9469.675837516785
+  },
+  {
+    "variant": "M3_no_multiscale",
+    "val_accuracy": 0.9009510948546081,
+    "val_macro_recall": 0.7910791290813338,
+    "val_macro_f1": 0.788295824394657,
+    "elapsed_sec": 8456.7272772789
+  },
+  {
+    "variant": "M4_no_focal_loss",
+    "val_accuracy": 0.9192150672741988,
+    "val_macro_recall": 0.7797589416235802,
+    "val_macro_f1": 0.8016475749154276,
+    "elapsed_sec": 7579.567237377167
+  },
+  {
+    "variant": "M5_no_adasyn",
+    "val_accuracy": 0.90982485009189,
+    "val_macro_recall": 0.7776991977377337,
+    "val_macro_f1": 0.7902798498453103,
+    "elapsed_sec": 6670.247001886368
+  },
+  {
+    "variant": "M6_no_temporal_features",
+    "val_accuracy": 0.7797323340949843,
+    "val_macro_recall": 0.5297293355095594,
+    "val_macro_f1": 0.5085339329338778,
+    "elapsed_sec": 10635.25987291336
+  }
+]

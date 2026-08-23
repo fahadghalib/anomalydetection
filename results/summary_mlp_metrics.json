@@ -1,0 +1,11 @@
+{
+  "accuracy_pct": 79.75,
+  "macro_precision_pct": 66.83,
+  "macro_recall_pct": 60.11,
+  "macro_f1_pct": 57.87,
+  "weighted_precision_pct": 78.5,
+  "weighted_recall_pct": 79.75,
+  "weighted_f1_pct": 76.16,
+  "n_test_samples": 958441,
+  "n_folds_in_ensemble": 5
+}

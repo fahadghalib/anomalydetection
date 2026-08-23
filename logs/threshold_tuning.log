@@ -1,0 +1,47 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1787092193.089009   51208 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1787092193.817026   51208 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1787092196.508987   51208 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Computing out-of-fold predictions on the training set...
+I0000 00:00:1787092215.532607   51208 gpu_device.cc:2043] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5563 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 4060 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.9
+I0000 00:00:1787092217.982144   51298 cuda_dnn.cc:461] Loaded cuDNN version 92400
+Loading training data from /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/data/VeReMi_train_data.csv ...
+  train shape: X=(2236367, 28), y=(2236367,), classes=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+[oof] fold 1 done (447274 rows)
+[oof] fold 2 done (447274 rows)
+[oof] fold 3 done (447273 rows)
+[oof] fold 4 done (447273 rows)
+[oof] fold 5 done (447273 rows)
+
+Searching per-class boosts on OOF data...
+[search] baseline OOF accuracy: 0.7799
+[search] round 1, class 10: boost=0.0, OOF acc=0.7799
+[search] round 1, class 11: boost=0.0, OOF acc=0.7799
+[search] round 1, class 13: boost=0.0, OOF acc=0.7799
+[search] round 1, class 15: boost=0.0, OOF acc=0.7799
+
+Final boosts: {10: 0.0, 11: 0.0, 13: 0.0, 15: 0.0}
+Final OOF accuracy: 0.7799
+
+Applying boosts to the REAL test set (first and only touch)...
+Loading test data from /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/data/VeReMi_test_data.csv ...
+  test shape: X=(958441, 28), y=(958441,), classes=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+=== FINAL (threshold-adjusted) TEST ACCURACY: 79.61% ===
+{
+  "accuracy_pct": 79.61,
+  "macro_precision_pct": 64.11,
+  "macro_recall_pct": 56.6,
+  "macro_f1_pct": 55.18,
+  "weighted_precision_pct": 75.77,
+  "weighted_recall_pct": 79.61,
+  "weighted_f1_pct": 74.55,
+  "boosts": {
+    "Disruptive Attack": 0.0,
+    "Disruptive Position Attack": 0.0,
+    "Data Replay Attack": 0.0,
+    "Distributed DoS (DDoS)": 0.0
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "variant": "M1_no_bigru",
+    "val_accuracy": 0.7843693127702482,
+    "val_macro_recall": 0.5398948488877897,
+    "val_macro_f1": 0.5213739677751026,
+    "elapsed_sec": 6477.224535226822
+  },
+  {
+    "variant": "M2_no_attention",
+    "val_accuracy": 0.900868371512764,
+    "val_macro_recall": 0.7860182274474548,
+    "val_macro_f1": 0.784151877567129,
+    "elapsed_sec": 9469.675837516785
+  },
+  {
+    "variant": "M3_no_multiscale",
+    "val_accuracy": 0.9009510948546081,
+    "val_macro_recall": 0.7910791290813338,
+    "val_macro_f1": 0.788295824394657,
+    "elapsed_sec": 8456.7272772789
+  },
+  {
+    "variant": "M4_no_focal_loss",
+    "val_accuracy": 0.9192150672741988,
+    "val_macro_recall": 0.7797589416235802,
+    "val_macro_f1": 0.8016475749154276,
+    "elapsed_sec": 7579.567237377167
+  },
+  {
+    "variant": "M5_no_adasyn",
+    "val_accuracy": 0.90982485009189,
+    "val_macro_recall": 0.7776991977377337,
+    "val_macro_f1": 0.7902798498453103,
+    "elapsed_sec": 6670.247001886368
+  },
+  {
+    "variant": "M6_no_temporal_features",
+    "val_accuracy": 0.7797323340949843,
+    "val_macro_recall": 0.5297293355095594,
+    "val_macro_f1": 0.5085339329338778,
+    "elapsed_sec": 10635.25987291336
+  }
+]

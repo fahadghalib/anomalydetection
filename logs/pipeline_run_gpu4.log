@@ -1,0 +1,45 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786987708.114298   20766 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1786987710.209796   20766 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786987722.036999   20766 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Loading training data from /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/data/VeReMi_train_data.csv ...
+  train shape: X=(2236367, 28), y=(2236367,), classes=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+[fold 1] already completed in a prior attempt (resume=True) -- skipping, val_accuracy=0.7823861883319844
+
+[fold 2] already completed in a prior attempt (resume=True) -- skipping, val_accuracy=0.7823638306720265
+
+======================================================================
+FOLD 3/5
+======================================================================
+[fold 3] resampling training fold (1789094 rows)...
+[fold 3] resampled 1789094 -> 2119406 rows in 2396.1s (ADASYN fallback to RandomOverSampler for classes [18, 19])
+I0000 00:00:1786990220.840736   20766 gpu_device.cc:2043] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5563 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 4060 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.9
+[fold 3] training on 2119406 rows...
+I0000 00:00:1786990285.453365   20954 cuda_dnn.cc:461] Loaded cuDNN version 92400
+W0000 00:00:1786990306.255983   20943 bfc_allocator.cc:311] Allocator (GPU_0_bfc) ran out of memory trying to allocate 6.54GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+W0000 00:00:1786990809.488346   20945 bfc_allocator.cc:311] Allocator (GPU_0_bfc) ran out of memory trying to allocate 4.69GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+[fold 3] epoch 1: loss=1.2137 val_loss=1.7068 (611.2s)
+[fold 3] epoch 2: loss=0.9311 val_loss=0.7467 (566.9s)
+[fold 3] epoch 3: loss=0.8563 val_loss=0.6043 (558.2s)
+W0000 00:00:1786992283.954251   20946 op_kernel.cc:1845] INTERNAL: 'cuLaunchKernel(function, gridX, gridY, gridZ, blockX, blockY, blockZ, 0, reinterpret_cast<CUstream>(stream), params, nullptr)' failed with 'CUDA_ERROR_UNKNOWN'
+W0000 00:00:1786992284.032856   20946 local_rendezvous.cc:412] Local rendezvous is aborting with status: INTERNAL: 'cuLaunchKernel(function, gridX, gridY, gridZ, blockX, blockY, blockZ, 0, reinterpret_cast<CUstream>(stream), params, nullptr)' failed with 'CUDA_ERROR_UNKNOWN'
+	 [[{{function_node cnn_bigru_attention_1_bigru_1_backward_gru_1_while_body_7047_grad_8274}}{{node gradient_tape/cnn_bigru_attention_1/bigru_1/backward_gru_1/while/gradients/cnn_bigru_attention_1/bigru_1/backward_gru_1/while/gru_cell_1/mul_grad/Mul}}]]
+W0000 00:00:1786992284.158437   20946 op_kernel.cc:1858] OP_REQUIRES failed at matmul_op_impl.h:831 : INTERNAL: an internal operation failed
+F0000 00:00:1786992284.330723   20946 reduction_gpu_kernels.cu.h:841] Check failed: (::tsl::TfCheckOkDeprecationMarker(), GpuLaunchKernel( ColumnReduceKernel<IN_T, T*, Op>, grid_dim, block_dim, 0, cu_stream, in, (T*)temp_storage.flat<int8_t>().data(), extent_x, extent_y, op, init)) is OK (INTERNAL: unknown error) 
+*** Check failure stack trace: ***
+    @     0x7d0f38d1d314  absl::lts_20250814::log_internal::LogMessage::SendToLog()
+    @     0x7d0f38d1d296  absl::lts_20250814::log_internal::LogMessage::Flush()
+    @     0x7d0f1fc8a43f  tensorflow::functor::LaunchColumnReduction_LTE4096Cols<>()
+    @     0x7d0f1fc82adc  tensorflow::functor::ReduceImpl<>()
+    @     0x7d0f1fc82ca6  tensorflow::functor::ReduceFunctor<>::Reduce<>()
+    @     0x7d0f1fbfab5e  tensorflow::ReductionOp<>::Compute()
+    @     0x7d0f38d876bc  tensorflow::BaseGPUDevice::Compute()
+    @     0x7d0f37d47a29  tensorflow::(anonymous namespace)::ExecutorState<>::Process()
+    @     0x7d0f389a8594  Eigen::ThreadPoolTempl<>::WorkerLoop()
+    @     0x7d0f389a8411  std::__invoke_impl<>()
+    @     0x7d0f38994edf  tsl::(anonymous namespace)::PThread::ThreadFn()
+    @     0x7d0f6e8a407a  (unknown)
+    @     0x7d0f6e93772c  (unknown)

@@ -1,0 +1,135 @@
+{
+  "Benign (Normal Traffic)": {
+    "precision": 0.9534561030973128,
+    "recall": 0.9785890089243776,
+    "f1-score": 0.9658590859781369,
+    "support": 266125.0
+  },
+  "Constant Attack": {
+    "precision": 0.9607037158829332,
+    "recall": 0.9547385620915033,
+    "f1-score": 0.9577118505163088,
+    "support": 6120.0
+  },
+  "Constant Position Attack": {
+    "precision": 0.4703722250041729,
+    "recall": 0.46280177369026115,
+    "f1-score": 0.46655629139072846,
+    "support": 6089.0
+  },
+  "Constant Speed Attack": {
+    "precision": 0.9031904910853925,
+    "recall": 0.9419344315772304,
+    "f1-score": 0.9221556886227545,
+    "support": 6131.0
+  },
+  "Random Attack": {
+    "precision": 0.8211943389713496,
+    "recall": 0.7964512889186475,
+    "f1-score": 0.8086335825968729,
+    "support": 5974.0
+  },
+  "Random Position Attack": {
+    "precision": 0.9666499078263784,
+    "recall": 0.9841324006142297,
+    "f1-score": 0.9753128170443016,
+    "support": 5861.0
+  },
+  "Random Speed Attack": {
+    "precision": 0.9186430029841369,
+    "recall": 0.9432349621028866,
+    "f1-score": 0.9307765754296626,
+    "support": 6201.0
+  },
+  "Eventual Attack": {
+    "precision": 0.9100599600266489,
+    "recall": 0.9276740237691001,
+    "f1-score": 0.9187825794518244,
+    "support": 5890.0
+  },
+  "Eventual Position Attack": {
+    "precision": 0.8383439271602817,
+    "recall": 0.8227954813690778,
+    "f1-score": 0.8304969366916269,
+    "support": 5931.0
+  },
+  "Eventual Speed Attack": {
+    "precision": 0.6708302718589273,
+    "recall": 0.7604531067799434,
+    "f1-score": 0.7128357276702061,
+    "support": 6003.0
+  },
+  "Disruptive Attack": {
+    "precision": 0.529664133366021,
+    "recall": 0.7120962425840475,
+    "f1-score": 0.6074792633206805,
+    "support": 6068.0
+  },
+  "Disruptive Position Attack": {
+    "precision": 0.5174880763116058,
+    "recall": 0.21003387643168253,
+    "f1-score": 0.2987951807228916,
+    "support": 6199.0
+  },
+  "Disruptive Speed Attack": {
+    "precision": 0.9841571609632446,
+    "recall": 0.5139831209664074,
+    "f1-score": 0.6752907924774432,
+    "support": 6043.0
+  },
+  "Data Replay Attack": {
+    "precision": 0.9061447136210492,
+    "recall": 0.9246889325474787,
+    "f1-score": 0.9153229073818977,
+    "support": 18324.0
+  },
+  "Denial of Service (DoS)": {
+    "precision": 0.8653964037597057,
+    "recall": 0.9543150067598017,
+    "f1-score": 0.9076832404629233,
+    "support": 17752.0
+  },
+  "Distributed DoS (DDoS)": {
+    "precision": 0.9154232324640915,
+    "recall": 0.7244785343781039,
+    "f1-score": 0.8088344011828487,
+    "support": 18122.0
+  },
+  "Sybil Attack": {
+    "precision": 0.969015427283758,
+    "recall": 0.9076186223972075,
+    "f1-score": 0.9373126820782596,
+    "support": 24637.0
+  },
+  "Sybil Position Attack": {
+    "precision": 0.8131999402717635,
+    "recall": 0.8788123285460707,
+    "f1-score": 0.8447339847991314,
+    "support": 6197.0
+  },
+  "Sybil Speed Attack": {
+    "precision": 0.8928215735846166,
+    "recall": 0.9602834541858932,
+    "f1-score": 0.9253245464289968,
+    "support": 12136.0
+  },
+  "Mixed / Other Misbehavior": {
+    "precision": 0.9324338349766477,
+    "recall": 0.7832606800348736,
+    "f1-score": 0.8513622364368633,
+    "support": 11470.0
+  },
+  "accuracy": 0.9174150910070583,
+  "macro avg": {
+    "precision": 0.8369594220250018,
+    "recall": 0.8071187919334412,
+    "f1-score": 0.8130630185342179,
+    "support": 447273.0
+  },
+  "weighted avg": {
+    "precision": 0.9167005534078824,
+    "recall": 0.9174150910070583,
+    "f1-score": 0.9140168339309683,
+    "support": 447273.0
+  }
+}
