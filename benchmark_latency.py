@@ -12,10 +12,23 @@ count, which understates real deployment latency.
 
 from __future__ import annotations
 
+import argparse
 import json
+import os
 import pickle
 import platform
 import time
+
+# Device selection must happen before TensorFlow initialises CUDA.
+_ap = argparse.ArgumentParser()
+_ap.add_argument("--device", choices=["gpu", "cpu"], default="gpu",
+                 help="cpu forces CUDA_VISIBLE_DEVICES='' so the same code path "
+                      "can be timed on both devices")
+_ap.add_argument("--tag", default=None,
+                 help="label for the output file, e.g. wsl2_cpu / native_windows_cpu")
+_ARGS, _ = _ap.parse_known_args()
+if _ARGS.device == "cpu":
+    os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
 import numpy as np
 import tensorflow as tf
@@ -25,7 +38,7 @@ from .data_pipeline import load_test
 from .model import AdditiveAttention  # noqa: F401 (needed for model deserialization)
 
 N_WARMUP = 50
-N_TIMED = 2000
+N_TIMED = 300
 
 
 def _load_fold_artifacts(n_folds: int = config.N_FOLDS):
@@ -42,6 +55,10 @@ def _load_fold_artifacts(n_folds: int = config.N_FOLDS):
 def run_benchmark(n_folds: int = config.N_FOLDS):
     gpus = tf.config.list_physical_devices("GPU")
     device_name = "GPU: NVIDIA GeForce RTX 4060 Laptop GPU (8GB)" if gpus else "CPU only"
+    tag = _ARGS.tag or ("gpu" if gpus else "cpu")
+    is_wsl = "microsoft" in platform.release().lower() or os.path.exists("/proc/sys/fs/binfmt_misc/WSLInterop")
+    host = "WSL2 (Ubuntu) on Windows 11" if is_wsl else f"native {platform.system()} {platform.release()}"
+    print(f"host={host}  device={device_name}  tag={tag}", flush=True)
 
     print("Loading fold models + scalers...", flush=True)
     models_, scalers_ = _load_fold_artifacts(n_folds)
@@ -71,11 +88,16 @@ def run_benchmark(n_folds: int = config.N_FOLDS):
     # --- timed single-sample (batch_size=1) ensemble inference ---
     print(f"Timing {N_TIMED} single-sample ensemble inferences...", flush=True)
     per_sample_ms = []
-    for i in range(N_WARMUP, N_WARMUP + N_TIMED):
+    t_start = time.perf_counter()
+    for j, i in enumerate(range(N_WARMUP, N_WARMUP + N_TIMED)):
         t0 = time.perf_counter()
         for model, Xs in zip(models_, Xs_per_fold):
             _ = model(Xs[i:i + 1], training=False)
         per_sample_ms.append((time.perf_counter() - t0) * 1000.0)
+        if (j + 1) % 25 == 0:
+            elapsed = time.perf_counter() - t_start
+            print(f"  {j + 1}/{N_TIMED} timed samples "
+                  f"({elapsed:.1f}s elapsed, {elapsed / (j + 1):.3f}s/sample avg)", flush=True)
 
     per_sample_ms = np.array(per_sample_ms)
 
@@ -87,7 +109,7 @@ def run_benchmark(n_folds: int = config.N_FOLDS):
         "environment": {
             "hardware": device_name,
             "cpu": "13th Gen Intel Core i9-13900H",
-            "os": "WSL2 (Ubuntu) on Windows 11",
+            "os": host,
             "framework": f"TensorFlow {tf.__version__} (Keras {tf.keras.__version__})",
             "python_version": platform.python_version(),
             "numerical_precision": "float32",
@@ -113,7 +135,7 @@ def run_benchmark(n_folds: int = config.N_FOLDS):
         "trainable_params_per_fold": models_[0].count_params(),
     }
 
-    out_path = config.RESULTS_DIR / "latency_benchmark.json"
+    out_path = config.RESULTS_DIR / f"latency_benchmark_{tag}.json"
     with open(out_path, "w") as f:
         json.dump(result, f, indent=2)
 
