@@ -1,0 +1,198 @@
+{
+  "public_dataset_reported_instances": 3194808,
+  "train": {
+    "split": "train",
+    "raw_records": 2236367,
+    "exact_duplicate_rows_removed": 0,
+    "rows_with_nan_or_inf_removed": 0,
+    "records_after_cleaning": 2236367,
+    "n_columns": 30,
+    "type_column_unique_values": [
+      4
+    ],
+    "class_column_unique_values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "n_unique_senders": 24644,
+    "n_senders_with_single_class": 24644,
+    "pct_senders_class_pure": 100.0,
+    "n_unique_senderPseudo": 106510,
+    "pct_pseudo_class_pure": 100.0,
+    "class_counts": {
+      "0": 1330629,
+      "1": 30600,
+      "2": 30446,
+      "3": 30658,
+      "4": 29874,
+      "5": 29306,
+      "6": 31002,
+      "7": 29449,
+      "8": 29656,
+      "9": 30014,
+      "10": 30337,
+      "11": 30995,
+      "12": 30212,
+      "13": 91616,
+      "14": 88757,
+      "15": 90611,
+      "16": 123188,
+      "17": 30983,
+      "18": 60681,
+      "19": 57353
+    }
+  },
+  "test": {
+    "split": "test",
+    "raw_records": 958441,
+    "exact_duplicate_rows_removed": 0,
+    "rows_with_nan_or_inf_removed": 0,
+    "records_after_cleaning": 958441,
+    "n_columns": 30,
+    "type_column_unique_values": [
+      4
+    ],
+    "class_column_unique_values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "n_unique_senders": 24553,
+    "n_senders_with_single_class": 24553,
+    "pct_senders_class_pure": 100.0,
+    "n_unique_senderPseudo": 73157,
+    "pct_pseudo_class_pure": 100.0,
+    "class_counts": {
+      "0": 569910,
+      "1": 13053,
+      "2": 13121,
+      "3": 13199,
+      "4": 12701,
+      "5": 12619,
+      "6": 13357,
+      "7": 12809,
+      "8": 12927,
+      "9": 12776,
+      "10": 12927,
+      "11": 13342,
+      "12": 12906,
+      "13": 39689,
+      "14": 37967,
+      "15": 38659,
+      "16": 52203,
+      "17": 13327,
+      "18": 26202,
+      "19": 24747
+    }
+  },
+  "combined_raw_records": 3194808,
+  "combined_records_after_cleaning": 3194808,
+  "raw_matches_public_total": true,
+  "identifier_columns_used_as_model_features": [
+    "sender",
+    "senderPseudo",
+    "messageID"
+  ],
+  "train_test_identifier_overlap": {
+    "sender": {
+      "n_train": 24644,
+      "n_test": 24553,
+      "n_shared": 24534,
+      "pct_of_test_ids_seen_in_train": 99.923
+    },
+    "senderPseudo": {
+      "n_train": 106510,
+      "n_test": 73157,
+      "n_shared": 60758,
+      "pct_of_test_ids_seen_in_train": 83.052
+    },
+    "messageID": {
+      "n_train": 2236367,
+      "n_test": 958441,
+      "n_shared": 0,
+      "pct_of_test_ids_seen_in_train": 0.0
+    }
+  },
+  "row_level_stratifiedkfold_leakage": [
+    {
+      "fold": 1,
+      "n_val_senders": 24388,
+      "n_val_senders_also_in_train": 24373,
+      "pct_val_senders_also_in_train": 99.938,
+      "pct_val_rows_whose_sender_seen_in_train": 99.995,
+      "n_train_rows": 1789093,
+      "n_val_rows": 447274
+    },
+    {
+      "fold": 2,
+      "n_val_senders": 24385,
+      "n_val_senders_also_in_train": 24369,
+      "pct_val_senders_also_in_train": 99.934,
+      "pct_val_rows_whose_sender_seen_in_train": 99.995,
+      "n_train_rows": 1789093,
+      "n_val_rows": 447274
+    },
+    {
+      "fold": 3,
+      "n_val_senders": 24400,
+      "n_val_senders_also_in_train": 24379,
+      "pct_val_senders_also_in_train": 99.914,
+      "pct_val_rows_whose_sender_seen_in_train": 99.994,
+      "n_train_rows": 1789094,
+      "n_val_rows": 447273
+    },
+    {
+      "fold": 4,
+      "n_val_senders": 24374,
+      "n_val_senders_also_in_train": 24364,
+      "pct_val_senders_also_in_train": 99.959,
+      "pct_val_rows_whose_sender_seen_in_train": 99.997,
+      "n_train_rows": 1789094,
+      "n_val_rows": 447273
+    },
+    {
+      "fold": 5,
+      "n_val_senders": 24400,
+      "n_val_senders_also_in_train": 24381,
+      "pct_val_senders_also_in_train": 99.922,
+      "pct_val_rows_whose_sender_seen_in_train": 99.994,
+      "n_train_rows": 1789094,
+      "n_val_rows": 447273
+    }
+  ]
+}

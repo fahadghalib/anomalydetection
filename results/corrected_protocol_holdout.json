@@ -1,0 +1,690 @@
+{
+  "cnn": {
+    "model": "cnn",
+    "val_accuracy": 0.8783275317599755,
+    "val_macro_precision": 0.7460308361342829,
+    "val_macro_recall": 0.7341656130498551,
+    "val_macro_f1": 0.7236616984276742,
+    "model_size": 140373,
+    "elapsed_sec": 7973.262483358383,
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "Benign (Normal Traffic)",
+        "precision_pct": 95.0,
+        "recall_pct": 96.7,
+        "f1_pct": 95.8,
+        "support": 633513
+      },
+      {
+        "class_id": 1,
+        "class_name": "Constant Attack",
+        "precision_pct": 93.9,
+        "recall_pct": 94.6,
+        "f1_pct": 94.3,
+        "support": 14550
+      },
+      {
+        "class_id": 2,
+        "class_name": "Constant Position Attack",
+        "precision_pct": 38.6,
+        "recall_pct": 46.0,
+        "f1_pct": 42.0,
+        "support": 14522
+      },
+      {
+        "class_id": 3,
+        "class_name": "Constant Speed Attack",
+        "precision_pct": 89.0,
+        "recall_pct": 95.8,
+        "f1_pct": 92.3,
+        "support": 14619
+      },
+      {
+        "class_id": 4,
+        "class_name": "Random Attack",
+        "precision_pct": 85.2,
+        "recall_pct": 85.0,
+        "f1_pct": 85.1,
+        "support": 14193
+      },
+      {
+        "class_id": 5,
+        "class_name": "Random Position Attack",
+        "precision_pct": 94.4,
+        "recall_pct": 97.6,
+        "f1_pct": 96.0,
+        "support": 13974
+      },
+      {
+        "class_id": 6,
+        "class_name": "Random Speed Attack",
+        "precision_pct": 90.4,
+        "recall_pct": 93.7,
+        "f1_pct": 92.0,
+        "support": 14786
+      },
+      {
+        "class_id": 7,
+        "class_name": "Eventual Attack",
+        "precision_pct": 88.6,
+        "recall_pct": 93.9,
+        "f1_pct": 91.2,
+        "support": 14087
+      },
+      {
+        "class_id": 8,
+        "class_name": "Eventual Position Attack",
+        "precision_pct": 67.3,
+        "recall_pct": 79.4,
+        "f1_pct": 72.8,
+        "support": 14192
+      },
+      {
+        "class_id": 9,
+        "class_name": "Eventual Speed Attack",
+        "precision_pct": 59.5,
+        "recall_pct": 66.2,
+        "f1_pct": 62.7,
+        "support": 14264
+      },
+      {
+        "class_id": 10,
+        "class_name": "Disruptive Attack",
+        "precision_pct": 46.7,
+        "recall_pct": 67.9,
+        "f1_pct": 55.3,
+        "support": 14420
+      },
+      {
+        "class_id": 11,
+        "class_name": "Disruptive Position Attack",
+        "precision_pct": 36.0,
+        "recall_pct": 14.2,
+        "f1_pct": 20.3,
+        "support": 14780
+      },
+      {
+        "class_id": 12,
+        "class_name": "Disruptive Speed Attack",
+        "precision_pct": 95.0,
+        "recall_pct": 51.5,
+        "f1_pct": 66.8,
+        "support": 14372
+      },
+      {
+        "class_id": 13,
+        "class_name": "Data Replay Attack",
+        "precision_pct": 88.5,
+        "recall_pct": 98.1,
+        "f1_pct": 93.1,
+        "support": 43773
+      },
+      {
+        "class_id": 14,
+        "class_name": "Denial of Service (DoS)",
+        "precision_pct": 85.9,
+        "recall_pct": 59.6,
+        "f1_pct": 70.3,
+        "support": 42240
+      },
+      {
+        "class_id": 15,
+        "class_name": "Distributed DoS (DDoS)",
+        "precision_pct": 96.0,
+        "recall_pct": 56.3,
+        "f1_pct": 71.0,
+        "support": 43094
+      },
+      {
+        "class_id": 16,
+        "class_name": "Sybil Attack",
+        "precision_pct": 94.3,
+        "recall_pct": 90.9,
+        "f1_pct": 92.6,
+        "support": 58468
+      },
+      {
+        "class_id": 17,
+        "class_name": "Sybil Position Attack",
+        "precision_pct": 29.2,
+        "recall_pct": 9.3,
+        "f1_pct": 14.1,
+        "support": 14768
+      },
+      {
+        "class_id": 18,
+        "class_name": "Sybil Speed Attack",
+        "precision_pct": 58.5,
+        "recall_pct": 96.4,
+        "f1_pct": 72.8,
+        "support": 28961
+      },
+      {
+        "class_id": 19,
+        "class_name": "Mixed / Other Misbehavior",
+        "precision_pct": 60.0,
+        "recall_pct": 75.2,
+        "f1_pct": 66.8,
+        "support": 27365
+      }
+    ],
+    "false_alarm_rate_pct": 3.3
+  },
+  "mlp_cap": {
+    "model": "mlp_cap",
+    "val_accuracy": 0.896022408753161,
+    "val_macro_precision": 0.7787882838652501,
+    "val_macro_recall": 0.7641211235215776,
+    "val_macro_f1": 0.7523450921801549,
+    "model_size": 142596,
+    "elapsed_sec": 209.54193353652954,
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "Benign (Normal Traffic)",
+        "precision_pct": 95.8,
+        "recall_pct": 98.0,
+        "f1_pct": 96.9,
+        "support": 633513
+      },
+      {
+        "class_id": 1,
+        "class_name": "Constant Attack",
+        "precision_pct": 92.0,
+        "recall_pct": 96.4,
+        "f1_pct": 94.2,
+        "support": 14550
+      },
+      {
+        "class_id": 2,
+        "class_name": "Constant Position Attack",
+        "precision_pct": 51.0,
+        "recall_pct": 58.3,
+        "f1_pct": 54.4,
+        "support": 14522
+      },
+      {
+        "class_id": 3,
+        "class_name": "Constant Speed Attack",
+        "precision_pct": 89.1,
+        "recall_pct": 97.9,
+        "f1_pct": 93.3,
+        "support": 14619
+      },
+      {
+        "class_id": 4,
+        "class_name": "Random Attack",
+        "precision_pct": 87.1,
+        "recall_pct": 89.8,
+        "f1_pct": 88.4,
+        "support": 14193
+      },
+      {
+        "class_id": 5,
+        "class_name": "Random Position Attack",
+        "precision_pct": 96.5,
+        "recall_pct": 97.9,
+        "f1_pct": 97.2,
+        "support": 13974
+      },
+      {
+        "class_id": 6,
+        "class_name": "Random Speed Attack",
+        "precision_pct": 93.4,
+        "recall_pct": 97.6,
+        "f1_pct": 95.5,
+        "support": 14786
+      },
+      {
+        "class_id": 7,
+        "class_name": "Eventual Attack",
+        "precision_pct": 94.7,
+        "recall_pct": 95.3,
+        "f1_pct": 95.0,
+        "support": 14087
+      },
+      {
+        "class_id": 8,
+        "class_name": "Eventual Position Attack",
+        "precision_pct": 91.7,
+        "recall_pct": 93.5,
+        "f1_pct": 92.6,
+        "support": 14192
+      },
+      {
+        "class_id": 9,
+        "class_name": "Eventual Speed Attack",
+        "precision_pct": 80.5,
+        "recall_pct": 69.7,
+        "f1_pct": 74.7,
+        "support": 14264
+      },
+      {
+        "class_id": 10,
+        "class_name": "Disruptive Attack",
+        "precision_pct": 46.4,
+        "recall_pct": 77.8,
+        "f1_pct": 58.2,
+        "support": 14420
+      },
+      {
+        "class_id": 11,
+        "class_name": "Disruptive Position Attack",
+        "precision_pct": 31.8,
+        "recall_pct": 2.8,
+        "f1_pct": 5.2,
+        "support": 14780
+      },
+      {
+        "class_id": 12,
+        "class_name": "Disruptive Speed Attack",
+        "precision_pct": 79.7,
+        "recall_pct": 52.9,
+        "f1_pct": 63.6,
+        "support": 14372
+      },
+      {
+        "class_id": 13,
+        "class_name": "Data Replay Attack",
+        "precision_pct": 90.5,
+        "recall_pct": 98.9,
+        "f1_pct": 94.5,
+        "support": 43773
+      },
+      {
+        "class_id": 14,
+        "class_name": "Denial of Service (DoS)",
+        "precision_pct": 86.9,
+        "recall_pct": 60.0,
+        "f1_pct": 71.0,
+        "support": 42240
+      },
+      {
+        "class_id": 15,
+        "class_name": "Distributed DoS (DDoS)",
+        "precision_pct": 99.1,
+        "recall_pct": 56.3,
+        "f1_pct": 71.8,
+        "support": 43094
+      },
+      {
+        "class_id": 16,
+        "class_name": "Sybil Attack",
+        "precision_pct": 95.3,
+        "recall_pct": 93.3,
+        "f1_pct": 94.3,
+        "support": 58468
+      },
+      {
+        "class_id": 17,
+        "class_name": "Sybil Position Attack",
+        "precision_pct": 35.1,
+        "recall_pct": 15.4,
+        "f1_pct": 21.4,
+        "support": 14768
+      },
+      {
+        "class_id": 18,
+        "class_name": "Sybil Speed Attack",
+        "precision_pct": 58.5,
+        "recall_pct": 98.9,
+        "f1_pct": 73.6,
+        "support": 28961
+      },
+      {
+        "class_id": 19,
+        "class_name": "Mixed / Other Misbehavior",
+        "precision_pct": 62.3,
+        "recall_pct": 77.5,
+        "f1_pct": 69.1,
+        "support": 27365
+      }
+    ],
+    "false_alarm_rate_pct": 2.0
+  },
+  "mlp_matched": {
+    "model": "mlp_matched",
+    "val_accuracy": 0.8982178355420629,
+    "val_macro_precision": 0.7902035267268335,
+    "val_macro_recall": 0.758665441785113,
+    "val_macro_f1": 0.7537809645076197,
+    "model_size": 106868,
+    "elapsed_sec": 146.8290011882782,
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "Benign (Normal Traffic)",
+        "precision_pct": 95.6,
+        "recall_pct": 98.8,
+        "f1_pct": 97.1,
+        "support": 633513
+      },
+      {
+        "class_id": 1,
+        "class_name": "Constant Attack",
+        "precision_pct": 93.1,
+        "recall_pct": 94.7,
+        "f1_pct": 93.9,
+        "support": 14550
+      },
+      {
+        "class_id": 2,
+        "class_name": "Constant Position Attack",
+        "precision_pct": 58.6,
+        "recall_pct": 52.2,
+        "f1_pct": 55.2,
+        "support": 14522
+      },
+      {
+        "class_id": 3,
+        "class_name": "Constant Speed Attack",
+        "precision_pct": 88.8,
+        "recall_pct": 97.7,
+        "f1_pct": 93.0,
+        "support": 14619
+      },
+      {
+        "class_id": 4,
+        "class_name": "Random Attack",
+        "precision_pct": 86.1,
+        "recall_pct": 89.4,
+        "f1_pct": 87.7,
+        "support": 14193
+      },
+      {
+        "class_id": 5,
+        "class_name": "Random Position Attack",
+        "precision_pct": 94.8,
+        "recall_pct": 98.5,
+        "f1_pct": 96.6,
+        "support": 13974
+      },
+      {
+        "class_id": 6,
+        "class_name": "Random Speed Attack",
+        "precision_pct": 93.4,
+        "recall_pct": 97.0,
+        "f1_pct": 95.2,
+        "support": 14786
+      },
+      {
+        "class_id": 7,
+        "class_name": "Eventual Attack",
+        "precision_pct": 94.5,
+        "recall_pct": 95.0,
+        "f1_pct": 94.8,
+        "support": 14087
+      },
+      {
+        "class_id": 8,
+        "class_name": "Eventual Position Attack",
+        "precision_pct": 90.8,
+        "recall_pct": 93.1,
+        "f1_pct": 91.9,
+        "support": 14192
+      },
+      {
+        "class_id": 9,
+        "class_name": "Eventual Speed Attack",
+        "precision_pct": 84.2,
+        "recall_pct": 68.9,
+        "f1_pct": 75.8,
+        "support": 14264
+      },
+      {
+        "class_id": 10,
+        "class_name": "Disruptive Attack",
+        "precision_pct": 46.4,
+        "recall_pct": 77.6,
+        "f1_pct": 58.1,
+        "support": 14420
+      },
+      {
+        "class_id": 11,
+        "class_name": "Disruptive Position Attack",
+        "precision_pct": 42.2,
+        "recall_pct": 13.0,
+        "f1_pct": 19.9,
+        "support": 14780
+      },
+      {
+        "class_id": 12,
+        "class_name": "Disruptive Speed Attack",
+        "precision_pct": 88.2,
+        "recall_pct": 52.7,
+        "f1_pct": 66.0,
+        "support": 14372
+      },
+      {
+        "class_id": 13,
+        "class_name": "Data Replay Attack",
+        "precision_pct": 90.3,
+        "recall_pct": 98.8,
+        "f1_pct": 94.4,
+        "support": 43773
+      },
+      {
+        "class_id": 14,
+        "class_name": "Denial of Service (DoS)",
+        "precision_pct": 86.5,
+        "recall_pct": 59.9,
+        "f1_pct": 70.7,
+        "support": 42240
+      },
+      {
+        "class_id": 15,
+        "class_name": "Distributed DoS (DDoS)",
+        "precision_pct": 98.9,
+        "recall_pct": 55.9,
+        "f1_pct": 71.4,
+        "support": 43094
+      },
+      {
+        "class_id": 16,
+        "class_name": "Sybil Attack",
+        "precision_pct": 95.0,
+        "recall_pct": 92.9,
+        "f1_pct": 93.9,
+        "support": 58468
+      },
+      {
+        "class_id": 17,
+        "class_name": "Sybil Position Attack",
+        "precision_pct": 32.9,
+        "recall_pct": 6.0,
+        "f1_pct": 10.2,
+        "support": 14768
+      },
+      {
+        "class_id": 18,
+        "class_name": "Sybil Speed Attack",
+        "precision_pct": 58.3,
+        "recall_pct": 98.9,
+        "f1_pct": 73.4,
+        "support": 28961
+      },
+      {
+        "class_id": 19,
+        "class_name": "Mixed / Other Misbehavior",
+        "precision_pct": 61.8,
+        "recall_pct": 76.3,
+        "f1_pct": 68.3,
+        "support": 27365
+      }
+    ],
+    "false_alarm_rate_pct": 1.2
+  },
+  "lgbm": {
+    "model": "lgbm",
+    "val_accuracy": 0.8144169489201749,
+    "val_macro_precision": 0.6080407022113606,
+    "val_macro_recall": 0.647599776469204,
+    "val_macro_f1": 0.6249579291613908,
+    "model_size": 8000,
+    "elapsed_sec": 863.6775906085968,
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "Benign (Normal Traffic)",
+        "precision_pct": 93.6,
+        "recall_pct": 90.9,
+        "f1_pct": 92.2,
+        "support": 633513
+      },
+      {
+        "class_id": 1,
+        "class_name": "Constant Attack",
+        "precision_pct": 78.4,
+        "recall_pct": 87.5,
+        "f1_pct": 82.7,
+        "support": 14550
+      },
+      {
+        "class_id": 2,
+        "class_name": "Constant Position Attack",
+        "precision_pct": 33.5,
+        "recall_pct": 31.4,
+        "f1_pct": 32.4,
+        "support": 14522
+      },
+      {
+        "class_id": 3,
+        "class_name": "Constant Speed Attack",
+        "precision_pct": 84.5,
+        "recall_pct": 88.0,
+        "f1_pct": 86.2,
+        "support": 14619
+      },
+      {
+        "class_id": 4,
+        "class_name": "Random Attack",
+        "precision_pct": 68.7,
+        "recall_pct": 72.4,
+        "f1_pct": 70.5,
+        "support": 14193
+      },
+      {
+        "class_id": 5,
+        "class_name": "Random Position Attack",
+        "precision_pct": 59.6,
+        "recall_pct": 68.7,
+        "f1_pct": 63.8,
+        "support": 13974
+      },
+      {
+        "class_id": 6,
+        "class_name": "Random Speed Attack",
+        "precision_pct": 58.0,
+        "recall_pct": 68.2,
+        "f1_pct": 62.7,
+        "support": 14786
+      },
+      {
+        "class_id": 7,
+        "class_name": "Eventual Attack",
+        "precision_pct": 84.1,
+        "recall_pct": 89.5,
+        "f1_pct": 86.7,
+        "support": 14087
+      },
+      {
+        "class_id": 8,
+        "class_name": "Eventual Position Attack",
+        "precision_pct": 56.3,
+        "recall_pct": 66.5,
+        "f1_pct": 61.0,
+        "support": 14192
+      },
+      {
+        "class_id": 9,
+        "class_name": "Eventual Speed Attack",
+        "precision_pct": 51.3,
+        "recall_pct": 65.9,
+        "f1_pct": 57.7,
+        "support": 14264
+      },
+      {
+        "class_id": 10,
+        "class_name": "Disruptive Attack",
+        "precision_pct": 42.1,
+        "recall_pct": 52.0,
+        "f1_pct": 46.6,
+        "support": 14420
+      },
+      {
+        "class_id": 11,
+        "class_name": "Disruptive Position Attack",
+        "precision_pct": 14.5,
+        "recall_pct": 14.0,
+        "f1_pct": 14.2,
+        "support": 14780
+      },
+      {
+        "class_id": 12,
+        "class_name": "Disruptive Speed Attack",
+        "precision_pct": 42.7,
+        "recall_pct": 52.9,
+        "f1_pct": 47.2,
+        "support": 14372
+      },
+      {
+        "class_id": 13,
+        "class_name": "Data Replay Attack",
+        "precision_pct": 87.9,
+        "recall_pct": 86.5,
+        "f1_pct": 87.2,
+        "support": 43773
+      },
+      {
+        "class_id": 14,
+        "class_name": "Denial of Service (DoS)",
+        "precision_pct": 73.8,
+        "recall_pct": 64.3,
+        "f1_pct": 68.7,
+        "support": 42240
+      },
+      {
+        "class_id": 15,
+        "class_name": "Distributed DoS (DDoS)",
+        "precision_pct": 72.4,
+        "recall_pct": 59.6,
+        "f1_pct": 65.4,
+        "support": 43094
+      },
+      {
+        "class_id": 16,
+        "class_name": "Sybil Attack",
+        "precision_pct": 91.2,
+        "recall_pct": 89.2,
+        "f1_pct": 90.2,
+        "support": 58468
+      },
+      {
+        "class_id": 17,
+        "class_name": "Sybil Position Attack",
+        "precision_pct": 10.7,
+        "recall_pct": 11.6,
+        "f1_pct": 11.2,
+        "support": 14768
+      },
+      {
+        "class_id": 18,
+        "class_name": "Sybil Speed Attack",
+        "precision_pct": 58.5,
+        "recall_pct": 73.2,
+        "f1_pct": 65.0,
+        "support": 28961
+      },
+      {
+        "class_id": 19,
+        "class_name": "Mixed / Other Misbehavior",
+        "precision_pct": 54.3,
+        "recall_pct": 63.1,
+        "f1_pct": 58.4,
+        "support": 27365
+      }
+    ],
+    "false_alarm_rate_pct": 9.1
+  }
+}

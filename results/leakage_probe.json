@@ -1,0 +1,21 @@
+{
+  "probe_A_sender_lookup_baseline": {
+    "description": "predict each test row's class by looking its sender ID up in a sender->class table built from the training CSV; unseen senders fall back to the majority class",
+    "n_test_rows": 958441,
+    "n_test_rows_with_sender_seen_in_train": 958408,
+    "pct_test_rows_covered": 99.997,
+    "accuracy_on_covered_rows_pct": 100.0,
+    "accuracy_full_test_set_pct": 99.999,
+    "accuracy_via_senderPseudo_pct": 98.289
+  },
+  "probe_B_id_block_structure": {
+    "n_unique_senders_train": 24644,
+    "n_classes": 20,
+    "n_contiguous_single_class_runs": 14791,
+    "mean_senders_per_run": 1.67
+  },
+  "reference_points": {
+    "proposed_model_M7_test_accuracy_pct": 81.73,
+    "mlp_baseline_M8_test_accuracy_pct": 84.31
+  }
+}

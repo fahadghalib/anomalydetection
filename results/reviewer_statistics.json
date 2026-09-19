@@ -1,0 +1,1431 @@
+{
+  "false_alarm_rate": {
+    "M7_proposed": {
+      "convention": "positive = attack (classes 1-19), negative = benign (class 0)",
+      "confusion_counts": {
+        "TP_attack_detected_as_attack": 340907,
+        "FN_attack_missed_as_benign": 47624,
+        "FP_benign_flagged_as_attack": 24812,
+        "TN_benign_correct": 545098
+      },
+      "n_actual_benign": 569910,
+      "n_actual_attack": 388531,
+      "benign_recall_pct": 95.646,
+      "FAR_pct_correct_orientation": 4.354,
+      "identity_check_far_equals_1_minus_benign_recall": 4.354,
+      "miss_rate_pct_inverted_orientation_NOT_far": 12.257
+    },
+    "M8_mlp_temporal": {
+      "convention": "positive = attack (classes 1-19), negative = benign (class 0)",
+      "confusion_counts": {
+        "TP_attack_detected_as_attack": 349273,
+        "FN_attack_missed_as_benign": 39258,
+        "FP_benign_flagged_as_attack": 26341,
+        "TN_benign_correct": 543569
+      },
+      "n_actual_benign": 569910,
+      "n_actual_attack": 388531,
+      "benign_recall_pct": 95.378,
+      "FAR_pct_correct_orientation": 4.622,
+      "identity_check_far_equals_1_minus_benign_recall": 4.622,
+      "miss_rate_pct_inverted_orientation_NOT_far": 10.104
+    },
+    "M9_mlp_no_temporal": {
+      "convention": "positive = attack (classes 1-19), negative = benign (class 0)",
+      "confusion_counts": {
+        "TP_attack_detected_as_attack": 282392,
+        "FN_attack_missed_as_benign": 106139,
+        "FP_benign_flagged_as_attack": 28740,
+        "TN_benign_correct": 541170
+      },
+      "n_actual_benign": 569910,
+      "n_actual_attack": 388531,
+      "benign_recall_pct": 94.957,
+      "FAR_pct_correct_orientation": 5.043,
+      "identity_check_far_equals_1_minus_benign_recall": 5.043,
+      "miss_rate_pct_inverted_orientation_NOT_far": 27.318
+    }
+  },
+  "M8_vs_M7_statistical_tests_WITHDRAWN_leaky_protocol": {
+    "val_accuracy": {
+      "comparison": "M8_mlp_temporal minus M7_proposed",
+      "n_folds": 5,
+      "M7_proposed_per_fold": [
+        0.9134266691111042,
+        0.9161431247959864,
+        0.9187185454968219,
+        0.9198476098490184,
+        0.9174150910070583
+      ],
+      "M8_mlp_temporal_per_fold": [
+        0.9261481776271369,
+        0.925935779857537,
+        0.9283949623607953,
+        0.9283524827119007,
+        0.9234606157760473
+      ],
+      "fold_level_paired_differences": [
+        0.012721508516032709,
+        0.009792655061550581,
+        0.00967641686397347,
+        0.008504872862882373,
+        0.006045524768989008
+      ],
+      "M7_proposed_mean": 0.9171102080519977,
+      "M7_proposed_sd": 0.0024837864594293648,
+      "M8_mlp_temporal_mean": 0.9264584036666834,
+      "M8_mlp_temporal_sd": 0.0020429086545912735,
+      "mean_difference": 0.009348195614685629,
+      "sd_of_differences": 0.002413676723253845,
+      "paired_t_test": {
+        "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+        "t_statistic": 8.660315053800234,
+        "degrees_of_freedom": 4,
+        "p_value": 0.000978062220611748,
+        "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+      },
+      "corrected_resampled_t_test": {
+        "test": "Nadeau-Bengio corrected resampled t-test",
+        "t_statistic": 6.0467613887743665,
+        "degrees_of_freedom": 4,
+        "p_value": 0.003773550977761664,
+        "variance_correction_factor": 0.41025295337912826,
+        "n_train_per_fold": 2127309,
+        "n_test_per_fold": 447273
+      },
+      "wilcoxon_signed_rank": {
+        "statistic": 0.0,
+        "p_value": 0.0625,
+        "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+      },
+      "ci95_of_mean_difference": [
+        0.0063512201241189,
+        0.012345171105252357
+      ],
+      "cohens_d_paired": 3.873010633372415
+    },
+    "val_macro_precision": {
+      "comparison": "M8_mlp_temporal minus M7_proposed",
+      "n_folds": 5,
+      "M7_proposed_per_fold": [
+        0.8258212782489147,
+        0.8277133058658525,
+        0.8374229408146645,
+        0.8391568751868471,
+        0.8369594220250018
+      ],
+      "M8_mlp_temporal_per_fold": [
+        0.852750749704937,
+        0.8516461635126154,
+        0.8558488666083683,
+        0.8551722237258268,
+        0.8482703864005134
+      ],
+      "fold_level_paired_differences": [
+        0.026929471456022314,
+        0.023932857646762895,
+        0.018425925793703835,
+        0.01601534853897968,
+        0.0113109643755116
+      ],
+      "M7_proposed_mean": 0.8334147644282561,
+      "M7_proposed_sd": 0.006159739716118499,
+      "M8_mlp_temporal_mean": 0.8527376779904522,
+      "M8_mlp_temporal_sd": 0.0030312858834356977,
+      "mean_difference": 0.019322913562196065,
+      "sd_of_differences": 0.00622589773977629,
+      "paired_t_test": {
+        "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+        "t_statistic": 6.939938632846151,
+        "degrees_of_freedom": 4,
+        "p_value": 0.002264038134209219,
+        "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+      },
+      "corrected_resampled_t_test": {
+        "test": "Nadeau-Bengio corrected resampled t-test",
+        "t_statistic": 4.845568862664341,
+        "degrees_of_freedom": 4,
+        "p_value": 0.008366234580987841,
+        "variance_correction_factor": 0.41025295337912826,
+        "n_train_per_fold": 2127309,
+        "n_test_per_fold": 447273
+      },
+      "wilcoxon_signed_rank": {
+        "statistic": 0.0,
+        "p_value": 0.0625,
+        "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+      },
+      "ci95_of_mean_difference": [
+        0.011592440482217657,
+        0.027053386642174472
+      ],
+      "cohens_d_paired": 3.10363490854419
+    },
+    "val_macro_recall": {
+      "comparison": "M8_mlp_temporal minus M7_proposed",
+      "n_folds": 5,
+      "M7_proposed_per_fold": [
+        0.8161039229557346,
+        0.8205966047655494,
+        0.8154761773096979,
+        0.8143728311029707,
+        0.8071187919334412
+      ],
+      "M8_mlp_temporal_per_fold": [
+        0.8521224117205225,
+        0.8512980934517047,
+        0.8509962373385817,
+        0.8511856761601463,
+        0.8531559516972665
+      ],
+      "fold_level_paired_differences": [
+        0.03601848876478786,
+        0.030701488686155298,
+        0.03552006002888375,
+        0.036812845057175636,
+        0.046037159763825386
+      ],
+      "M7_proposed_mean": 0.8147336656134787,
+      "M7_proposed_sd": 0.004871331620071002,
+      "M8_mlp_temporal_mean": 0.8517516740736444,
+      "M8_mlp_temporal_sd": 0.0008952954437480753,
+      "mean_difference": 0.037018008460165584,
+      "sd_of_differences": 0.005579616775369196,
+      "paired_t_test": {
+        "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+        "t_statistic": 14.835209413305176,
+        "degrees_of_freedom": 4,
+        "p_value": 0.00012020825719710526,
+        "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+      },
+      "corrected_resampled_t_test": {
+        "test": "Nadeau-Bengio corrected resampled t-test",
+        "t_statistic": 10.35816490710604,
+        "degrees_of_freedom": 4,
+        "p_value": 0.0004903489898071545,
+        "variance_correction_factor": 0.41025295337912826,
+        "n_train_per_fold": 2127309,
+        "n_test_per_fold": 447273
+      },
+      "wilcoxon_signed_rank": {
+        "statistic": 0.0,
+        "p_value": 0.0625,
+        "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+      },
+      "ci95_of_mean_difference": [
+        0.030089999186415875,
+        0.043946017733915294
+      ],
+      "cohens_d_paired": 6.634507341719029
+    },
+    "val_macro_f1": {
+      "comparison": "M8_mlp_temporal minus M7_proposed",
+      "n_folds": 5,
+      "M7_proposed_per_fold": [
+        0.8099484395886558,
+        0.8181072880227562,
+        0.8169919782383086,
+        0.8193575742479553,
+        0.8130630185342179
+      ],
+      "M8_mlp_temporal_per_fold": [
+        0.8393932242331527,
+        0.8381523964810234,
+        0.8404532656115913,
+        0.8409803209719803,
+        0.8376199736281709
+      ],
+      "fold_level_paired_differences": [
+        0.029444784644496846,
+        0.020045108458267125,
+        0.02346128737328268,
+        0.021622746724024977,
+        0.024556955093952948
+      ],
+      "M7_proposed_mean": 0.8154936597263788,
+      "M7_proposed_sd": 0.0038943333718912637,
+      "M8_mlp_temporal_mean": 0.8393198361851836,
+      "M8_mlp_temporal_sd": 0.001440460514297285,
+      "mean_difference": 0.023826176458804915,
+      "sd_of_differences": 0.003584254358421347,
+      "paired_t_test": {
+        "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+        "t_statistic": 14.864165563645535,
+        "degrees_of_freedom": 4,
+        "p_value": 0.00011928812704941769,
+        "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+      },
+      "corrected_resampled_t_test": {
+        "test": "Nadeau-Bengio corrected resampled t-test",
+        "t_statistic": 10.37838252398925,
+        "degrees_of_freedom": 4,
+        "p_value": 0.00048665287686988634,
+        "variance_correction_factor": 0.41025295337912826,
+        "n_train_per_fold": 2127309,
+        "n_test_per_fold": 447273
+      },
+      "wilcoxon_signed_rank": {
+        "statistic": 0.0,
+        "p_value": 0.0625,
+        "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+      },
+      "ci95_of_mean_difference": [
+        0.0193757368615482,
+        0.028276616056061632
+      ],
+      "cohens_d_paired": 6.647456925824579
+    }
+  },
+  "corrected_protocol_tests": {
+    "mlp_matched_vs_cnn": {
+      "val_accuracy": {
+        "comparison": "mlp_matched minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.8736838892788477,
+          0.8666051608541326,
+          0.8717022325515882,
+          0.8614496155877692,
+          0.8646141205469805
+        ],
+        "mlp_matched_per_fold": [
+          0.8935397010594618,
+          0.8952663999849757,
+          0.8927107542784704,
+          0.8953060625623569,
+          0.8940219496449322
+        ],
+        "fold_level_paired_differences": [
+          0.01985581178061413,
+          0.028661239130843064,
+          0.021008521726882168,
+          0.03385644697458767,
+          0.0294078290979517
+        ],
+        "cnn_mean": 0.8676110037638637,
+        "cnn_sd": 0.005039192016157372,
+        "mlp_matched_mean": 0.8941689735060393,
+        "mlp_matched_sd": 0.0011226441491047215,
+        "mean_difference": 0.026557969742175745,
+        "sd_of_differences": 0.005948287673717823,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": 9.983616957579022,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0005655824009599249,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": 7.008660762605929,
+          "degrees_of_freedom": 4,
+          "p_value": 0.002181994502621798,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          0.019172195086761108,
+          0.03394374439759038
+        ],
+        "cohens_d_paired": 4.464809235693266
+      },
+      "val_macro_precision": {
+        "comparison": "mlp_matched minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.7253042478789652,
+          0.7242310586026053,
+          0.7249157121531067,
+          0.7133988608252416,
+          0.724199580107613
+        ],
+        "mlp_matched_per_fold": [
+          0.773378775435395,
+          0.7793400499895634,
+          0.7689246839267564,
+          0.7758620516791175,
+          0.7762044059433463
+        ],
+        "fold_level_paired_differences": [
+          0.048074527556429825,
+          0.05510899138695813,
+          0.04400897177364971,
+          0.06246319085387586,
+          0.05200482583573329
+        ],
+        "cnn_mean": 0.7224098919135064,
+        "cnn_sd": 0.005059020279245269,
+        "mlp_matched_mean": 0.7747419933948357,
+        "mlp_matched_sd": 0.0038805527352071645,
+        "mean_difference": 0.052332101481329364,
+        "sd_of_differences": 0.007033111378109121,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": 16.638174774523574,
+          "degrees_of_freedom": 4,
+          "p_value": 7.644365827134744e-05,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": 11.680268103140529,
+          "degrees_of_freedom": 4,
+          "p_value": 0.000307192422758229,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          0.043599340287774006,
+          0.06106486267488472
+        ],
+        "cohens_d_paired": 7.440817963471389
+      },
+      "val_macro_recall": {
+        "comparison": "mlp_matched minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.7412413464533386,
+          0.7517451550438128,
+          0.7427642648864096,
+          0.7443925521030723,
+          0.7503432412266593
+        ],
+        "mlp_matched_per_fold": [
+          0.7543858260780139,
+          0.7506909595124991,
+          0.7505444461604062,
+          0.7549832408050741,
+          0.7630858352068898
+        ],
+        "fold_level_paired_differences": [
+          0.013144479624675243,
+          -0.0010541955313136953,
+          0.0077801812739966,
+          0.01059068870200175,
+          0.012742593980230477
+        ],
+        "cnn_mean": 0.7460973119426585,
+        "cnn_sd": 0.004677655844632355,
+        "mlp_matched_mean": 0.7547380615525766,
+        "mlp_matched_sd": 0.0050949718512296295,
+        "mean_difference": 0.008640749609918074,
+        "sd_of_differences": 0.0058233047511530855,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": 3.3179275909449437,
+          "degrees_of_freedom": 4,
+          "p_value": 0.029435461393138043,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": 2.3292388939431508,
+          "degrees_of_freedom": 4,
+          "p_value": 0.08031903448946798,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 1.0,
+          "p_value": 0.125,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          0.0014101617498423584,
+          0.01587133746999379
+        ],
+        "cohens_d_paired": 1.4838223275550022
+      },
+      "val_macro_f1": {
+        "comparison": "mlp_matched minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.720739961650809,
+          0.717535104415814,
+          0.7208010638685244,
+          0.7127120722605527,
+          0.7213806615375742
+        ],
+        "mlp_matched_per_fold": [
+          0.7447372195861022,
+          0.741618915791719,
+          0.7409866038580423,
+          0.7455560675361433,
+          0.7506035354959703
+        ],
+        "fold_level_paired_differences": [
+          0.02399725793529317,
+          0.024083811375904984,
+          0.020185539989517887,
+          0.032843995275590676,
+          0.029222873958396067
+        ],
+        "cnn_mean": 0.7186337727466547,
+        "cnn_sd": 0.0036384127475071553,
+        "mlp_matched_mean": 0.7447004684535954,
+        "mlp_matched_sd": 0.003836285898645657,
+        "mean_difference": 0.026066695706940556,
+        "sd_of_differences": 0.004967284120415967,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": 11.734159378956562,
+          "degrees_of_freedom": 4,
+          "p_value": 0.000301719243915066,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": 8.237569887837545,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0011842630087044448,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          0.0198989978457708,
+          0.03223439356811031
+        ],
+        "cohens_d_paired": 5.247675606032718
+      }
+    },
+    "mlp_cap_vs_cnn": {
+      "val_accuracy": {
+        "comparison": "mlp_cap minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.8736838892788477,
+          0.8666051608541326,
+          0.8717022325515882,
+          0.8614496155877692,
+          0.8646141205469805
+        ],
+        "mlp_cap_per_fold": [
+          0.8963121902664736,
+          0.8935010423122429,
+          0.8899194778975045,
+          0.8923058864956863,
+          0.8971113328246962
+        ],
+        "fold_level_paired_differences": [
+          0.022628300987625916,
+          0.026895881458110282,
+          0.01821724534591629,
+          0.030856270907917094,
+          0.03249721227771574
+        ],
+        "cnn_mean": 0.8676110037638637,
+        "cnn_sd": 0.005039192016157372,
+        "mlp_cap_mean": 0.8938299859593208,
+        "mlp_cap_sd": 0.002943286083312804,
+        "mean_difference": 0.026218982195457062,
+        "sd_of_differences": 0.005880042438746465,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": 9.970578801196059,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0005684507490196131,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": 6.999507765706481,
+          "degrees_of_freedom": 4,
+          "p_value": 0.002192707588714704,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          0.018917945191355316,
+          0.03352001919955881
+        ],
+        "cohens_d_paired": 4.4589783948985495
+      },
+      "val_macro_precision": {
+        "comparison": "mlp_cap minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.7253042478789652,
+          0.7242310586026053,
+          0.7249157121531067,
+          0.7133988608252416,
+          0.724199580107613
+        ],
+        "mlp_cap_per_fold": [
+          0.7754693918565636,
+          0.775661556824301,
+          0.7622457402617804,
+          0.7657734155584792,
+          0.7787137857363802
+        ],
+        "fold_level_paired_differences": [
+          0.050165143977598414,
+          0.051430498221695764,
+          0.037330028108673696,
+          0.0523745547332376,
+          0.05451420562876719
+        ],
+        "cnn_mean": 0.7224098919135064,
+        "cnn_sd": 0.005059020279245269,
+        "mlp_cap_mean": 0.7715727780475009,
+        "mlp_cap_sd": 0.007133055814490597,
+        "mean_difference": 0.049162886133994534,
+        "sd_of_differences": 0.006802840398305177,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": 16.159655221821957,
+          "degrees_of_freedom": 4,
+          "p_value": 8.578593366803195e-05,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": 11.344339628779986,
+          "degrees_of_freedom": 4,
+          "p_value": 0.00034424310757819043,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          0.04071604412589284,
+          0.05760972814209623
+        ],
+        "cohens_d_paired": 7.226817513790667
+      },
+      "val_macro_recall": {
+        "comparison": "mlp_cap minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.7412413464533386,
+          0.7517451550438128,
+          0.7427642648864096,
+          0.7443925521030723,
+          0.7503432412266593
+        ],
+        "mlp_cap_per_fold": [
+          0.7556184343085937,
+          0.7534273120146306,
+          0.7508400272861862,
+          0.7561804084118238,
+          0.7589514604796431
+        ],
+        "fold_level_paired_differences": [
+          0.014377087855255044,
+          0.0016821569708178608,
+          0.008075762399776587,
+          0.011787856308751454,
+          0.008608219252983829
+        ],
+        "cnn_mean": 0.7460973119426585,
+        "cnn_sd": 0.004677655844632355,
+        "mlp_cap_mean": 0.7550035285001754,
+        "mlp_cap_sd": 0.003048299655642672,
+        "mean_difference": 0.008906216557516954,
+        "sd_of_differences": 0.004774928633657932,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": 4.170723202973999,
+          "degrees_of_freedom": 4,
+          "p_value": 0.014022988789581902,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": 2.927915222366706,
+          "degrees_of_freedom": 4,
+          "p_value": 0.04290297397080467,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          0.00297735957911161,
+          0.014835073535922299
+        ],
+        "cohens_d_paired": 1.8652041194371034
+      },
+      "val_macro_f1": {
+        "comparison": "mlp_cap minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.720739961650809,
+          0.717535104415814,
+          0.7208010638685244,
+          0.7127120722605527,
+          0.7213806615375742
+        ],
+        "mlp_cap_per_fold": [
+          0.7480420903558183,
+          0.7430840889622216,
+          0.7391663447235965,
+          0.7419810177968473,
+          0.7502049701682203
+        ],
+        "fold_level_paired_differences": [
+          0.027302128705009254,
+          0.025548984546407527,
+          0.018365280855072164,
+          0.029268945536294666,
+          0.02882430863064611
+        ],
+        "cnn_mean": 0.7186337727466547,
+        "cnn_sd": 0.0036384127475071553,
+        "mlp_cap_mean": 0.7444957024013409,
+        "mlp_cap_sd": 0.004524680938378477,
+        "mean_difference": 0.025861929654685943,
+        "sd_of_differences": 0.004437209077360542,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": 13.032749128782282,
+          "degrees_of_freedom": 4,
+          "p_value": 0.00020005555117259713,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": 9.149200919456451,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0007921338049428073,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          0.020352406890824418,
+          0.03137145241854747
+        ],
+        "cohens_d_paired": 5.828422597131668
+      }
+    },
+    "lgbm_nondeterministic_SUPERSEDED_vs_cnn": {
+      "val_accuracy": {
+        "comparison": "lgbm_nondeterministic_SUPERSEDED minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.8736838892788477,
+          0.8666051608541326,
+          0.8717022325515882,
+          0.8614496155877692,
+          0.8646141205469805
+        ],
+        "lgbm_nondeterministic_SUPERSEDED_per_fold": [
+          0.7799521563674523,
+          0.8139590023851109,
+          0.7868441439537995,
+          0.6630975996243911,
+          0.6682387464053055
+        ],
+        "fold_level_paired_differences": [
+          -0.09373173291139536,
+          -0.052646158469021764,
+          -0.08485808859778865,
+          -0.19835201596337815,
+          -0.19637537414167505
+        ],
+        "cnn_mean": 0.8676110037638637,
+        "cnn_sd": 0.005039192016157372,
+        "lgbm_nondeterministic_SUPERSEDED_mean": 0.7424183297472119,
+        "lgbm_nondeterministic_SUPERSEDED_sd": 0.07123008100893147,
+        "mean_difference": -0.1251926740166518,
+        "sd_of_differences": 0.067636773698576,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -4.138862841592026,
+          "degrees_of_freedom": 4,
+          "p_value": 0.014389811576341264,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -2.90554873278191,
+          "degrees_of_freedom": 4,
+          "p_value": 0.043873286313060644,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.20917482087282885,
+          -0.04121052716047473
+        ],
+        "cohens_d_paired": -1.8509557326695427
+      },
+      "val_macro_precision": {
+        "comparison": "lgbm_nondeterministic_SUPERSEDED minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.7253042478789652,
+          0.7242310586026053,
+          0.7249157121531067,
+          0.7133988608252416,
+          0.724199580107613
+        ],
+        "lgbm_nondeterministic_SUPERSEDED_per_fold": [
+          0.5584874814376338,
+          0.6094416417328417,
+          0.5581720150136038,
+          0.404212481866289,
+          0.4213532124380512
+        ],
+        "fold_level_paired_differences": [
+          -0.16681676644133137,
+          -0.11478941686976363,
+          -0.16674369713950288,
+          -0.3091863789589526,
+          -0.3028463676695618
+        ],
+        "cnn_mean": 0.7224098919135064,
+        "cnn_sd": 0.005059020279245269,
+        "lgbm_nondeterministic_SUPERSEDED_mean": 0.5103333664976839,
+        "lgbm_nondeterministic_SUPERSEDED_sd": 0.09166367228759878,
+        "mean_difference": -0.21207652541582248,
+        "sd_of_differences": 0.08837106498898388,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -5.3662081284281875,
+          "degrees_of_freedom": 4,
+          "p_value": 0.005822069569310109,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -3.7671649977656863,
+          "degrees_of_freedom": 4,
+          "p_value": 0.019652603006169667,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.32180369529556885,
+          -0.10234935553607608
+        ],
+        "cohens_d_paired": -2.39984123131547
+      },
+      "val_macro_recall": {
+        "comparison": "lgbm_nondeterministic_SUPERSEDED minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.7412413464533386,
+          0.7517451550438128,
+          0.7427642648864096,
+          0.7443925521030723,
+          0.7503432412266593
+        ],
+        "lgbm_nondeterministic_SUPERSEDED_per_fold": [
+          0.5915197734439832,
+          0.6475544795234344,
+          0.5879475358079993,
+          0.4435416935367452,
+          0.4867859106178082
+        ],
+        "fold_level_paired_differences": [
+          -0.1497215730093554,
+          -0.10419067552037842,
+          -0.15481672907841026,
+          -0.3008508585663271,
+          -0.2635573306088511
+        ],
+        "cnn_mean": 0.7460973119426585,
+        "cnn_sd": 0.004677655844632355,
+        "lgbm_nondeterministic_SUPERSEDED_mean": 0.5514698785859941,
+        "lgbm_nondeterministic_SUPERSEDED_sd": 0.08366506578612044,
+        "mean_difference": -0.19462743335666446,
+        "sd_of_differences": 0.0833891216452594,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -5.218908206314613,
+          "degrees_of_freedom": 4,
+          "p_value": 0.006432272290458131,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -3.663758067307622,
+          "degrees_of_freedom": 4,
+          "p_value": 0.02150898602913287,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.2981687035454173,
+          -0.09108616316791164
+        ],
+        "cohens_d_paired": -2.3339667035301943
+      },
+      "val_macro_f1": {
+        "comparison": "lgbm_nondeterministic_SUPERSEDED minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.720739961650809,
+          0.717535104415814,
+          0.7208010638685244,
+          0.7127120722605527,
+          0.7213806615375742
+        ],
+        "lgbm_nondeterministic_SUPERSEDED_per_fold": [
+          0.5731658048192151,
+          0.6257539918884144,
+          0.5670004021970566,
+          0.4128434453203994,
+          0.4408831335667493
+        ],
+        "fold_level_paired_differences": [
+          -0.14757415683159392,
+          -0.09178111252739962,
+          -0.15380066167146778,
+          -0.29986862694015326,
+          -0.2804975279708249
+        ],
+        "cnn_mean": 0.7186337727466547,
+        "cnn_sd": 0.0036384127475071553,
+        "lgbm_nondeterministic_SUPERSEDED_mean": 0.5239293555583668,
+        "lgbm_nondeterministic_SUPERSEDED_sd": 0.09203851639204302,
+        "mean_difference": -0.1947044171882879,
+        "sd_of_differences": 0.09070219700959092,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -4.800019478099892,
+          "degrees_of_freedom": 4,
+          "p_value": 0.008648033624652218,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -3.3696913973010494,
+          "degrees_of_freedom": 4,
+          "p_value": 0.028051740725481444,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.3073260697730821,
+          -0.08208276460349374
+        ],
+        "cohens_d_paired": -2.1466339692708845
+      }
+    },
+    "lgbm_vs_cnn": {
+      "val_accuracy": {
+        "comparison": "lgbm minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.8736838892788477,
+          0.8666051608541326,
+          0.8717022325515882,
+          0.8614496155877692,
+          0.8646141205469805
+        ],
+        "lgbm_per_fold": [
+          0.8027846966108021,
+          0.8124354423723402,
+          0.8427001901542363,
+          0.7918469393743764,
+          0.7401349844474441
+        ],
+        "fold_level_paired_differences": [
+          -0.07089919266804556,
+          -0.05416971848179242,
+          -0.029002042397351935,
+          -0.06960267621339278,
+          -0.12447913609953642
+        ],
+        "cnn_mean": 0.8676110037638637,
+        "cnn_sd": 0.005039192016157372,
+        "lgbm_mean": 0.7979804505918399,
+        "lgbm_sd": 0.03746865552375344,
+        "mean_difference": -0.06963055317202382,
+        "sd_of_differences": 0.034998894873760684,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -4.448673329976742,
+          "degrees_of_freedom": 4,
+          "p_value": 0.011258246762578833,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -3.1230407121929753,
+          "degrees_of_freedom": 4,
+          "p_value": 0.03542241403026569,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.11308742091369074,
+          -0.026173685430356905
+        ],
+        "cohens_d_paired": -1.9895071951036698
+      },
+      "val_macro_precision": {
+        "comparison": "lgbm minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.7253042478789652,
+          0.7242310586026053,
+          0.7249157121531067,
+          0.7133988608252416,
+          0.724199580107613
+        ],
+        "lgbm_per_fold": [
+          0.5921637862322109,
+          0.6134856050783822,
+          0.6653828654791474,
+          0.5476474197602085,
+          0.5210277514109681
+        ],
+        "fold_level_paired_differences": [
+          -0.1331404616467543,
+          -0.11074545352422305,
+          -0.059532846673959305,
+          -0.16575144106503314,
+          -0.20317182869664485
+        ],
+        "cnn_mean": 0.7224098919135064,
+        "cnn_sd": 0.005059020279245269,
+        "lgbm_mean": 0.5879414855921834,
+        "lgbm_sd": 0.05649901933919498,
+        "mean_difference": -0.13446840632132293,
+        "sd_of_differences": 0.05449465234083479,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -5.517614746488251,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0052669819873697645,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -3.873454895275311,
+          "degrees_of_freedom": 4,
+          "p_value": 0.01794072284311632,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.20213245422756798,
+          -0.06680435841507788
+        ],
+        "cohens_d_paired": -2.4675523293605996
+      },
+      "val_macro_recall": {
+        "comparison": "lgbm minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.7412413464533386,
+          0.7517451550438128,
+          0.7427642648864096,
+          0.7443925521030723,
+          0.7503432412266593
+        ],
+        "lgbm_per_fold": [
+          0.610249773415515,
+          0.6447823999287622,
+          0.6821767273021119,
+          0.5908028966800931,
+          0.6408857977506253
+        ],
+        "fold_level_paired_differences": [
+          -0.1309915730378236,
+          -0.1069627551150506,
+          -0.06058753758429769,
+          -0.1535896554229792,
+          -0.10945744347603403
+        ],
+        "cnn_mean": 0.7460973119426585,
+        "cnn_sd": 0.004677655844632355,
+        "lgbm_mean": 0.6337795190154216,
+        "lgbm_sd": 0.03505171661684568,
+        "mean_difference": -0.11231779292723702,
+        "sd_of_differences": 0.03451432327413011,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -7.2766954772163945,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0018950538928082493,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -5.1083580519264835,
+          "degrees_of_freedom": 4,
+          "p_value": 0.006942088495655252,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.15517298555909065,
+          -0.0694626002953834
+        ],
+        "cohens_d_paired": -3.254237147724226
+      },
+      "val_macro_f1": {
+        "comparison": "lgbm minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.720739961650809,
+          0.717535104415814,
+          0.7208010638685244,
+          0.7127120722605527,
+          0.7213806615375742
+        ],
+        "lgbm_per_fold": [
+          0.5996105291835081,
+          0.6270046642991464,
+          0.671424912827046,
+          0.5637293977398293,
+          0.5654231027855958
+        ],
+        "fold_level_paired_differences": [
+          -0.1211294324673009,
+          -0.09053044011666767,
+          -0.04937615104147841,
+          -0.14898267452072333,
+          -0.15595755875197836
+        ],
+        "cnn_mean": 0.7186337727466547,
+        "cnn_sd": 0.0036384127475071553,
+        "lgbm_mean": 0.6054385213670251,
+        "lgbm_sd": 0.04526077935080944,
+        "mean_difference": -0.11319525137962974,
+        "sd_of_differences": 0.04404224407876936,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -5.747034060352119,
+          "degrees_of_freedom": 4,
+          "p_value": 0.004543938527024512,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -4.034510968449374,
+          "degrees_of_freedom": 4,
+          "p_value": 0.015674961648716623,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.16788092025234055,
+          -0.05850958250691893
+        ],
+        "cohens_d_paired": -2.5701517655907935
+      }
+    },
+    "cnn_permuted_vs_cnn": {
+      "val_accuracy": {
+        "comparison": "cnn_permuted minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.8736838892788477,
+          0.8666051608541326,
+          0.8717022325515882,
+          0.8614496155877692,
+          0.8646141205469805
+        ],
+        "cnn_permuted_per_fold": [
+          0.8597369304483169,
+          0.866250680789528,
+          0.8553419254877104,
+          0.8554727390105054,
+          0.8680861552908035
+        ],
+        "fold_level_paired_differences": [
+          -0.013946958830530765,
+          -0.0003544800646045898,
+          -0.01636030706387781,
+          -0.005976876577263868,
+          0.0034720347438229604
+        ],
+        "cnn_mean": 0.8676110037638637,
+        "cnn_sd": 0.005039192016157372,
+        "cnn_permuted_mean": 0.8609776862053728,
+        "cnn_permuted_sd": 0.005956939691585504,
+        "mean_difference": -0.006633317558490814,
+        "sd_of_differences": 0.008515816662016904,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -1.741764714508946,
+          "degrees_of_freedom": 4,
+          "p_value": 0.1565148973856933,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -1.2227470328780135,
+          "degrees_of_freedom": 4,
+          "p_value": 0.2885407594956457,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 2.0,
+          "p_value": 0.1875,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.017207100523020956,
+          0.003940465406039326
+        ],
+        "cohens_d_paired": -0.7789408604905035
+      },
+      "val_macro_precision": {
+        "comparison": "cnn_permuted minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.7253042478789652,
+          0.7242310586026053,
+          0.7249157121531067,
+          0.7133988608252416,
+          0.724199580107613
+        ],
+        "cnn_permuted_per_fold": [
+          0.7048912423532006,
+          0.7121344143609761,
+          0.7004507976448955,
+          0.6936013716212249,
+          0.7140050876823527
+        ],
+        "fold_level_paired_differences": [
+          -0.020413005525764638,
+          -0.01209664424162915,
+          -0.0244649145082112,
+          -0.019797489204016694,
+          -0.010194492425260271
+        ],
+        "cnn_mean": 0.7224098919135064,
+        "cnn_sd": 0.005059020279245269,
+        "cnn_permuted_mean": 0.70501658273253,
+        "cnn_permuted_sd": 0.008405740549123474,
+        "mean_difference": -0.01739330918097639,
+        "sd_of_differences": 0.006016308495750919,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -6.464532480307936,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0029492579081455885,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -4.538206477255786,
+          "degrees_of_freedom": 4,
+          "p_value": 0.010511444493275013,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.024863542842237747,
+          -0.00992307551971503
+        ],
+        "cohens_d_paired": -2.891026813744773
+      },
+      "val_macro_recall": {
+        "comparison": "cnn_permuted minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.7412413464533386,
+          0.7517451550438128,
+          0.7427642648864096,
+          0.7443925521030723,
+          0.7503432412266593
+        ],
+        "cnn_permuted_per_fold": [
+          0.7263390461295167,
+          0.7172017488214457,
+          0.7246237452338943,
+          0.729830449969634,
+          0.7237779193498062
+        ],
+        "fold_level_paired_differences": [
+          -0.014902300323821893,
+          -0.03454340622236707,
+          -0.018140519652515286,
+          -0.014562102133438337,
+          -0.02656532187685312
+        ],
+        "cnn_mean": 0.7460973119426585,
+        "cnn_sd": 0.004677655844632355,
+        "cnn_permuted_mean": 0.7243545819008593,
+        "cnn_permuted_sd": 0.004623073626956362,
+        "mean_difference": -0.021742730041799142,
+        "sd_of_differences": 0.008637758943453871,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -5.628569019830667,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0049009569619492535,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -3.9513465917739534,
+          "degrees_of_freedom": 4,
+          "p_value": 0.016799024046107114,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.0324679243470484,
+          -0.011017535736549887
+        ],
+        "cohens_d_paired": -2.517172588878146
+      },
+      "val_macro_f1": {
+        "comparison": "cnn_permuted minus cnn",
+        "n_folds": 5,
+        "cnn_per_fold": [
+          0.720739961650809,
+          0.717535104415814,
+          0.7208010638685244,
+          0.7127120722605527,
+          0.7213806615375742
+        ],
+        "cnn_permuted_per_fold": [
+          0.7009279009127132,
+          0.6974466476443381,
+          0.6965463300360077,
+          0.6958596203398206,
+          0.7042350866159104
+        ],
+        "fold_level_paired_differences": [
+          -0.019812060738095827,
+          -0.02008845677147597,
+          -0.02425473383251664,
+          -0.016852451920732037,
+          -0.017145574921663798
+        ],
+        "cnn_mean": 0.7186337727466547,
+        "cnn_sd": 0.0036384127475071553,
+        "cnn_permuted_mean": 0.699003117109758,
+        "cnn_permuted_sd": 0.0035149064520469367,
+        "mean_difference": -0.019630655636896855,
+        "sd_of_differences": 0.0029798754545494223,
+        "paired_t_test": {
+          "test": "paired two-sided t-test (scipy.stats.ttest_rel)",
+          "t_statistic": -14.730642644804124,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0001236055713353671,
+          "caveat": "assumes independent folds; k-fold folds share training data, so this test is anti-conservative -- see corrected test below"
+        },
+        "corrected_resampled_t_test": {
+          "test": "Nadeau-Bengio corrected resampled t-test",
+          "t_statistic": -10.341149660617988,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0004934867167649681,
+          "variance_correction_factor": 0.4058221400384709,
+          "n_train_per_fold": 2069617,
+          "n_test_per_fold": 425973
+        },
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625,
+          "note": "with k=5 folds the minimum attainable two-sided p is 0.0625"
+        },
+        "ci95_of_mean_difference": [
+          -0.023330659707941948,
+          -0.015930651565851762
+        ],
+        "cohens_d_paired": -6.587743661207862
+      }
+    }
+  }
+}

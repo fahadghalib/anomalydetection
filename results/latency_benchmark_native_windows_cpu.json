@@ -1,0 +1,35 @@
+{
+  "environment": {
+    "hardware": "CPU only",
+    "cpu": "13th Gen Intel Core i9-13900H",
+    "os": "native Windows 11",
+    "framework": "TensorFlow 2.21.0 (Keras 3.15.1)",
+    "python_version": "3.13.14",
+    "numerical_precision": "float32",
+    "batch_size": 1,
+    "n_warmup_samples": 50,
+    "n_timed_repetitions": 300,
+    "ensemble_size": 5
+  },
+  "latency_ms_per_sample_ensemble": {
+    "mean": 5881.534353001432,
+    "median": 6559.111399983522,
+    "p95": 16952.312085006273,
+    "p99": 17984.725786999334,
+    "std": 3605.678240729322,
+    "min": 1986.8400000268593,
+    "max": 19175.651700003073
+  },
+  "model_size": {
+    "per_fold_bytes": [
+      1770476,
+      1770488,
+      1770488,
+      1770494,
+      1770497
+    ],
+    "per_fold_mb_mean": 1.688,
+    "ensemble_total_mb": 8.442
+  },
+  "trainable_params_per_fold": 140949
+}

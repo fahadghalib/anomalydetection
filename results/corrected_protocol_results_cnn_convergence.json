@@ -1,0 +1,16 @@
+{
+  "cnn": [
+    {
+      "model": "cnn",
+      "val_accuracy": 0.8629765876080766,
+      "val_macro_precision": 0.7200175323285356,
+      "val_macro_recall": 0.7468262506210162,
+      "val_macro_f1": 0.7193921666365614,
+      "model_size": 140373,
+      "elapsed_sec": 27788.287078857422,
+      "fold": 1,
+      "n_train_rows": 2074570,
+      "n_val_rows": 425971
+    }
+  ]
+}

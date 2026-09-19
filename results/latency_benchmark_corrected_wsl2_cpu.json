@@ -1,0 +1,68 @@
+{
+  "model": "corrected-protocol CNN-BiGRU-Attention (single model)",
+  "note": "Timed on the 28-feature architecture reported in the corrected results. Weights are freshly initialised: forward-pass latency and serialised size depend on architecture and input width, not on weight values.",
+  "environment": {
+    "hardware": "CPU only",
+    "cpu": "13th Gen Intel Core i9-13900H",
+    "os": "WSL2 (Ubuntu) on Windows 11",
+    "framework": "TensorFlow 2.21.0 (Keras 3.15.1)",
+    "python_version": "3.11.15",
+    "numerical_precision": "float32",
+    "batch_size": 1,
+    "n_warmup_samples": 50,
+    "n_timed_repetitions": 300,
+    "n_features": 28,
+    "feature_names": [
+      "posx",
+      "posy",
+      "posz",
+      "posx_n",
+      "posy_n",
+      "posz_n",
+      "spdx",
+      "spdy",
+      "spdz",
+      "spdx_n",
+      "spdy_n",
+      "spdz_n",
+      "aclx",
+      "acly",
+      "aclz",
+      "aclx_n",
+      "acly_n",
+      "aclz_n",
+      "hedx",
+      "hedy",
+      "hedz",
+      "hedx_n",
+      "hedy_n",
+      "hedz_n",
+      "dt_prev",
+      "pos_delta",
+      "spd_delta",
+      "msg_rate_5s"
+    ]
+  },
+  "latency_ms_per_message": {
+    "mean": 266.33545263999844,
+    "median": 265.3569134999998,
+    "p95": 281.8005479000192,
+    "p99": 290.94356648001786,
+    "std": 9.140620118689656,
+    "min": 245.71793299998035,
+    "max": 300.6735509999885
+  },
+  "batched_throughput": {
+    "batch_size": 4096,
+    "batch_wall_clock_ms_median": 449.43,
+    "ms_per_sample": 0.1097,
+    "n_repetitions": 5,
+    "n_warmup": 3
+  },
+  "model_size": {
+    "bytes": 628227,
+    "mb": 0.599
+  },
+  "trainable_params": 140373,
+  "total_params": 140949
+}
