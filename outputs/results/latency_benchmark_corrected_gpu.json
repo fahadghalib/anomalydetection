@@ -1,0 +1,50 @@
+{
+  "model": "final held-out CNN-BiGRU-attention model (single model)",
+  "model_file": "outputs/models/final_cnn.keras",
+  "environment": {
+    "hardware": "GPU: NVIDIA GeForce RTX 4060 Laptop GPU (8GB)",
+    "cpu": "13th Gen Intel Core i9-13900H",
+    "os": "WSL2 (Ubuntu) on Windows 11",
+    "windows_power_throttling": "not applicable",
+    "framework": "TensorFlow 2.21.0 (Keras 3.15.1)",
+    "python_version": "3.11.15",
+    "numerical_precision": "float32",
+    "batch_size": 1,
+    "n_warmup_calls": 50,
+    "n_timed_calls": 300,
+    "n_features": 28
+  },
+  "latency_ms_per_message": {
+    "mean": 491.5247914100008,
+    "median": 485.2879919999964,
+    "p95": 535.8397808000028,
+    "p99": 589.6372939300022,
+    "std": 28.265902168403457,
+    "min": 445.8649320000063,
+    "max": 671.7419529999802
+  },
+  "latency_ms_per_message_graph": {
+    "mean": 94.56877329999969,
+    "median": 93.43003150000584,
+    "p95": 104.42876635001141,
+    "p99": 118.2601619299938,
+    "std": 8.526438292712932,
+    "min": 82.26411799998345,
+    "max": 179.6899359999884
+  },
+  "batched_throughput": {
+    "batch_size": 4096,
+    "batch_wall_clock_ms_median": 148.66,
+    "ms_per_sample": 0.0363,
+    "n_repetitions": 5,
+    "n_warmup": 3
+  },
+  "model_size": {
+    "weights_bytes_float32": 563796,
+    "weights_mb": 0.538,
+    "file_bytes": 1770484,
+    "file_mb": 1.688
+  },
+  "trainable_params": 140373,
+  "total_params": 140949
+}

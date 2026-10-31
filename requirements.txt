@@ -1,0 +1,17 @@
+# Direct dependencies, pinned to the versions used for every reported result
+# (Python 3.11.15). requirements-lock.txt contains the full frozen environment,
+# including the CUDA 12 wheels used under WSL2 (Linux).
+#
+# TensorFlow 2.21 has no native-Windows GPU build: GPU runs used WSL2 with
+# tensorflow[and-cuda]. Native Windows runs the same code on the CPU only, which
+# is how the native-Windows latency row of Table 9 was measured.
+
+tensorflow==2.21.0
+keras==3.15.1
+numpy==2.4.6
+pandas==3.0.5
+scikit-learn==1.9.0
+scipy==1.17.1
+imbalanced-learn==0.14.2
+lightgbm==4.7.0
+matplotlib==3.11.1

@@ -1,0 +1,23 @@
+  reading VeReMi_train_data.csv ...
+  reading VeReMi_test_data.csv ...
+  pooled records: 3,194,808
+  feature columns kept (28): ['posx', 'posy', 'posz', 'posx_n', 'posy_n', 'posz_n', 'spdx', 'spdy', 'spdz', 'spdx_n', 'spdy_n', 'spdz_n', 'aclx', 'acly', 'aclz', 'aclx_n', 'acly_n', 'aclz_n', 'hedx', 'hedy', 'hedz', 'hedx_n', 'hedy_n', 'hedz_n', 'dt_prev', 'pos_delta', 'spd_delta', 'msg_rate_5s']
+  columns dropped: ['class', 'messageID', 'sendTime', 'sender', 'senderPseudo', 'type']
+
+======================================================================
+CORRECTED PROTOCOL PARTITIONS
+======================================================================
+  pooled rows       : 3,194,808
+  features          : 28  ['posx', 'posy', 'posz', 'posx_n', 'posy_n', 'posz_n', 'spdx', 'spdy', 'spdz', 'spdx_n', 'spdy_n', 'spdz_n', 'aclx', 'acly', 'aclz', 'aclx_n', 'acly_n', 'aclz_n', 'hedx', 'hedy', 'hedz', 'hedx_n', 'hedy_n', 'hedz_n', 'dt_prev', 'pos_delta', 'spd_delta', 'msg_rate_5s']
+  unique senders    : 24,663
+
+  development rows  : 2,129,867  (16,441 senders)
+  held-out test rows: 1,064,941  (8,222 senders)
+  sender overlap dev<->test: 0  (asserted)
+
+  grouped 5-fold CV on the development partition:
+    fold 1: train 1,703,896 rows / 13,156 senders   val 425,971 rows / 3,285 senders   (sender overlap: 0)
+    fold 2: train 1,703,891 rows / 13,152 senders   val 425,976 rows / 3,289 senders   (sender overlap: 0)
+    fold 3: train 1,703,897 rows / 13,153 senders   val 425,970 rows / 3,288 senders   (sender overlap: 0)
+    fold 4: train 1,703,892 rows / 13,152 senders   val 425,975 rows / 3,289 senders   (sender overlap: 0)
+    fold 5: train 1,703,892 rows / 13,151 senders   val 425,975 rows / 3,290 senders   (sender overlap: 0)

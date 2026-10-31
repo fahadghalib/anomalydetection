@@ -1,0 +1,14 @@
+### Table 6. Paired comparisons with the proposed model on the five development folds
+
+| Configuration | Metric | Mean difference (points) | 95% CI | t(4) | p (naive) | p (corrected) | Cohen's d | Folds with same sign |
+|---|---|---|---|---|---|---|---|---|
+| Feed-forward, capacity-matched | Accuracy | +2.62 | [+1.89, +3.35] | 9.97 | 0.0006 | 0.0022 | 4.46 | 5/5 |
+| Feed-forward, capacity-matched | Macro F1 | +2.59 | [+2.04, +3.14] | 13.03 | 0.0002 | 0.0008 | 5.83 | 5/5 |
+| Feed-forward, reduced capacity | Accuracy | +2.66 | [+1.92, +3.39] | 9.98 | 0.0006 | 0.0022 | 4.46 | 5/5 |
+| Feed-forward, reduced capacity | Macro F1 | +2.61 | [+1.99, +3.22] | 11.73 | 0.0003 | 0.0012 | 5.25 | 5/5 |
+| Gradient-boosted trees (LightGBM) | Accuracy | -6.96 | [-11.31, -2.62] | -4.45 | 0.0113 | 0.0354 | -1.99 | 5/5 |
+| Gradient-boosted trees (LightGBM) | Macro F1 | -11.32 | [-16.79, -5.85] | -5.75 | 0.0045 | 0.0157 | -2.57 | 5/5 |
+| Proposed, permuted column order | Accuracy | -0.66 | [-1.72, +0.39] | -1.74 | 0.1565 | 0.2885 | -0.78 | 4/5 |
+| Proposed, permuted column order | Macro F1 | -1.96 | [-2.33, -1.59] | -14.73 | 0.0001 | 0.0005 | -6.59 | 5/5 |
+
+Corrected p: Nadeau-Bengio corrected resampled t-test; naive p assumes independent folds.

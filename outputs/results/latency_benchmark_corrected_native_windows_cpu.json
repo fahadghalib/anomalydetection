@@ -1,0 +1,50 @@
+{
+  "model": "final held-out CNN-BiGRU-attention model (single model)",
+  "model_file": "outputs/models/final_cnn.keras",
+  "environment": {
+    "hardware": "CPU only",
+    "cpu": "13th Gen Intel Core i9-13900H",
+    "os": "native Windows 11",
+    "windows_power_throttling": "execution-speed throttling disabled for this process",
+    "framework": "TensorFlow 2.21.0 (Keras 3.15.1)",
+    "python_version": "3.13.14",
+    "numerical_precision": "float32",
+    "batch_size": 1,
+    "n_warmup_calls": 50,
+    "n_timed_calls": 300,
+    "n_features": 28
+  },
+  "latency_ms_per_message": {
+    "mean": 291.9050509990969,
+    "median": 288.947900000494,
+    "p95": 315.94596500945045,
+    "p99": 351.6272030220714,
+    "std": 16.67278260503092,
+    "min": 265.8732999989297,
+    "max": 418.05740000563674
+  },
+  "latency_ms_per_message_graph": {
+    "mean": 3.7401886675312803,
+    "median": 3.979699991759844,
+    "p95": 4.646974994102493,
+    "p99": 5.031663006229791,
+    "std": 0.749015681880653,
+    "min": 2.430900000035763,
+    "max": 6.142099999124184
+  },
+  "batched_throughput": {
+    "batch_size": 4096,
+    "batch_wall_clock_ms_median": 418.18,
+    "ms_per_sample": 0.1021,
+    "n_repetitions": 5,
+    "n_warmup": 3
+  },
+  "model_size": {
+    "weights_bytes_float32": 563796,
+    "weights_mb": 0.538,
+    "file_bytes": 1770484,
+    "file_mb": 1.688
+  },
+  "trainable_params": 140373,
+  "total_params": 140949
+}

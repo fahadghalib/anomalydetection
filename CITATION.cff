@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article and the dataset."
+title: "Twenty-class misbehavior detection on VeReMi Extension: code and results"
+version: 2.0.0
+license: Apache-2.0
+date-released: 2026-10-31
+repository-code: "https://github.com/fahadghalib/anomalydetection"
+authors:
+  - family-names: Abdulkadhim
+    given-names: Fahad Ghalib
+    email: fahadg.abdulkadhim@uokufa.edu.iq
+    affiliation: "University of Kufa"
+  - family-names: Tahseen
+    given-names: Fatima
+    affiliation: "University of Alkafeel"
+  - family-names: Fadhil
+    given-names: Ayat Abbas
+    affiliation: "University of Alkafeel"
+  - family-names: Hashim
+    given-names: Hashim Ali
+    affiliation: "University of Alkafeel"
+  - family-names: Tang
+    given-names: Chengkai
+    affiliation: "Northwestern Polytechnical University"
+preferred-citation:
+  type: article
+  title: "Network Traffic Anomaly Detection in VANETs Using a Hybrid Deep Learning Model: A Leakage-Resistant Twenty-Class Evaluation"
+  journal: "Journal of Computational and Cognitive Engineering"
+  authors:
+    - family-names: Abdulkadhim
+      given-names: Fahad Ghalib
+    - family-names: Tahseen
+      given-names: Fatima
+    - family-names: Fadhil
+      given-names: Ayat Abbas
+    - family-names: Hashim
+      given-names: Hashim Ali
+    - family-names: Tang
+      given-names: Chengkai

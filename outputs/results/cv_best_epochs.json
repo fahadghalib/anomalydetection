@@ -1,0 +1,165 @@
+{
+  "rule": "median over CV folds of the epoch with minimum validation loss; the final refit uses this fixed budget with no validation data",
+  "models": {
+    "cnn": {
+      "per_fold": [
+        {
+          "fold": 1,
+          "best_epoch": 39,
+          "epochs_run": 40,
+          "best_val_loss": 0.2012,
+          "source": "outputs/logs/chain_runs.log"
+        },
+        {
+          "fold": 2,
+          "best_epoch": 40,
+          "epochs_run": 40,
+          "best_val_loss": 0.1946,
+          "source": "outputs/logs/chain_runs.log"
+        },
+        {
+          "fold": 3,
+          "best_epoch": 40,
+          "epochs_run": 40,
+          "best_val_loss": 0.1957,
+          "source": "outputs/logs/chain_runs2.log"
+        },
+        {
+          "fold": 4,
+          "best_epoch": 40,
+          "epochs_run": 40,
+          "best_val_loss": 0.1939,
+          "source": "outputs/logs/chain_runs2.log"
+        },
+        {
+          "fold": 5,
+          "best_epoch": 38,
+          "epochs_run": 40,
+          "best_val_loss": 0.1966,
+          "source": "outputs/logs/chain_runs2.log"
+        }
+      ],
+      "final_epochs": 40
+    },
+    "mlp_cap": {
+      "per_fold": [
+        {
+          "fold": 1,
+          "best_epoch": 18,
+          "epochs_run": 26,
+          "best_val_loss": 0.1786,
+          "source": "outputs/logs/chain_runs2.log"
+        },
+        {
+          "fold": 2,
+          "best_epoch": 18,
+          "epochs_run": 26,
+          "best_val_loss": 0.1782,
+          "source": "outputs/logs/chain_runs2.log"
+        },
+        {
+          "fold": 3,
+          "best_epoch": 19,
+          "epochs_run": 27,
+          "best_val_loss": 0.176,
+          "source": "outputs/logs/chain_runs2.log"
+        },
+        {
+          "fold": 4,
+          "best_epoch": 18,
+          "epochs_run": 27,
+          "best_val_loss": 0.1734,
+          "source": "outputs/logs/chain_runs2.log"
+        },
+        {
+          "fold": 5,
+          "best_epoch": 18,
+          "epochs_run": 26,
+          "best_val_loss": 0.173,
+          "source": "outputs/logs/chain_runs2.log"
+        }
+      ],
+      "final_epochs": 18
+    },
+    "mlp_matched": {
+      "per_fold": [
+        {
+          "fold": 1,
+          "best_epoch": 18,
+          "epochs_run": 27,
+          "best_val_loss": 0.1802,
+          "source": "outputs/logs/corrected_mlp.log"
+        },
+        {
+          "fold": 2,
+          "best_epoch": 19,
+          "epochs_run": 27,
+          "best_val_loss": 0.178,
+          "source": "outputs/logs/corrected_mlp.log"
+        },
+        {
+          "fold": 3,
+          "best_epoch": 19,
+          "epochs_run": 27,
+          "best_val_loss": 0.1747,
+          "source": "outputs/logs/corrected_mlp.log"
+        },
+        {
+          "fold": 4,
+          "best_epoch": 19,
+          "epochs_run": 27,
+          "best_val_loss": 0.175,
+          "source": "outputs/logs/corrected_mlp.log"
+        },
+        {
+          "fold": 5,
+          "best_epoch": 39,
+          "epochs_run": 40,
+          "best_val_loss": 0.1696,
+          "source": "outputs/logs/corrected_mlp.log"
+        }
+      ],
+      "final_epochs": 19
+    },
+    "cnn_permuted": {
+      "per_fold": [
+        {
+          "fold": 1,
+          "best_epoch": 39,
+          "epochs_run": 40,
+          "best_val_loss": 0.2168,
+          "source": "outputs/logs/chain_runs2.log"
+        },
+        {
+          "fold": 2,
+          "best_epoch": 19,
+          "epochs_run": 27,
+          "best_val_loss": 0.2191,
+          "source": "outputs/logs/chain_runs2.log"
+        },
+        {
+          "fold": 3,
+          "best_epoch": 37,
+          "epochs_run": 40,
+          "best_val_loss": 0.2114,
+          "source": "outputs/logs/chain_runs2.log"
+        },
+        {
+          "fold": 4,
+          "best_epoch": 37,
+          "epochs_run": 40,
+          "best_val_loss": 0.2116,
+          "source": "outputs/logs/chain_runs2.log"
+        },
+        {
+          "fold": 5,
+          "best_epoch": 18,
+          "epochs_run": 27,
+          "best_val_loss": 0.2172,
+          "source": "outputs/logs/chain_runs2.log"
+        }
+      ],
+      "final_epochs": 37
+    }
+  }
+}

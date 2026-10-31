@@ -1,0 +1,9 @@
+# data files are distributed separately (see data/README.md)
+data/*.csv
+data/cache/
+outputs/results_deposited_*/
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+.ipynb_checkpoints/

@@ -1,0 +1,15 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793407650.895734   34584 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793407652.979788   34584 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING:tensorflow:TensorFlow GPU support is not available on native Windows for TensorFlow >= 2.11. Even if CUDA/cuDNN are installed, GPU will not be used. Please use WSL2 or the TensorFlow-DirectML plugin.
+host=native Windows 11  device=CPU only  tag=corrected_native_windows_cpu  power throttling: execution-speed throttling disabled for this process
+WARNING:tensorflow:From C:\Users\<user>\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\keras\src\backend\tensorflow\core.py:233: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+  model final_cnn.keras: trainable 140,373, total 140,949, weights 0.538 MB
+eager: 50 warm-up + 300 timed calls ...
+  median 288.948 ms
+graph: 50 warm-up + 300 timed calls ...
+  median 3.980 ms
+batch of 4096: 418.2 ms -> 0.1021 ms/message
+saved -> D:\Network Traffic Anomaly Detection journal\anomalycode\outputs\results\latency_benchmark_corrected_native_windows_cpu.json

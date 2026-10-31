@@ -1,0 +1,70 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1789152507.020320   38605 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1789152507.107579   38605 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1789152509.362208   38605 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+corrected dataset: (3194808, 28), 24,663 senders, features=['posx', 'posy', 'posz', 'posx_n', 'posy_n', 'posz_n', 'spdx', 'spdy', 'spdz', 'spdx_n', 'spdy_n', 'spdz_n', 'aclx', 'acly', 'aclz', 'aclx_n', 'acly_n', 'aclz_n', 'hedx', 'hedy', 'hedz', 'hedx_n', 'hedy_n', 'hedz_n', 'dt_prev', 'pos_delta', 'spd_delta', 'msg_rate_5s']
+development: 2,129,867 rows / 16,441 senders; held-out test: 1,064,941 rows / 8,222 senders
+
+======================================================================
+FOLD 1/5  (train 1,703,896 rows / 13,156 senders, val 425,971 rows / 3,285 senders)
+======================================================================
+  reusing cached preprocessing: fold1.npz (2,074,570 train rows)
+
+--- lgbm | fold 1 ---
+  lgbm fold 1: acc=0.8028 macro_f1=0.5996 macro_recall=0.6102 (12.3 min)
+
+======================================================================
+FOLD 2/5  (train 1,703,891 rows / 13,152 senders, val 425,976 rows / 3,289 senders)
+======================================================================
+  reusing cached preprocessing: fold2.npz (2,061,184 train rows)
+
+--- lgbm | fold 2 ---
+  lgbm fold 2: acc=0.8124 macro_f1=0.6270 macro_recall=0.6448 (11.7 min)
+
+======================================================================
+FOLD 3/5  (train 1,703,897 rows / 13,153 senders, val 425,970 rows / 3,288 senders)
+======================================================================
+  reusing cached preprocessing: fold3.npz (2,071,877 train rows)
+
+--- lgbm | fold 3 ---
+  lgbm fold 3: acc=0.8427 macro_f1=0.6714 macro_recall=0.6822 (11.9 min)
+
+======================================================================
+FOLD 4/5  (train 1,703,892 rows / 13,152 senders, val 425,975 rows / 3,289 senders)
+======================================================================
+  reusing cached preprocessing: fold4.npz (2,071,572 train rows)
+
+--- lgbm | fold 4 ---
+  lgbm fold 4: acc=0.7918 macro_f1=0.5637 macro_recall=0.5908 (11.7 min)
+
+======================================================================
+FOLD 5/5  (train 1,703,892 rows / 13,151 senders, val 425,975 rows / 3,290 senders)
+======================================================================
+  reusing cached preprocessing: fold5.npz (2,068,883 train rows)
+
+--- lgbm | fold 5 ---
+  lgbm fold 5: acc=0.7401 macro_f1=0.5654 macro_recall=0.6409 (11.8 min)
+
+======================================================================
+CORRECTED-PROTOCOL SUMMARY
+======================================================================
+  lgbm           n=5  acc=79.80%±3.75  macro_f1=60.54%±4.53
+
+saved -> /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/corrected_protocol_results_lgbm_deterministic.json
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1789156113.529658   38604 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1789156113.596371   38604 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1789156115.696813   38604 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+corrected dataset: (3194808, 28), 24,663 senders, features=['posx', 'posy', 'posz', 'posx_n', 'posy_n', 'posz_n', 'spdx', 'spdy', 'spdz', 'spdx_n', 'spdy_n', 'spdz_n', 'aclx', 'acly', 'aclz', 'aclx_n', 'acly_n', 'aclz_n', 'hedx', 'hedy', 'hedz', 'hedx_n', 'hedy_n', 'hedz_n', 'dt_prev', 'pos_delta', 'spd_delta', 'msg_rate_5s']
+development: 2,129,867 rows / 16,441 senders; held-out test: 1,064,941 rows / 8,222 senders
+  reusing cached preprocessing: holdout_dev.npz (2,408,688 train rows)
+
+--- lgbm | held-out test ---
+  lgbm TEST: acc=0.8144 macro_f1=0.6250 macro_recall=0.6476
+  benign recall=90.9%  FAR=9.1%
+
+saved -> /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/corrected_protocol_holdout.json

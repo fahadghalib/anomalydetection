@@ -1,0 +1,147 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1789048739.595143     505 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1789048740.608459     505 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1789048743.193941     505 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+corrected dataset: (3194808, 28), 24,663 senders, features=['posx', 'posy', 'posz', 'posx_n', 'posy_n', 'posz_n', 'spdx', 'spdy', 'spdz', 'spdx_n', 'spdy_n', 'spdz_n', 'aclx', 'acly', 'aclz', 'aclx_n', 'acly_n', 'aclz_n', 'hedx', 'hedy', 'hedz', 'hedx_n', 'hedy_n', 'hedz_n', 'dt_prev', 'pos_delta', 'spd_delta', 'msg_rate_5s']
+development: 2,129,867 rows / 16,441 senders; held-out test: 1,064,941 rows / 8,222 senders
+  ADASYN on development partition -> 2,408,688 rows (1145s); test partition untouched
+
+--- mlp_matched | held-out test ---
+I0000 00:00:1789049902.912732     505 gpu_device.cc:2043] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 5563 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 4060 Laptop GPU, pci bus id: 0000:01:00.0, compute capability: 8.9
+Epoch 1/40
+I0000 00:00:1789049907.748061     779 service.cc:153] XLA service 0x7a0560036fa0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1789049907.748984     779 service.cc:161]   StreamExecutor [0]: NVIDIA GeForce RTX 4060 Laptop GPU, Compute Capability 8.9 (Driver: 12.7.0; Runtime: 12.9.0; Toolkit: 12.5.0; DNN: 9.24.0)
+I0000 00:00:1789049907.824387     779 dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+I0000 00:00:1789049908.283548     779 cuda_dnn.cc:461] Loaded cuDNN version 92400
+I0000 00:00:1789049908.385324     779 dot_merger.cc:481] Merging Dots in computation: a_inference_one_step_on_data_4724__.39
+I0000 00:00:1789049911.416722     856 subprocess_compilation.cc:348] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_MatMul_18', 72 bytes spill stores, 40 bytes spill loads
+
+I0000 00:00:1789049914.490417     849 subprocess_compilation.cc:348] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_MatMul_1_6', 72 bytes spill stores, 72 bytes spill loads
+
+I0000 00:00:1789049915.891314     857 subprocess_compilation.cc:348] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_MatMul_1_8', 80 bytes spill stores, 80 bytes spill loads
+
+I0000 00:00:1789049921.999164     779 device_compiler.h:208] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+I0000 00:00:1789049925.292750     779 dot_merger.cc:481] Merging Dots in computation: a_inference_one_step_on_data_4724__.39
+I0000 00:00:1789049925.573920     779 dot_search_space.cc:240] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+I0000 00:00:1789049927.131737     779 dot_search_space.cc:240] All configs were filtered out because none of them sufficiently match the hints. Maybe the hints set does not contain a good representative set of valid configs? Working around this by using the full hints set instead.
+I0000 00:00:1789049936.296795    1202 subprocess_compilation.cc:348] ptxas warning : Registers are spilled to local memory in function 'gemm_fusion_MatMul_10', 72 bytes spill stores, 40 bytes spill loads
+
+589/589 - 33s - 56ms/step - accuracy: 0.7303 - loss: 0.5436 - val_accuracy: 0.8636 - val_loss: 0.2850
+Epoch 2/40
+589/589 - 4s - 8ms/step - accuracy: 0.8143 - loss: 0.3371 - val_accuracy: 0.8821 - val_loss: 0.2116
+Epoch 3/40
+589/589 - 3s - 6ms/step - accuracy: 0.8260 - loss: 0.2993 - val_accuracy: 0.8888 - val_loss: 0.1915
+Epoch 4/40
+589/589 - 3s - 5ms/step - accuracy: 0.8323 - loss: 0.2801 - val_accuracy: 0.8902 - val_loss: 0.1845
+Epoch 5/40
+589/589 - 3s - 6ms/step - accuracy: 0.8370 - loss: 0.2687 - val_accuracy: 0.8912 - val_loss: 0.1804
+Epoch 6/40
+589/589 - 3s - 5ms/step - accuracy: 0.8402 - loss: 0.2605 - val_accuracy: 0.8928 - val_loss: 0.1781
+Epoch 7/40
+589/589 - 3s - 5ms/step - accuracy: 0.8420 - loss: 0.2550 - val_accuracy: 0.8922 - val_loss: 0.1747
+Epoch 8/40
+589/589 - 4s - 6ms/step - accuracy: 0.8437 - loss: 0.2500 - val_accuracy: 0.8955 - val_loss: 0.1711
+Epoch 9/40
+589/589 - 4s - 7ms/step - accuracy: 0.8451 - loss: 0.2455 - val_accuracy: 0.8947 - val_loss: 0.1710
+Epoch 10/40
+589/589 - 4s - 6ms/step - accuracy: 0.8458 - loss: 0.2420 - val_accuracy: 0.8956 - val_loss: 0.1701
+Epoch 11/40
+589/589 - 3s - 5ms/step - accuracy: 0.8470 - loss: 0.2390 - val_accuracy: 0.8963 - val_loss: 0.1681
+Epoch 12/40
+589/589 - 3s - 6ms/step - accuracy: 0.8475 - loss: 0.2359 - val_accuracy: 0.8963 - val_loss: 0.1680
+Epoch 13/40
+589/589 - 3s - 6ms/step - accuracy: 0.8488 - loss: 0.2335 - val_accuracy: 0.8960 - val_loss: 0.1668
+Epoch 14/40
+589/589 - 3s - 6ms/step - accuracy: 0.8492 - loss: 0.2314 - val_accuracy: 0.8972 - val_loss: 0.1665
+Epoch 15/40
+589/589 - 3s - 6ms/step - accuracy: 0.8498 - loss: 0.2295 - val_accuracy: 0.8974 - val_loss: 0.1658
+Epoch 16/40
+589/589 - 3s - 5ms/step - accuracy: 0.8499 - loss: 0.2283 - val_accuracy: 0.8976 - val_loss: 0.1654
+Epoch 17/40
+589/589 - 3s - 6ms/step - accuracy: 0.8507 - loss: 0.2273 - val_accuracy: 0.8979 - val_loss: 0.1648
+Epoch 18/40
+589/589 - 3s - 5ms/step - accuracy: 0.8510 - loss: 0.2266 - val_accuracy: 0.8980 - val_loss: 0.1643
+Epoch 19/40
+589/589 - 3s - 6ms/step - accuracy: 0.8508 - loss: 0.2261 - val_accuracy: 0.8983 - val_loss: 0.1642
+Epoch 20/40
+589/589 - 3s - 5ms/step - accuracy: 0.8512 - loss: 0.2261 - val_accuracy: 0.8937 - val_loss: 0.1685
+Epoch 21/40
+589/589 - 3s - 5ms/step - accuracy: 0.8452 - loss: 0.2385 - val_accuracy: 0.8960 - val_loss: 0.1685
+Epoch 22/40
+589/589 - 4s - 6ms/step - accuracy: 0.8458 - loss: 0.2363 - val_accuracy: 0.8976 - val_loss: 0.1681
+Epoch 23/40
+589/589 - 3s - 6ms/step - accuracy: 0.8467 - loss: 0.2346 - val_accuracy: 0.8941 - val_loss: 0.1681
+Epoch 24/40
+589/589 - 3s - 5ms/step - accuracy: 0.8465 - loss: 0.2331 - val_accuracy: 0.8960 - val_loss: 0.1678
+Epoch 25/40
+589/589 - 3s - 5ms/step - accuracy: 0.8471 - loss: 0.2314 - val_accuracy: 0.8948 - val_loss: 0.1672
+Epoch 26/40
+589/589 - 4s - 6ms/step - accuracy: 0.8474 - loss: 0.2303 - val_accuracy: 0.8968 - val_loss: 0.1654
+Epoch 27/40
+589/589 - 4s - 6ms/step - accuracy: 0.8476 - loss: 0.2289 - val_accuracy: 0.8973 - val_loss: 0.1666
+  mlp_matched TEST: acc=0.8983 macro_f1=0.7546 macro_recall=0.7596
+  benign recall=98.7%  FAR=1.3%
+
+--- lgbm | held-out test ---
+  lgbm TEST: acc=0.8355 macro_f1=0.6588 macro_recall=0.6729
+  benign recall=93.4%  FAR=6.6%
+
+saved -> /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/corrected_protocol_holdout.json
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1789051637.495075     504 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+I0000 00:00:1789051637.610848     504 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1789051639.649068     504 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+corrected dataset: (3194808, 28), 24,663 senders, features=['posx', 'posy', 'posz', 'posx_n', 'posy_n', 'posz_n', 'spdx', 'spdy', 'spdz', 'spdx_n', 'spdy_n', 'spdz_n', 'aclx', 'acly', 'aclz', 'aclx_n', 'acly_n', 'aclz_n', 'hedx', 'hedy', 'hedz', 'hedx_n', 'hedy_n', 'hedz_n', 'dt_prev', 'pos_delta', 'spd_delta', 'msg_rate_5s']
+development: 2,129,867 rows / 16,441 senders; held-out test: 1,064,941 rows / 8,222 senders
+
+======================================================================
+FOLD 1/5  (train 1,703,896 rows / 13,156 senders, val 425,971 rows / 3,285 senders)
+======================================================================
+  ADASYN: train 1,703,896 -> 2,074,570 rows (1098s); validation rows untouched
+
+--- lgbm | fold 1 ---
+  lgbm fold 1: acc=0.7800 macro_f1=0.5732 macro_recall=0.5915 (13.2 min)
+
+======================================================================
+FOLD 2/5  (train 1,703,891 rows / 13,152 senders, val 425,976 rows / 3,289 senders)
+======================================================================
+  ADASYN: train 1,703,891 -> 2,061,184 rows (995s); validation rows untouched
+
+--- lgbm | fold 2 ---
+  lgbm fold 2: acc=0.8140 macro_f1=0.6258 macro_recall=0.6476 (12.4 min)
+
+======================================================================
+FOLD 3/5  (train 1,703,897 rows / 13,153 senders, val 425,970 rows / 3,288 senders)
+======================================================================
+  ADASYN: train 1,703,897 -> 2,071,877 rows (995s); validation rows untouched
+
+--- lgbm | fold 3 ---
+  lgbm fold 3: acc=0.7868 macro_f1=0.5670 macro_recall=0.5879 (10.5 min)
+
+======================================================================
+FOLD 4/5  (train 1,703,892 rows / 13,152 senders, val 425,975 rows / 3,289 senders)
+======================================================================
+  ADASYN: train 1,703,892 -> 2,071,572 rows (998s); validation rows untouched
+
+--- lgbm | fold 4 ---
+  lgbm fold 4: acc=0.6631 macro_f1=0.4128 macro_recall=0.4435 (12.9 min)
+
+======================================================================
+FOLD 5/5  (train 1,703,892 rows / 13,151 senders, val 425,975 rows / 3,290 senders)
+======================================================================
+  ADASYN: train 1,703,892 -> 2,068,883 rows (980s); validation rows untouched
+
+--- lgbm | fold 5 ---
+  lgbm fold 5: acc=0.6682 macro_f1=0.4409 macro_recall=0.4868 (9.2 min)
+
+======================================================================
+CORRECTED-PROTOCOL SUMMARY
+======================================================================
+  mlp_matched    n=5  acc=89.42%±0.11  macro_f1=74.47%±0.38
+  lgbm           n=5  acc=74.24%±7.12  macro_f1=52.39%±9.20
+
+saved -> /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/corrected_protocol_results.json

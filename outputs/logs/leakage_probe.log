@@ -1,0 +1,21 @@
+Loading identifier columns from both CSVs ...
+
+======================================================================
+PROBE A -- SENDER LOOKUP BASELINE (no model, no features)
+======================================================================
+  test rows                          : 958,441
+  test rows whose sender seen in train: 958,408 (99.997%)
+  accuracy on those covered rows     : 100.000%
+  accuracy on the FULL test set      : 99.999%
+  same probe via senderPseudo        : 98.289%
+
+======================================================================
+PROBE B -- SENDER-ID BLOCK STRUCTURE
+======================================================================
+  unique senders (train)             : 24,644
+  distinct classes among them        : 20
+  contiguous single-class runs on the sorted ID axis: 14,791
+  mean senders per run               : 1.7
+  (n_runs == n_classes would mean each class is one solid ID block)
+
+saved -> /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/leakage_probe.json

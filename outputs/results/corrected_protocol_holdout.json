@@ -1,0 +1,740 @@
+{
+  "mlp_cap": {
+    "model": "mlp_cap",
+    "val_accuracy": 0.8994714261165642,
+    "val_macro_precision": 0.7936158564994743,
+    "val_macro_recall": 0.7599460280549766,
+    "val_macro_f1": 0.7564568215934011,
+    "model_size": 142596,
+    "elapsed_sec": 83.07552170753479,
+    "best_epoch": 18,
+    "epochs_run": 18,
+    "epoch_budget_source": "median CV best epoch (cv_best_epochs.json)",
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "Genuine (benign)",
+        "precision_pct": 95.6,
+        "recall_pct": 98.9,
+        "f1_pct": 97.2,
+        "support": 633513
+      },
+      {
+        "class_id": 1,
+        "class_name": "Constant Position",
+        "precision_pct": 92.6,
+        "recall_pct": 95.5,
+        "f1_pct": 94.1,
+        "support": 14550
+      },
+      {
+        "class_id": 2,
+        "class_name": "Constant Position Offset",
+        "precision_pct": 62.6,
+        "recall_pct": 52.9,
+        "f1_pct": 57.3,
+        "support": 14522
+      },
+      {
+        "class_id": 3,
+        "class_name": "Random Position",
+        "precision_pct": 89.6,
+        "recall_pct": 97.6,
+        "f1_pct": 93.4,
+        "support": 14619
+      },
+      {
+        "class_id": 4,
+        "class_name": "Random Position Offset",
+        "precision_pct": 86.4,
+        "recall_pct": 89.3,
+        "f1_pct": 87.8,
+        "support": 14193
+      },
+      {
+        "class_id": 5,
+        "class_name": "Constant Speed",
+        "precision_pct": 95.4,
+        "recall_pct": 98.3,
+        "f1_pct": 96.8,
+        "support": 13974
+      },
+      {
+        "class_id": 6,
+        "class_name": "Constant Speed Offset",
+        "precision_pct": 93.8,
+        "recall_pct": 97.1,
+        "f1_pct": 95.4,
+        "support": 14786
+      },
+      {
+        "class_id": 7,
+        "class_name": "Random Speed",
+        "precision_pct": 94.7,
+        "recall_pct": 95.3,
+        "f1_pct": 95.0,
+        "support": 14087
+      },
+      {
+        "class_id": 8,
+        "class_name": "Random Speed Offset",
+        "precision_pct": 91.2,
+        "recall_pct": 93.6,
+        "f1_pct": 92.4,
+        "support": 14192
+      },
+      {
+        "class_id": 9,
+        "class_name": "Eventual Stop",
+        "precision_pct": 87.2,
+        "recall_pct": 68.9,
+        "f1_pct": 77.0,
+        "support": 14264
+      },
+      {
+        "class_id": 10,
+        "class_name": "Disruptive",
+        "precision_pct": 46.5,
+        "recall_pct": 77.1,
+        "f1_pct": 58.0,
+        "support": 14420
+      },
+      {
+        "class_id": 11,
+        "class_name": "Data Replay",
+        "precision_pct": 40.0,
+        "recall_pct": 9.6,
+        "f1_pct": 15.5,
+        "support": 14780
+      },
+      {
+        "class_id": 12,
+        "class_name": "Delayed Messages",
+        "precision_pct": 85.7,
+        "recall_pct": 52.9,
+        "f1_pct": 65.4,
+        "support": 14372
+      },
+      {
+        "class_id": 13,
+        "class_name": "DoS",
+        "precision_pct": 90.4,
+        "recall_pct": 98.8,
+        "f1_pct": 94.4,
+        "support": 43773
+      },
+      {
+        "class_id": 14,
+        "class_name": "DoS Random",
+        "precision_pct": 86.5,
+        "recall_pct": 60.0,
+        "f1_pct": 70.8,
+        "support": 42240
+      },
+      {
+        "class_id": 15,
+        "class_name": "DoS Disruptive",
+        "precision_pct": 99.0,
+        "recall_pct": 56.0,
+        "f1_pct": 71.5,
+        "support": 43094
+      },
+      {
+        "class_id": 16,
+        "class_name": "Grid Sybil",
+        "precision_pct": 95.4,
+        "recall_pct": 92.4,
+        "f1_pct": 93.9,
+        "support": 58468
+      },
+      {
+        "class_id": 17,
+        "class_name": "Data Replay Sybil",
+        "precision_pct": 34.7,
+        "recall_pct": 9.4,
+        "f1_pct": 14.8,
+        "support": 14768
+      },
+      {
+        "class_id": 18,
+        "class_name": "DoS Random Sybil",
+        "precision_pct": 58.5,
+        "recall_pct": 98.8,
+        "f1_pct": 73.5,
+        "support": 28961
+      },
+      {
+        "class_id": 19,
+        "class_name": "DoS Disruptive Sybil",
+        "precision_pct": 61.5,
+        "recall_pct": 77.3,
+        "f1_pct": 68.5,
+        "support": 27365
+      }
+    ],
+    "weighted_precision": 0.8994633870145103,
+    "weighted_recall": 0.8994714261165642,
+    "weighted_f1": 0.890636555678026,
+    "binary_view": {
+      "TN_benign_correct": 626664,
+      "FP_benign_flagged": 6849,
+      "FN_attack_missed_as_benign": 28819,
+      "TP_attack_flagged": 402609
+    },
+    "false_alarm_rate_pct": 1.081,
+    "attack_miss_rate_pct": 6.68
+  },
+  "mlp_matched": {
+    "model": "mlp_matched",
+    "val_accuracy": 0.8993775242008712,
+    "val_macro_precision": 0.7945889966124053,
+    "val_macro_recall": 0.758876757497645,
+    "val_macro_f1": 0.7554907206169963,
+    "model_size": 106868,
+    "elapsed_sec": 90.88773345947266,
+    "best_epoch": 19,
+    "epochs_run": 19,
+    "epoch_budget_source": "median CV best epoch (cv_best_epochs.json)",
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "Genuine (benign)",
+        "precision_pct": 95.6,
+        "recall_pct": 99.0,
+        "f1_pct": 97.2,
+        "support": 633513
+      },
+      {
+        "class_id": 1,
+        "class_name": "Constant Position",
+        "precision_pct": 93.1,
+        "recall_pct": 94.3,
+        "f1_pct": 93.7,
+        "support": 14550
+      },
+      {
+        "class_id": 2,
+        "class_name": "Constant Position Offset",
+        "precision_pct": 61.8,
+        "recall_pct": 52.1,
+        "f1_pct": 56.5,
+        "support": 14522
+      },
+      {
+        "class_id": 3,
+        "class_name": "Random Position",
+        "precision_pct": 88.8,
+        "recall_pct": 97.6,
+        "f1_pct": 93.0,
+        "support": 14619
+      },
+      {
+        "class_id": 4,
+        "class_name": "Random Position Offset",
+        "precision_pct": 86.0,
+        "recall_pct": 89.5,
+        "f1_pct": 87.7,
+        "support": 14193
+      },
+      {
+        "class_id": 5,
+        "class_name": "Constant Speed",
+        "precision_pct": 94.8,
+        "recall_pct": 98.4,
+        "f1_pct": 96.6,
+        "support": 13974
+      },
+      {
+        "class_id": 6,
+        "class_name": "Constant Speed Offset",
+        "precision_pct": 93.5,
+        "recall_pct": 97.4,
+        "f1_pct": 95.4,
+        "support": 14786
+      },
+      {
+        "class_id": 7,
+        "class_name": "Random Speed",
+        "precision_pct": 94.4,
+        "recall_pct": 95.1,
+        "f1_pct": 94.8,
+        "support": 14087
+      },
+      {
+        "class_id": 8,
+        "class_name": "Random Speed Offset",
+        "precision_pct": 91.1,
+        "recall_pct": 93.4,
+        "f1_pct": 92.2,
+        "support": 14192
+      },
+      {
+        "class_id": 9,
+        "class_name": "Eventual Stop",
+        "precision_pct": 88.6,
+        "recall_pct": 68.9,
+        "f1_pct": 77.5,
+        "support": 14264
+      },
+      {
+        "class_id": 10,
+        "class_name": "Disruptive",
+        "precision_pct": 46.4,
+        "recall_pct": 77.5,
+        "f1_pct": 58.0,
+        "support": 14420
+      },
+      {
+        "class_id": 11,
+        "class_name": "Data Replay",
+        "precision_pct": 43.7,
+        "recall_pct": 13.1,
+        "f1_pct": 20.2,
+        "support": 14780
+      },
+      {
+        "class_id": 12,
+        "class_name": "Delayed Messages",
+        "precision_pct": 88.4,
+        "recall_pct": 52.7,
+        "f1_pct": 66.1,
+        "support": 14372
+      },
+      {
+        "class_id": 13,
+        "class_name": "DoS",
+        "precision_pct": 90.4,
+        "recall_pct": 98.8,
+        "f1_pct": 94.4,
+        "support": 43773
+      },
+      {
+        "class_id": 14,
+        "class_name": "DoS Random",
+        "precision_pct": 86.4,
+        "recall_pct": 59.8,
+        "f1_pct": 70.7,
+        "support": 42240
+      },
+      {
+        "class_id": 15,
+        "class_name": "DoS Disruptive",
+        "precision_pct": 98.9,
+        "recall_pct": 55.8,
+        "f1_pct": 71.3,
+        "support": 43094
+      },
+      {
+        "class_id": 16,
+        "class_name": "Grid Sybil",
+        "precision_pct": 95.2,
+        "recall_pct": 92.6,
+        "f1_pct": 93.9,
+        "support": 58468
+      },
+      {
+        "class_id": 17,
+        "class_name": "Data Replay Sybil",
+        "precision_pct": 32.5,
+        "recall_pct": 6.0,
+        "f1_pct": 10.1,
+        "support": 14768
+      },
+      {
+        "class_id": 18,
+        "class_name": "DoS Random Sybil",
+        "precision_pct": 58.3,
+        "recall_pct": 98.9,
+        "f1_pct": 73.4,
+        "support": 28961
+      },
+      {
+        "class_id": 19,
+        "class_name": "DoS Disruptive Sybil",
+        "precision_pct": 61.6,
+        "recall_pct": 76.8,
+        "f1_pct": 68.3,
+        "support": 27365
+      }
+    ],
+    "weighted_precision": 0.8994066187903361,
+    "weighted_recall": 0.8993775242008712,
+    "weighted_f1": 0.8902871402708189,
+    "binary_view": {
+      "TN_benign_correct": 626963,
+      "FP_benign_flagged": 6550,
+      "FN_attack_missed_as_benign": 29032,
+      "TP_attack_flagged": 402396
+    },
+    "false_alarm_rate_pct": 1.034,
+    "attack_miss_rate_pct": 6.729
+  },
+  "cnn": {
+    "model": "cnn",
+    "val_accuracy": 0.8791087956985411,
+    "val_macro_precision": 0.7450583322478923,
+    "val_macro_recall": 0.7442594398647282,
+    "val_macro_f1": 0.7286063243291425,
+    "model_size": 140373,
+    "elapsed_sec": 11028.213442325592,
+    "best_epoch": 40,
+    "epochs_run": 40,
+    "epoch_budget_source": "median CV best epoch (cv_best_epochs.json)",
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "Genuine (benign)",
+        "precision_pct": 95.5,
+        "recall_pct": 96.3,
+        "f1_pct": 95.9,
+        "support": 633513
+      },
+      {
+        "class_id": 1,
+        "class_name": "Constant Position",
+        "precision_pct": 87.6,
+        "recall_pct": 95.7,
+        "f1_pct": 91.5,
+        "support": 14550
+      },
+      {
+        "class_id": 2,
+        "class_name": "Constant Position Offset",
+        "precision_pct": 47.1,
+        "recall_pct": 57.7,
+        "f1_pct": 51.9,
+        "support": 14522
+      },
+      {
+        "class_id": 3,
+        "class_name": "Random Position",
+        "precision_pct": 90.8,
+        "recall_pct": 96.4,
+        "f1_pct": 93.5,
+        "support": 14619
+      },
+      {
+        "class_id": 4,
+        "class_name": "Random Position Offset",
+        "precision_pct": 87.3,
+        "recall_pct": 84.1,
+        "f1_pct": 85.7,
+        "support": 14193
+      },
+      {
+        "class_id": 5,
+        "class_name": "Constant Speed",
+        "precision_pct": 90.7,
+        "recall_pct": 97.9,
+        "f1_pct": 94.2,
+        "support": 13974
+      },
+      {
+        "class_id": 6,
+        "class_name": "Constant Speed Offset",
+        "precision_pct": 90.8,
+        "recall_pct": 90.6,
+        "f1_pct": 90.7,
+        "support": 14786
+      },
+      {
+        "class_id": 7,
+        "class_name": "Random Speed",
+        "precision_pct": 89.0,
+        "recall_pct": 94.0,
+        "f1_pct": 91.4,
+        "support": 14087
+      },
+      {
+        "class_id": 8,
+        "class_name": "Random Speed Offset",
+        "precision_pct": 81.1,
+        "recall_pct": 83.2,
+        "f1_pct": 82.2,
+        "support": 14192
+      },
+      {
+        "class_id": 9,
+        "class_name": "Eventual Stop",
+        "precision_pct": 45.6,
+        "recall_pct": 67.2,
+        "f1_pct": 54.3,
+        "support": 14264
+      },
+      {
+        "class_id": 10,
+        "class_name": "Disruptive",
+        "precision_pct": 46.5,
+        "recall_pct": 68.6,
+        "f1_pct": 55.4,
+        "support": 14420
+      },
+      {
+        "class_id": 11,
+        "class_name": "Data Replay",
+        "precision_pct": 38.2,
+        "recall_pct": 13.2,
+        "f1_pct": 19.6,
+        "support": 14780
+      },
+      {
+        "class_id": 12,
+        "class_name": "Delayed Messages",
+        "precision_pct": 85.4,
+        "recall_pct": 51.9,
+        "f1_pct": 64.6,
+        "support": 14372
+      },
+      {
+        "class_id": 13,
+        "class_name": "DoS",
+        "precision_pct": 88.2,
+        "recall_pct": 98.4,
+        "f1_pct": 93.1,
+        "support": 43773
+      },
+      {
+        "class_id": 14,
+        "class_name": "DoS Random",
+        "precision_pct": 85.8,
+        "recall_pct": 60.1,
+        "f1_pct": 70.7,
+        "support": 42240
+      },
+      {
+        "class_id": 15,
+        "class_name": "DoS Disruptive",
+        "precision_pct": 96.2,
+        "recall_pct": 56.6,
+        "f1_pct": 71.2,
+        "support": 43094
+      },
+      {
+        "class_id": 16,
+        "class_name": "Grid Sybil",
+        "precision_pct": 95.4,
+        "recall_pct": 90.8,
+        "f1_pct": 93.1,
+        "support": 58468
+      },
+      {
+        "class_id": 17,
+        "class_name": "Data Replay Sybil",
+        "precision_pct": 29.7,
+        "recall_pct": 12.7,
+        "f1_pct": 17.8,
+        "support": 14768
+      },
+      {
+        "class_id": 18,
+        "class_name": "DoS Random Sybil",
+        "precision_pct": 58.7,
+        "recall_pct": 96.8,
+        "f1_pct": 73.1,
+        "support": 28961
+      },
+      {
+        "class_id": 19,
+        "class_name": "DoS Disruptive Sybil",
+        "precision_pct": 60.4,
+        "recall_pct": 76.3,
+        "f1_pct": 67.5,
+        "support": 27365
+      }
+    ],
+    "weighted_precision": 0.8843484439549444,
+    "weighted_recall": 0.8791087956985411,
+    "weighted_f1": 0.8745241946624404,
+    "binary_view": {
+      "TN_benign_correct": 610108,
+      "FP_benign_flagged": 23405,
+      "FN_attack_missed_as_benign": 28513,
+      "TP_attack_flagged": 402915
+    },
+    "false_alarm_rate_pct": 3.694,
+    "attack_miss_rate_pct": 6.609
+  },
+  "lgbm": {
+    "model": "lgbm",
+    "val_accuracy": 0.8144169489201749,
+    "val_macro_precision": 0.6080407022113606,
+    "val_macro_recall": 0.647599776469204,
+    "val_macro_f1": 0.6249579291613908,
+    "model_size": 8000,
+    "elapsed_sec": 861.4690933227539,
+    "epoch_budget_source": null,
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_name": "Genuine (benign)",
+        "precision_pct": 93.6,
+        "recall_pct": 90.9,
+        "f1_pct": 92.2,
+        "support": 633513
+      },
+      {
+        "class_id": 1,
+        "class_name": "Constant Position",
+        "precision_pct": 78.4,
+        "recall_pct": 87.5,
+        "f1_pct": 82.7,
+        "support": 14550
+      },
+      {
+        "class_id": 2,
+        "class_name": "Constant Position Offset",
+        "precision_pct": 33.5,
+        "recall_pct": 31.4,
+        "f1_pct": 32.4,
+        "support": 14522
+      },
+      {
+        "class_id": 3,
+        "class_name": "Random Position",
+        "precision_pct": 84.5,
+        "recall_pct": 88.0,
+        "f1_pct": 86.2,
+        "support": 14619
+      },
+      {
+        "class_id": 4,
+        "class_name": "Random Position Offset",
+        "precision_pct": 68.7,
+        "recall_pct": 72.4,
+        "f1_pct": 70.5,
+        "support": 14193
+      },
+      {
+        "class_id": 5,
+        "class_name": "Constant Speed",
+        "precision_pct": 59.6,
+        "recall_pct": 68.7,
+        "f1_pct": 63.8,
+        "support": 13974
+      },
+      {
+        "class_id": 6,
+        "class_name": "Constant Speed Offset",
+        "precision_pct": 58.0,
+        "recall_pct": 68.2,
+        "f1_pct": 62.7,
+        "support": 14786
+      },
+      {
+        "class_id": 7,
+        "class_name": "Random Speed",
+        "precision_pct": 84.1,
+        "recall_pct": 89.5,
+        "f1_pct": 86.7,
+        "support": 14087
+      },
+      {
+        "class_id": 8,
+        "class_name": "Random Speed Offset",
+        "precision_pct": 56.3,
+        "recall_pct": 66.5,
+        "f1_pct": 61.0,
+        "support": 14192
+      },
+      {
+        "class_id": 9,
+        "class_name": "Eventual Stop",
+        "precision_pct": 51.3,
+        "recall_pct": 65.9,
+        "f1_pct": 57.7,
+        "support": 14264
+      },
+      {
+        "class_id": 10,
+        "class_name": "Disruptive",
+        "precision_pct": 42.1,
+        "recall_pct": 52.0,
+        "f1_pct": 46.6,
+        "support": 14420
+      },
+      {
+        "class_id": 11,
+        "class_name": "Data Replay",
+        "precision_pct": 14.5,
+        "recall_pct": 14.0,
+        "f1_pct": 14.2,
+        "support": 14780
+      },
+      {
+        "class_id": 12,
+        "class_name": "Delayed Messages",
+        "precision_pct": 42.7,
+        "recall_pct": 52.9,
+        "f1_pct": 47.2,
+        "support": 14372
+      },
+      {
+        "class_id": 13,
+        "class_name": "DoS",
+        "precision_pct": 87.9,
+        "recall_pct": 86.5,
+        "f1_pct": 87.2,
+        "support": 43773
+      },
+      {
+        "class_id": 14,
+        "class_name": "DoS Random",
+        "precision_pct": 73.8,
+        "recall_pct": 64.3,
+        "f1_pct": 68.7,
+        "support": 42240
+      },
+      {
+        "class_id": 15,
+        "class_name": "DoS Disruptive",
+        "precision_pct": 72.4,
+        "recall_pct": 59.6,
+        "f1_pct": 65.4,
+        "support": 43094
+      },
+      {
+        "class_id": 16,
+        "class_name": "Grid Sybil",
+        "precision_pct": 91.2,
+        "recall_pct": 89.2,
+        "f1_pct": 90.2,
+        "support": 58468
+      },
+      {
+        "class_id": 17,
+        "class_name": "Data Replay Sybil",
+        "precision_pct": 10.7,
+        "recall_pct": 11.6,
+        "f1_pct": 11.2,
+        "support": 14768
+      },
+      {
+        "class_id": 18,
+        "class_name": "DoS Random Sybil",
+        "precision_pct": 58.5,
+        "recall_pct": 73.2,
+        "f1_pct": 65.0,
+        "support": 28961
+      },
+      {
+        "class_id": 19,
+        "class_name": "DoS Disruptive Sybil",
+        "precision_pct": 54.3,
+        "recall_pct": 63.1,
+        "f1_pct": 58.4,
+        "support": 27365
+      }
+    ],
+    "weighted_precision": 0.8237805757432938,
+    "weighted_recall": 0.8144169489201749,
+    "weighted_f1": 0.8177978582730846,
+    "binary_view": {
+      "TN_benign_correct": 575552,
+      "FP_benign_flagged": 57961,
+      "FN_attack_missed_as_benign": 39383,
+      "TP_attack_flagged": 392045
+    },
+    "false_alarm_rate_pct": 9.149,
+    "attack_miss_rate_pct": 9.129
+  }
+}

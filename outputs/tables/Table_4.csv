@@ -1,0 +1,23 @@
+ID,Class,Type,Precision (%),Recall (%),F1 (%),Messages,Classified as genuine (%),Most frequent other class (%)
+0,Genuine (benign),Genuine,95.5,96.3,95.9,"633,513",-,Eventual Stop (1.7)
+1,Constant Position,Fault,87.6,95.7,91.5,"14,550",1.5,Genuine (benign) (1.5)
+2,Constant Position Offset,Fault,47.1,57.7,51.9,"14,522",36.4,Genuine (benign) (36.4)
+3,Random Position,Fault,90.8,96.4,93.5,"14,619",0.2,Disruptive (2.3)
+4,Random Position Offset,Fault,87.3,84.1,85.7,"14,193",8.3,Genuine (benign) (8.3)
+5,Constant Speed,Fault,90.7,97.9,94.2,"13,974",0.7,Constant Speed Offset (1.1)
+6,Constant Speed Offset,Fault,90.8,90.6,90.7,"14,786",0.8,Constant Speed (5.9)
+7,Random Speed,Fault,89.0,94.0,91.4,"14,087",0.2,Random Speed Offset (3.8)
+8,Random Speed Offset,Fault,81.1,83.2,82.2,"14,192",5.4,Random Speed (6.2)
+9,Eventual Stop,Attack,45.6,67.2,54.3,"14,264",30.7,Genuine (benign) (30.7)
+10,Disruptive,Attack,46.5,68.6,55.4,"14,420",4.2,Data Replay Sybil (11.6)
+11,Data Replay,Attack,38.2,13.2,19.6,"14,780",27.5,Disruptive (33.2)
+12,Delayed Messages,Fault,85.4,51.9,64.6,"14,372",46.5,Genuine (benign) (46.5)
+13,DoS,Attack,88.2,98.4,93.1,"43,773",0.7,-
+14,DoS Random,Attack,85.8,60.1,70.7,"42,240",0.0,DoS Random Sybil (37.7)
+15,DoS Disruptive,Attack,96.2,56.6,71.2,"43,094",0.2,DoS Disruptive Sybil (22.0)
+16,Grid Sybil,Attack,95.4,90.8,93.1,"58,468",0.3,DoS Disruptive Sybil (6.1)
+17,Data Replay Sybil,Attack,29.7,12.7,17.8,"14,768",29.5,Disruptive (33.9)
+18,DoS Random Sybil,Attack,58.7,96.8,73.1,"28,961",0.0,DoS Random (1.5)
+19,DoS Disruptive Sybil,Attack,60.4,76.3,67.5,"27,365",0.3,DoS Random Sybil (9.3)
+,Macro average,,74.5,74.4,72.9,,,
+,Weighted average,,88.4,87.9,87.5,,,

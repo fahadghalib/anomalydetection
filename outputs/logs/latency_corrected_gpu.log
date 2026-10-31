@@ -1,0 +1,9 @@
+host=WSL2 (Ubuntu) on Windows 11  device=GPU: NVIDIA GeForce RTX 4060 Laptop GPU (8GB)  tag=corrected_gpu  power throttling: not applicable
+  model final_cnn.keras: trainable 140,373, total 140,949, weights 0.538 MB
+eager: 50 warm-up + 300 timed calls ...
+  median 485.288 ms
+graph: 50 warm-up + 300 timed calls ...
+  median 93.430 ms
+batch of 4096: 148.7 ms -> 0.0363 ms/message
+saved -> /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/latency_benchmark_corrected_gpu.json
+3] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.

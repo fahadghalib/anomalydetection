@@ -1,0 +1,180 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793392418.275017     453 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1793392422.630888     453 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+corrected dataset: (3194808, 28), 24,663 senders, features=['posx', 'posy', 'posz', 'posx_n', 'posy_n', 'posz_n', 'spdx', 'spdy', 'spdz', 'spdx_n', 'spdy_n', 'spdz_n', 'aclx', 'acly', 'aclz', 'aclx_n', 'acly_n', 'aclz_n', 'hedx', 'hedy', 'hedz', 'hedx_n', 'hedy_n', 'hedz_n', 'dt_prev', 'pos_delta', 'spd_delta', 'msg_rate_5s']
+development: 2,129,867 rows / 16,441 senders; held-out test: 1,064,941 rows / 8,222 senders
+  reusing cached preprocessing: holdout_dev.npz (2,408,688 train rows)
+
+--- mlp_cap | held-out test (fixed 18 epochs from CV) ---
+Epoch 1/18
+589/589 - 30s - 51ms/step - accuracy: 0.7383 - loss: 0.5253
+Epoch 2/18
+589/589 - 4s - 6ms/step - accuracy: 0.8183 - loss: 0.3295
+Epoch 3/18
+589/589 - 3s - 4ms/step - accuracy: 0.8287 - loss: 0.2946
+Epoch 4/18
+589/589 - 2s - 4ms/step - accuracy: 0.8358 - loss: 0.2746
+Epoch 5/18
+589/589 - 2s - 4ms/step - accuracy: 0.8406 - loss: 0.2629
+Epoch 6/18
+589/589 - 3s - 4ms/step - accuracy: 0.8435 - loss: 0.2550
+Epoch 7/18
+589/589 - 3s - 4ms/step - accuracy: 0.8451 - loss: 0.2486
+Epoch 8/18
+589/589 - 2s - 4ms/step - accuracy: 0.8468 - loss: 0.2436
+Epoch 9/18
+589/589 - 3s - 4ms/step - accuracy: 0.8480 - loss: 0.2391
+Epoch 10/18
+589/589 - 3s - 4ms/step - accuracy: 0.8491 - loss: 0.2355
+Epoch 11/18
+589/589 - 2s - 4ms/step - accuracy: 0.8501 - loss: 0.2320
+Epoch 12/18
+589/589 - 3s - 4ms/step - accuracy: 0.8511 - loss: 0.2293
+Epoch 13/18
+589/589 - 3s - 4ms/step - accuracy: 0.8519 - loss: 0.2270
+Epoch 14/18
+589/589 - 2s - 4ms/step - accuracy: 0.8527 - loss: 0.2245
+Epoch 15/18
+589/589 - 2s - 4ms/step - accuracy: 0.8531 - loss: 0.2227
+Epoch 16/18
+589/589 - 2s - 4ms/step - accuracy: 0.8539 - loss: 0.2211
+Epoch 17/18
+589/589 - 2s - 4ms/step - accuracy: 0.8541 - loss: 0.2202
+Epoch 18/18
+589/589 - 2s - 4ms/step - accuracy: 0.8543 - loss: 0.2194
+  mlp_cap TEST: acc=0.8995 macro_f1=0.7565 macro_recall=0.7599
+  FAR=1.081%  attacks missed as benign=6.68%
+
+--- mlp_matched | held-out test (fixed 19 epochs from CV) ---
+Epoch 1/19
+589/589 - 31s - 53ms/step - accuracy: 0.7302 - loss: 0.5436
+Epoch 2/19
+589/589 - 4s - 7ms/step - accuracy: 0.8143 - loss: 0.3373
+Epoch 3/19
+589/589 - 3s - 5ms/step - accuracy: 0.8258 - loss: 0.2994
+Epoch 4/19
+589/589 - 3s - 5ms/step - accuracy: 0.8322 - loss: 0.2800
+Epoch 5/19
+589/589 - 3s - 5ms/step - accuracy: 0.8371 - loss: 0.2683
+Epoch 6/19
+589/589 - 3s - 5ms/step - accuracy: 0.8408 - loss: 0.2601
+Epoch 7/19
+589/589 - 3s - 5ms/step - accuracy: 0.8426 - loss: 0.2544
+Epoch 8/19
+589/589 - 3s - 6ms/step - accuracy: 0.8445 - loss: 0.2494
+Epoch 9/19
+589/589 - 3s - 5ms/step - accuracy: 0.8458 - loss: 0.2452
+Epoch 10/19
+589/589 - 3s - 5ms/step - accuracy: 0.8467 - loss: 0.2418
+Epoch 11/19
+589/589 - 3s - 5ms/step - accuracy: 0.8479 - loss: 0.2389
+Epoch 12/19
+589/589 - 3s - 5ms/step - accuracy: 0.8486 - loss: 0.2358
+Epoch 13/19
+589/589 - 3s - 5ms/step - accuracy: 0.8496 - loss: 0.2335
+Epoch 14/19
+589/589 - 2s - 4ms/step - accuracy: 0.8499 - loss: 0.2313
+Epoch 15/19
+589/589 - 3s - 5ms/step - accuracy: 0.8506 - loss: 0.2294
+Epoch 16/19
+589/589 - 3s - 5ms/step - accuracy: 0.8509 - loss: 0.2283
+Epoch 17/19
+589/589 - 3s - 5ms/step - accuracy: 0.8516 - loss: 0.2273
+Epoch 18/19
+589/589 - 3s - 5ms/step - accuracy: 0.8518 - loss: 0.2267
+Epoch 19/19
+589/589 - 3s - 5ms/step - accuracy: 0.8519 - loss: 0.2262
+  mlp_matched TEST: acc=0.8994 macro_f1=0.7555 macro_recall=0.7589
+  FAR=1.034%  attacks missed as benign=6.729%
+
+--- cnn | held-out test (fixed 40 epochs from CV) ---
+Epoch 1/40
+589/589 - 293s - 498ms/step - accuracy: 0.7315 - loss: 0.6010
+Epoch 2/40
+589/589 - 302s - 513ms/step - accuracy: 0.7858 - loss: 0.4010
+Epoch 3/40
+589/589 - 274s - 465ms/step - accuracy: 0.8010 - loss: 0.3580
+Epoch 4/40
+589/589 - 276s - 468ms/step - accuracy: 0.8093 - loss: 0.3331
+Epoch 5/40
+589/589 - 282s - 478ms/step - accuracy: 0.8153 - loss: 0.3177
+Epoch 6/40
+589/589 - 289s - 490ms/step - accuracy: 0.8191 - loss: 0.3075
+Epoch 7/40
+589/589 - 292s - 495ms/step - accuracy: 0.8222 - loss: 0.3005
+Epoch 8/40
+589/589 - 297s - 504ms/step - accuracy: 0.8247 - loss: 0.2938
+Epoch 9/40
+589/589 - 298s - 505ms/step - accuracy: 0.8263 - loss: 0.2893
+Epoch 10/40
+589/589 - 300s - 510ms/step - accuracy: 0.8275 - loss: 0.2849
+Epoch 11/40
+589/589 - 298s - 506ms/step - accuracy: 0.8290 - loss: 0.2815
+Epoch 12/40
+589/589 - 293s - 498ms/step - accuracy: 0.8303 - loss: 0.2780
+Epoch 13/40
+589/589 - 268s - 454ms/step - accuracy: 0.8307 - loss: 0.2757
+Epoch 14/40
+589/589 - 268s - 455ms/step - accuracy: 0.8317 - loss: 0.2734
+Epoch 15/40
+589/589 - 266s - 451ms/step - accuracy: 0.8327 - loss: 0.2717
+Epoch 16/40
+589/589 - 265s - 450ms/step - accuracy: 0.8332 - loss: 0.2702
+Epoch 17/40
+589/589 - 266s - 452ms/step - accuracy: 0.8337 - loss: 0.2691
+Epoch 18/40
+589/589 - 267s - 453ms/step - accuracy: 0.8339 - loss: 0.2685
+Epoch 19/40
+589/589 - 294s - 500ms/step - accuracy: 0.8343 - loss: 0.2681
+Epoch 20/40
+589/589 - 268s - 454ms/step - accuracy: 0.8344 - loss: 0.2681
+Epoch 21/40
+589/589 - 269s - 457ms/step - accuracy: 0.8295 - loss: 0.2757
+Epoch 22/40
+589/589 - 266s - 452ms/step - accuracy: 0.8316 - loss: 0.2717
+Epoch 23/40
+589/589 - 266s - 452ms/step - accuracy: 0.8328 - loss: 0.2684
+Epoch 24/40
+589/589 - 266s - 452ms/step - accuracy: 0.8342 - loss: 0.2647
+Epoch 25/40
+589/589 - 268s - 454ms/step - accuracy: 0.8352 - loss: 0.2625
+Epoch 26/40
+589/589 - 266s - 452ms/step - accuracy: 0.8363 - loss: 0.2601
+Epoch 27/40
+589/589 - 270s - 458ms/step - accuracy: 0.8374 - loss: 0.2576
+Epoch 28/40
+589/589 - 266s - 452ms/step - accuracy: 0.8382 - loss: 0.2554
+Epoch 29/40
+589/589 - 265s - 450ms/step - accuracy: 0.8390 - loss: 0.2539
+Epoch 30/40
+589/589 - 266s - 452ms/step - accuracy: 0.8396 - loss: 0.2530
+Epoch 31/40
+589/589 - 266s - 451ms/step - accuracy: 0.8404 - loss: 0.2502
+Epoch 32/40
+589/589 - 267s - 453ms/step - accuracy: 0.8411 - loss: 0.2487
+Epoch 33/40
+589/589 - 268s - 454ms/step - accuracy: 0.8418 - loss: 0.2478
+Epoch 34/40
+589/589 - 266s - 452ms/step - accuracy: 0.8422 - loss: 0.2461
+Epoch 35/40
+589/589 - 267s - 454ms/step - accuracy: 0.8427 - loss: 0.2448
+Epoch 36/40
+589/589 - 269s - 456ms/step - accuracy: 0.8432 - loss: 0.2434
+Epoch 37/40
+589/589 - 266s - 451ms/step - accuracy: 0.8440 - loss: 0.2423
+Epoch 38/40
+589/589 - 268s - 455ms/step - accuracy: 0.8442 - loss: 0.2415
+Epoch 39/40
+589/589 - 266s - 452ms/step - accuracy: 0.8444 - loss: 0.2411
+Epoch 40/40
+589/589 - 268s - 455ms/step - accuracy: 0.8455 - loss: 0.2388
+  cnn TEST: acc=0.8791 macro_f1=0.7286 macro_recall=0.7443
+  FAR=3.694%  attacks missed as benign=6.609%
+
+--- lgbm | held-out test (400 boosting rounds) ---
+  lgbm TEST: acc=0.8144 macro_f1=0.6250 macro_recall=0.6476
+  FAR=9.149%  attacks missed as benign=9.129%
+
+saved -> /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/corrected_protocol_holdout.json
+EXIT=0

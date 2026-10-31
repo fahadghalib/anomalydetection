@@ -1,0 +1,8 @@
+Finding,Value (training / test file)
+Senders whose messages carry a single class label,100.0% / 100.0%
+Pseudonyms whose messages carry a single class label,100.0% / 100.0%
+Test-file senders that also occur in the training file,99.923%
+Test-file pseudonyms that also occur in the training file,83.052%
+Validation messages whose sender occurs in training (row-level 5-fold split),99.994%-99.997%
+Sender-to-class lookup accuracy on the test file (no model),99.999%
+Pseudonym-to-class lookup accuracy on the test file,98.289%

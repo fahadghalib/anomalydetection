@@ -1,0 +1,10 @@
+host=WSL2 (Ubuntu) on Windows 11  device=CPU only  tag=corrected_wsl2_cpu  power throttling: not applicable
+  model final_cnn.keras: trainable 140,373, total 140,949, weights 0.538 MB
+eager: 50 warm-up + 300 timed calls ...
+  median 260.867 ms
+graph: 50 warm-up + 300 timed calls ...
+  median 6.174 ms
+batch of 4096: 464.4 ms -> 0.1134 ms/message
+saved -> /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/latency_benchmark_corrected_wsl2_cpu.json
+23.882981    1017 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+E0000 00:00:1793408025.705953    1017 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected

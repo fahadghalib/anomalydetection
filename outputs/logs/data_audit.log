@@ -1,0 +1,47 @@
+
+======================================================================
+train: /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/data/VeReMi_train_data.csv
+======================================================================
+  raw records: 2,236,367
+  exact duplicate rows: 0
+  rows with NaN/inf: 0
+  rows after cleaning: 2,236,367
+  'type' unique values: [4]
+  unique senders: 24,644  (100.0% carry exactly one class)
+  unique senderPseudo: 106,510  (100.0% class-pure)
+
+======================================================================
+test: /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/data/VeReMi_test_data.csv
+======================================================================
+  raw records: 958,441
+  exact duplicate rows: 0
+  rows with NaN/inf: 0
+  rows after cleaning: 958,441
+  'type' unique values: [4]
+  unique senders: 24,553  (100.0% carry exactly one class)
+  unique senderPseudo: 73,157  (100.0% class-pure)
+
+======================================================================
+TRAIN <-> TEST IDENTIFIER OVERLAP
+======================================================================
+  sender: 24,534 shared (99.923% of test sender values also occur in train)
+  senderPseudo: 60,758 shared (83.052% of test senderPseudo values also occur in train)
+  messageID: 0 shared (0.0% of test messageID values also occur in train)
+
+======================================================================
+ROW-LEVEL StratifiedKFold LEAKAGE (n_splits=5, shuffle=True, seed=42)
+======================================================================
+  fold 1: 24373/24388 validation senders (99.938%) also appear in training; 99.995% of validation rows
+  fold 2: 24369/24385 validation senders (99.934%) also appear in training; 99.995% of validation rows
+  fold 3: 24379/24400 validation senders (99.914%) also appear in training; 99.994% of validation rows
+  fold 4: 24364/24374 validation senders (99.959%) also appear in training; 99.997% of validation rows
+  fold 5: 24381/24400 validation senders (99.922%) also appear in training; 99.994% of validation rows
+
+======================================================================
+DATA-FLOW SUMMARY
+======================================================================
+  public dataset reported instances : 3,194,808
+  train raw + test raw              : 3,194,808  (MATCHES)
+  combined after cleaning           : 3,194,808
+
+  saved -> /mnt/d/Network Traffic Anomaly Detection journal/anomalycode/outputs/results/data_audit.json

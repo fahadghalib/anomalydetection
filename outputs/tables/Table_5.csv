@@ -1,0 +1,6 @@
+Configuration,Parameters,Accuracy,Macro precision,Macro recall,Macro F1,Training time per fold (min)
+Proposed (CNN-BiGRU-attention),"140,373",86.76 ± 0.50,72.24 ± 0.51,74.61 ± 0.47,71.86 ± 0.36,151.4
+"Proposed, permuted column order","140,373",86.10 ± 0.60,70.50 ± 0.84,72.44 ± 0.46,69.90 ± 0.35,152.9
+"Feed-forward, capacity-matched","142,596",89.38 ± 0.29,77.16 ± 0.71,75.50 ± 0.30,74.45 ± 0.45,1.7
+"Feed-forward, reduced capacity","106,868",89.42 ± 0.11,77.47 ± 0.39,75.47 ± 0.51,74.47 ± 0.38,1.9
+Gradient-boosted trees (LightGBM),400 rounds,79.80 ± 3.75,58.79 ± 5.65,63.38 ± 3.51,60.54 ± 4.53,11.8

@@ -1,0 +1,7 @@
+### Table 9. Single-message latency and batched throughput of the proposed model
+
+| Platform | Eager median (ms) | Eager p95 (ms) | Graph median (ms) | Graph p95 (ms) | Batched (ms/msg) |
+|---|---|---|---|---|---|
+| GPU, WSL2 | 485 | 536 | 93.43 | 104.43 | 0.0363 |
+| CPU, WSL2 | 261 | 275 | 6.17 | 7.48 | 0.1134 |
+| CPU, native Windows | 289 | 316 | 3.98 | 4.65 | 0.1021 |

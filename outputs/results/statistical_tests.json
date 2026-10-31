@@ -1,0 +1,792 @@
+{
+  "n_train_per_fold_mean": 2069617.2,
+  "n_validation_per_fold_mean": 425973.4,
+  "paired_comparisons": {
+    "cnn_permuted_vs_cnn": {
+      "val_accuracy": {
+        "baseline_per_fold": [
+          0.8736838892788477,
+          0.8666051608541326,
+          0.8717022325515882,
+          0.8614496155877692,
+          0.8646141205469805
+        ],
+        "compared_per_fold": [
+          0.8597369304483169,
+          0.866250680789528,
+          0.8553419254877104,
+          0.8554727390105054,
+          0.8680861552908035
+        ],
+        "paired_differences": [
+          -0.013946958830530765,
+          -0.0003544800646045898,
+          -0.01636030706387781,
+          -0.005976876577263868,
+          0.0034720347438229604
+        ],
+        "mean_difference": -0.006633317558490814,
+        "sd_of_differences": 0.008515816662016904,
+        "ci95_of_mean_difference": [
+          -0.017207100523020977,
+          0.003940465406039347
+        ],
+        "folds_with_same_sign": 4,
+        "paired_t_test": {
+          "t_statistic": -1.741764714508946,
+          "degrees_of_freedom": 4,
+          "p_value": 0.15651489738569319
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": -1.2227467716761866,
+          "degrees_of_freedom": 4,
+          "p_value": 0.28854084805745445,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": -0.7789408604905035,
+        "wilcoxon_signed_rank": {
+          "statistic": 2.0,
+          "p_value": 0.1875
+        }
+      },
+      "val_macro_precision": {
+        "baseline_per_fold": [
+          0.7253042478789652,
+          0.7242310586026053,
+          0.7249157121531067,
+          0.7133988608252416,
+          0.724199580107613
+        ],
+        "compared_per_fold": [
+          0.7048912423532006,
+          0.7121344143609761,
+          0.7004507976448955,
+          0.6936013716212249,
+          0.7140050876823527
+        ],
+        "paired_differences": [
+          -0.020413005525764638,
+          -0.01209664424162915,
+          -0.0244649145082112,
+          -0.019797489204016694,
+          -0.010194492425260271
+        ],
+        "mean_difference": -0.01739330918097639,
+        "sd_of_differences": 0.006016308495750919,
+        "ci95_of_mean_difference": [
+          -0.024863542842237765,
+          -0.009923075519715014
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": -6.464532480307936,
+          "degrees_of_freedom": 4,
+          "p_value": 0.002949257908145589
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": -4.538205507809293,
+          "degrees_of_freedom": 4,
+          "p_value": 0.010511452248674443,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": -2.891026813744773,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      },
+      "val_macro_recall": {
+        "baseline_per_fold": [
+          0.7412413464533386,
+          0.7517451550438128,
+          0.7427642648864096,
+          0.7443925521030723,
+          0.7503432412266593
+        ],
+        "compared_per_fold": [
+          0.7263390461295167,
+          0.7172017488214457,
+          0.7246237452338943,
+          0.729830449969634,
+          0.7237779193498062
+        ],
+        "paired_differences": [
+          -0.014902300323821893,
+          -0.03454340622236707,
+          -0.018140519652515286,
+          -0.014562102133438337,
+          -0.02656532187685312
+        ],
+        "mean_difference": -0.021742730041799142,
+        "sd_of_differences": 0.008637758943453871,
+        "ci95_of_mean_difference": [
+          -0.03246792434704842,
+          -0.011017535736549866
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": -5.628569019830667,
+          "degrees_of_freedom": 4,
+          "p_value": 0.004900956961949253
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": -3.9513457476918,
+          "degrees_of_freedom": 4,
+          "p_value": 0.016799035937379563,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": -2.517172588878146,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      },
+      "val_macro_f1": {
+        "baseline_per_fold": [
+          0.720739961650809,
+          0.717535104415814,
+          0.7208010638685244,
+          0.7127120722605527,
+          0.7213806615375742
+        ],
+        "compared_per_fold": [
+          0.7009279009127132,
+          0.6974466476443381,
+          0.6965463300360077,
+          0.6958596203398206,
+          0.7042350866159104
+        ],
+        "paired_differences": [
+          -0.019812060738095827,
+          -0.02008845677147597,
+          -0.02425473383251664,
+          -0.016852451920732037,
+          -0.017145574921663798
+        ],
+        "mean_difference": -0.019630655636896855,
+        "sd_of_differences": 0.0029798754545494223,
+        "ci95_of_mean_difference": [
+          -0.02333065970794196,
+          -0.01593065156585175
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": -14.730642644804124,
+          "degrees_of_freedom": 4,
+          "p_value": 0.00012360557133536722
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": -10.341147451553391,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0004934871257483026,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": -6.587743661207862,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      }
+    },
+    "mlp_cap_vs_cnn": {
+      "val_accuracy": {
+        "baseline_per_fold": [
+          0.8736838892788477,
+          0.8666051608541326,
+          0.8717022325515882,
+          0.8614496155877692,
+          0.8646141205469805
+        ],
+        "compared_per_fold": [
+          0.8963121902664736,
+          0.8935010423122429,
+          0.8899194778975045,
+          0.8923058864956863,
+          0.8971113328246962
+        ],
+        "paired_differences": [
+          0.022628300987625916,
+          0.026895881458110282,
+          0.01821724534591629,
+          0.030856270907917094,
+          0.03249721227771574
+        ],
+        "mean_difference": 0.026218982195457062,
+        "sd_of_differences": 0.005880042438746465,
+        "ci95_of_mean_difference": [
+          0.0189179451913553,
+          0.033520019199558826
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": 9.970578801196059,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0005684507490196129
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": 6.999506270479613,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0021927093440903883,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": 4.4589783948985495,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      },
+      "val_macro_precision": {
+        "baseline_per_fold": [
+          0.7253042478789652,
+          0.7242310586026053,
+          0.7249157121531067,
+          0.7133988608252416,
+          0.724199580107613
+        ],
+        "compared_per_fold": [
+          0.7754693918565636,
+          0.775661556824301,
+          0.7622457402617804,
+          0.7657734155584792,
+          0.7787137857363802
+        ],
+        "paired_differences": [
+          0.050165143977598414,
+          0.051430498221695764,
+          0.037330028108673696,
+          0.0523745547332376,
+          0.05451420562876719
+        ],
+        "mean_difference": 0.049162886133994534,
+        "sd_of_differences": 0.006802840398305177,
+        "ci95_of_mean_difference": [
+          0.040716044125892824,
+          0.05760972814209624
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": 16.159655221821957,
+          "degrees_of_freedom": 4,
+          "p_value": 8.57859336680319e-05
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": 11.344337205415089,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0003442433943270535,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": 7.226817513790667,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      },
+      "val_macro_recall": {
+        "baseline_per_fold": [
+          0.7412413464533386,
+          0.7517451550438128,
+          0.7427642648864096,
+          0.7443925521030723,
+          0.7503432412266593
+        ],
+        "compared_per_fold": [
+          0.7556184343085937,
+          0.7534273120146306,
+          0.7508400272861862,
+          0.7561804084118238,
+          0.7589514604796431
+        ],
+        "paired_differences": [
+          0.014377087855255044,
+          0.0016821569708178608,
+          0.008075762399776587,
+          0.011787856308751454,
+          0.008608219252983829
+        ],
+        "mean_difference": 0.008906216557516954,
+        "sd_of_differences": 0.004774928633657932,
+        "ci95_of_mean_difference": [
+          0.0029773595791115987,
+          0.01483507353592231
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": 4.170723202973999,
+          "degrees_of_freedom": 4,
+          "p_value": 0.014022988789581898
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": 2.927914596908795,
+          "degrees_of_freedom": 4,
+          "p_value": 0.04290300075256882,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": 1.8652041194371034,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      },
+      "val_macro_f1": {
+        "baseline_per_fold": [
+          0.720739961650809,
+          0.717535104415814,
+          0.7208010638685244,
+          0.7127120722605527,
+          0.7213806615375742
+        ],
+        "compared_per_fold": [
+          0.7480420903558183,
+          0.7430840889622216,
+          0.7391663447235965,
+          0.7419810177968473,
+          0.7502049701682203
+        ],
+        "paired_differences": [
+          0.027302128705009254,
+          0.025548984546407527,
+          0.018365280855072164,
+          0.029268945536294666,
+          0.02882430863064611
+        ],
+        "mean_difference": 0.025861929654685943,
+        "sd_of_differences": 0.004437209077360542,
+        "ci95_of_mean_difference": [
+          0.020352406890824407,
+          0.03137145241854748
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": 13.032749128782282,
+          "degrees_of_freedom": 4,
+          "p_value": 0.00020005555117259702
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": 9.149198965014584,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0007921344560277522,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": 5.828422597131668,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      }
+    },
+    "mlp_matched_vs_cnn": {
+      "val_accuracy": {
+        "baseline_per_fold": [
+          0.8736838892788477,
+          0.8666051608541326,
+          0.8717022325515882,
+          0.8614496155877692,
+          0.8646141205469805
+        ],
+        "compared_per_fold": [
+          0.8935397010594618,
+          0.8952663999849757,
+          0.8927107542784704,
+          0.8953060625623569,
+          0.8940219496449322
+        ],
+        "paired_differences": [
+          0.01985581178061413,
+          0.028661239130843064,
+          0.021008521726882168,
+          0.03385644697458767,
+          0.0294078290979517
+        ],
+        "mean_difference": 0.026557969742175745,
+        "sd_of_differences": 0.005948287673717823,
+        "ci95_of_mean_difference": [
+          0.01917219508676109,
+          0.033943744397590396
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": 9.983616957579022,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0005655824009599248
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": 7.00865926542381,
+          "degrees_of_freedom": 4,
+          "p_value": 0.002181996249705945,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": 4.464809235693266,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      },
+      "val_macro_precision": {
+        "baseline_per_fold": [
+          0.7253042478789652,
+          0.7242310586026053,
+          0.7249157121531067,
+          0.7133988608252416,
+          0.724199580107613
+        ],
+        "compared_per_fold": [
+          0.773378775435395,
+          0.7793400499895634,
+          0.7689246839267564,
+          0.7758620516791175,
+          0.7762044059433463
+        ],
+        "paired_differences": [
+          0.048074527556429825,
+          0.05510899138695813,
+          0.04400897177364971,
+          0.06246319085387586,
+          0.05200482583573329
+        ],
+        "mean_difference": 0.052332101481329364,
+        "sd_of_differences": 0.007033111378109121,
+        "ci95_of_mean_difference": [
+          0.04359934028777399,
+          0.061064862674884736
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": 16.638174774523574,
+          "degrees_of_freedom": 4,
+          "p_value": 7.64436582713474e-05
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": 11.680265608014976,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0003071926790085212,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": 7.440817963471389,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      },
+      "val_macro_recall": {
+        "baseline_per_fold": [
+          0.7412413464533386,
+          0.7517451550438128,
+          0.7427642648864096,
+          0.7443925521030723,
+          0.7503432412266593
+        ],
+        "compared_per_fold": [
+          0.7543858260780139,
+          0.7506909595124991,
+          0.7505444461604062,
+          0.7549832408050741,
+          0.7630858352068898
+        ],
+        "paired_differences": [
+          0.013144479624675243,
+          -0.0010541955313136953,
+          0.0077801812739966,
+          0.01059068870200175,
+          0.012742593980230477
+        ],
+        "mean_difference": 0.008640749609918074,
+        "sd_of_differences": 0.0058233047511530855,
+        "ci95_of_mean_difference": [
+          0.0014101617498423454,
+          0.015871337469993804
+        ],
+        "folds_with_same_sign": 4,
+        "paired_t_test": {
+          "t_statistic": 3.3179275909449437,
+          "degrees_of_freedom": 4,
+          "p_value": 0.029435461393138046
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": 2.3292383963737944,
+          "degrees_of_freedom": 4,
+          "p_value": 0.08031907827401331,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": 1.4838223275550022,
+        "wilcoxon_signed_rank": {
+          "statistic": 1.0,
+          "p_value": 0.125
+        }
+      },
+      "val_macro_f1": {
+        "baseline_per_fold": [
+          0.720739961650809,
+          0.717535104415814,
+          0.7208010638685244,
+          0.7127120722605527,
+          0.7213806615375742
+        ],
+        "compared_per_fold": [
+          0.7447372195861022,
+          0.741618915791719,
+          0.7409866038580423,
+          0.7455560675361433,
+          0.7506035354959703
+        ],
+        "paired_differences": [
+          0.02399725793529317,
+          0.024083811375904984,
+          0.020185539989517887,
+          0.032843995275590676,
+          0.029222873958396067
+        ],
+        "mean_difference": 0.026066695706940556,
+        "sd_of_differences": 0.004967284120415967,
+        "ci95_of_mean_difference": [
+          0.01989899784577079,
+          0.03223439356811032
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": 11.734159378956562,
+          "degrees_of_freedom": 4,
+          "p_value": 0.00030171924391506603
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": 8.237568128137257,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0011842639735749792,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": 5.247675606032718,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      }
+    },
+    "lgbm_vs_cnn": {
+      "val_accuracy": {
+        "baseline_per_fold": [
+          0.8736838892788477,
+          0.8666051608541326,
+          0.8717022325515882,
+          0.8614496155877692,
+          0.8646141205469805
+        ],
+        "compared_per_fold": [
+          0.8027846966108021,
+          0.8124354423723402,
+          0.8427001901542363,
+          0.7918469393743764,
+          0.7401349844474441
+        ],
+        "paired_differences": [
+          -0.07089919266804556,
+          -0.05416971848179242,
+          -0.029002042397351935,
+          -0.06960267621339278,
+          -0.12447913609953642
+        ],
+        "mean_difference": -0.06963055317202382,
+        "sd_of_differences": 0.034998894873760684,
+        "ci95_of_mean_difference": [
+          -0.11308742091369083,
+          -0.02617368543035682
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": -4.448673329976742,
+          "degrees_of_freedom": 4,
+          "p_value": 0.011258246762578828
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": -3.1230400450525795,
+          "degrees_of_freedom": 4,
+          "p_value": 0.035422436854949876,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": -1.9895071951036698,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      },
+      "val_macro_precision": {
+        "baseline_per_fold": [
+          0.7253042478789652,
+          0.7242310586026053,
+          0.7249157121531067,
+          0.7133988608252416,
+          0.724199580107613
+        ],
+        "compared_per_fold": [
+          0.5921637862322109,
+          0.6134856050783822,
+          0.6653828654791474,
+          0.5476474197602085,
+          0.5210277514109681
+        ],
+        "paired_differences": [
+          -0.1331404616467543,
+          -0.11074545352422305,
+          -0.059532846673959305,
+          -0.16575144106503314,
+          -0.20317182869664485
+        ],
+        "mean_difference": -0.13446840632132293,
+        "sd_of_differences": 0.05449465234083479,
+        "ci95_of_mean_difference": [
+          -0.2021324542275681,
+          -0.06680435841507776
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": -5.517614746488251,
+          "degrees_of_freedom": 4,
+          "p_value": 0.005266981987369768
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": -3.873454067832293,
+          "degrees_of_freedom": 4,
+          "p_value": 0.017940735457231783,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": -2.4675523293605996,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      },
+      "val_macro_recall": {
+        "baseline_per_fold": [
+          0.7412413464533386,
+          0.7517451550438128,
+          0.7427642648864096,
+          0.7443925521030723,
+          0.7503432412266593
+        ],
+        "compared_per_fold": [
+          0.610249773415515,
+          0.6447823999287622,
+          0.6821767273021119,
+          0.5908028966800931,
+          0.6408857977506253
+        ],
+        "paired_differences": [
+          -0.1309915730378236,
+          -0.1069627551150506,
+          -0.06058753758429769,
+          -0.1535896554229792,
+          -0.10945744347603403
+        ],
+        "mean_difference": -0.11231779292723702,
+        "sd_of_differences": 0.03451432327413011,
+        "ci95_of_mean_difference": [
+          -0.15517298555909073,
+          -0.06946260029538331
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": -7.2766954772163945,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0018950538928082495
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": -5.108356960684861,
+          "degrees_of_freedom": 4,
+          "p_value": 0.0069420937665566045,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": -3.254237147724226,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      },
+      "val_macro_f1": {
+        "baseline_per_fold": [
+          0.720739961650809,
+          0.717535104415814,
+          0.7208010638685244,
+          0.7127120722605527,
+          0.7213806615375742
+        ],
+        "compared_per_fold": [
+          0.5996105291835081,
+          0.6270046642991464,
+          0.671424912827046,
+          0.5637293977398293,
+          0.5654231027855958
+        ],
+        "paired_differences": [
+          -0.1211294324673009,
+          -0.09053044011666767,
+          -0.04937615104147841,
+          -0.14898267452072333,
+          -0.15595755875197836
+        ],
+        "mean_difference": -0.11319525137962974,
+        "sd_of_differences": 0.04404224407876936,
+        "ci95_of_mean_difference": [
+          -0.16788092025234067,
+          -0.05850958250691882
+        ],
+        "folds_with_same_sign": 5,
+        "paired_t_test": {
+          "t_statistic": -5.747034060352119,
+          "degrees_of_freedom": 4,
+          "p_value": 0.004543938527024511
+        },
+        "corrected_resampled_t_test": {
+          "t_statistic": -4.034510106601742,
+          "degrees_of_freedom": 4,
+          "p_value": 0.015674972820377484,
+          "variance_correction_factor": 0.405822313421052
+        },
+        "cohens_d_paired": -2.5701517655907935,
+        "wilcoxon_signed_rank": {
+          "statistic": 0.0,
+          "p_value": 0.0625
+        }
+      }
+    }
+  },
+  "held_out_binary_view": {
+    "cnn": {
+      "convention": "positive = fault or attack (classes 1-19), negative = genuine (class 0)",
+      "TN_genuine_correct": 610108,
+      "FP_genuine_flagged": 23405,
+      "FN_misbehavior_missed": 28513,
+      "TP_misbehavior_flagged": 402915,
+      "false_alarm_rate_pct": 3.694478250643633,
+      "genuine_recall_pct": 96.30552174935637,
+      "missed_detection_rate_pct": 6.608982263552667
+    },
+    "lgbm": {
+      "convention": "positive = fault or attack (classes 1-19), negative = genuine (class 0)",
+      "TN_genuine_correct": 575552,
+      "FP_genuine_flagged": 57961,
+      "FN_misbehavior_missed": 39383,
+      "TP_misbehavior_flagged": 392045,
+      "false_alarm_rate_pct": 9.149141375157258,
+      "genuine_recall_pct": 90.85085862484274,
+      "missed_detection_rate_pct": 9.128522024532483
+    },
+    "mlp_cap": {
+      "convention": "positive = fault or attack (classes 1-19), negative = genuine (class 0)",
+      "TN_genuine_correct": 626664,
+      "FP_genuine_flagged": 6849,
+      "FN_misbehavior_missed": 28819,
+      "TP_misbehavior_flagged": 402609,
+      "false_alarm_rate_pct": 1.0811143575585662,
+      "genuine_recall_pct": 98.91888564244144,
+      "missed_detection_rate_pct": 6.67990950981392
+    },
+    "mlp_matched": {
+      "convention": "positive = fault or attack (classes 1-19), negative = genuine (class 0)",
+      "TN_genuine_correct": 626963,
+      "FP_genuine_flagged": 6550,
+      "FN_misbehavior_missed": 29032,
+      "TP_misbehavior_flagged": 402396,
+      "false_alarm_rate_pct": 1.033917220325392,
+      "genuine_recall_pct": 98.96608277967461,
+      "missed_detection_rate_pct": 6.729280436133028
+    }
+  }
+}

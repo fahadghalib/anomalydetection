@@ -1,0 +1,12 @@
+### Table 7. Held-out results of the final models (single evaluation, 1,064,941 messages)
+
+| Metric | Proposed | FF, matched | FF, reduced | GBT |
+|---|---|---|---|---|
+| Accuracy (%) | 87.91 | 89.95 | 89.94 | 81.44 |
+| Macro precision (%) | 74.51 | 79.36 | 79.46 | 60.80 |
+| Macro recall (%) | 74.43 | 75.99 | 75.89 | 64.76 |
+| Macro F1 (%) | 72.86 | 75.65 | 75.55 | 62.50 |
+| Weighted F1 (%) | 87.45 | 89.06 | 89.03 | 81.78 |
+| False alarm rate (%) | 3.69 | 1.08 | 1.03 | 9.15 |
+| Missed detections (%) | 6.61 | 6.68 | 6.73 | 9.13 |
+| Training epochs | 40 | 18 | 19 | 400 rounds |
