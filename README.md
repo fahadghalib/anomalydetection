@@ -4,11 +4,11 @@ This repository contains the complete code, configuration, result files, and
 trained models for the manuscript
 
 > **Network Traffic Anomaly Detection in VANETs Using a Hybrid Deep Learning
-> Model: A Leakage-Resistant Twenty-Class Evaluation**
+> Model**
 > F. G. Abdulkadhim, F. Tahseen, A. A. Fadhil, H. A. Hashim, and C. Tang.
 > *Journal of Computational and Cognitive Engineering* (under review, manuscript 9314).
 
-Release **v2.0.0** is the version that corresponds to the revised manuscript.
+Release **v2.0.1** is the version that corresponds to the revised manuscript.
 Every number, table, and figure in the manuscript is produced by the code in
 `src/` from the files in `outputs/results/`; the table at the end of this
 README lists the command and output for each of them.
@@ -66,11 +66,12 @@ reproduce every reported table exactly.
 
 ## Data
 
-Download the two CSV files of the Mendeley Data release
+Download `mixalldata_clean.tar.xz` from the Mendeley Data release
 *VeReMi_Extension: Dataset for Misbehaviors in VANETs* (version 1,
-doi:[10.17632/k62n4z9gdz.1](https://doi.org/10.17632/k62n4z9gdz.1)) and place
-them in `data/`. See `data/README.md` for the expected sizes and SHA-256
-checksums.
+doi:[10.17632/k62n4z9gdz.1](https://doi.org/10.17632/k62n4z9gdz.1)), extract
+`mixalldata_clean.csv` into `data/`, and run `python -m src.prepare_data` to
+recreate the training and test files of the 70/30 row-level split that the
+scripts read. See `data/README.md` for checksums and details.
 
 ## Reproducing the results
 
@@ -142,6 +143,7 @@ recorded under `environment.windows_power_throttling` in the result file.
 ```
 src/                     authoritative pipeline (Python package)
   config.py              all settings (Table 3)
+  prepare_data.py        the two split files, from the Mendeley release
   data_audit.py          provenance and leakage audit
   leakage_probe.py       identifier lookup baseline
   data_pipeline.py       cleaning and per-sender temporal features
@@ -161,7 +163,7 @@ outputs/models/          the final trained models evaluated on the held-out part
 outputs/figures/         figures of the manuscript
 outputs/tables/          tables of the manuscript (Markdown, CSV)
 outputs/logs/            training logs (used by src/cv_epochs.py)
-data/                    place the two CSV files here (see data/README.md)
+data/                    mixalldata_clean.csv and the two split files (see data/README.md)
 ```
 
 The key `lgbm_nondeterministic_SUPERSEDED` in

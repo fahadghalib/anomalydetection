@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this code, please cite the article and the dataset."
 title: "Twenty-class misbehavior detection on VeReMi Extension: code and results"
-version: 2.0.0
+version: 2.0.1
 license: Apache-2.0
-date-released: 2026-10-31
+date-released: 2026-11-13
 repository-code: "https://github.com/fahadghalib/anomalydetection"
 authors:
   - family-names: Abdulkadhim
@@ -24,7 +24,7 @@ authors:
     affiliation: "Northwestern Polytechnical University"
 preferred-citation:
   type: article
-  title: "Network Traffic Anomaly Detection in VANETs Using a Hybrid Deep Learning Model: A Leakage-Resistant Twenty-Class Evaluation"
+  title: "Network Traffic Anomaly Detection in VANETs Using a Hybrid Deep Learning Model"
   journal: "Journal of Computational and Cognitive Engineering"
   authors:
     - family-names: Abdulkadhim

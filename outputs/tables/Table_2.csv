@@ -1,4 +1,4 @@
-Finding,Value (training / test file)
+Finding,Value (training / test file of the row-level split)
 Senders whose messages carry a single class label,100.0% / 100.0%
 Pseudonyms whose messages carry a single class label,100.0% / 100.0%
 Test-file senders that also occur in the training file,99.923%

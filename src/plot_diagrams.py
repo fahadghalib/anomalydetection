@@ -67,9 +67,9 @@ def protocol_figure(path):
     fs = 6.6
 
     # row 1: inputs, pooling, de-identification, sender-grouped split
-    _box(ax, 0.01, 0.865, 0.14, 0.115, "Training file\n2,236,367 messages", FILL_DATA, fs=fs)
-    _box(ax, 0.01, 0.705, 0.14, 0.115, "Test file\n958,441 messages", FILL_DATA, fs=fs)
-    _box(ax, 0.19, 0.72, 0.19, 0.25, "Pooled corpus\n3,194,808 messages\n24,663 senders; 99.92%\nof test-file senders also\nin the training file", FILL_DATA, fs=fs)
+    _box(ax, 0.01, 0.865, 0.14, 0.115, "Training file (70%)\n2,236,367 messages", FILL_DATA, fs=fs)
+    _box(ax, 0.01, 0.705, 0.14, 0.115, "Test file (30%)\n958,441 messages", FILL_DATA, fs=fs)
+    _box(ax, 0.19, 0.72, 0.19, 0.25, "Pooled corpus\n= released file\n3,194,808 messages\n24,663 senders; 99.92%\nof test-file senders also\nin the training file", FILL_DATA, fs=fs)
     _arrow(ax, 0.15, 0.92, 0.19, 0.88)
     _arrow(ax, 0.15, 0.76, 0.19, 0.80)
     _box(ax, 0.42, 0.72, 0.25, 0.25, "De-identification\nremove sender, senderPseudo,\nmessageID and type; add four\nper-sender temporal features;\ndrop sendTime → 28 features", FILL_STEP, fs=fs)

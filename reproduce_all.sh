@@ -3,8 +3,8 @@
 #
 #   bash reproduce_all.sh tables   regenerate tables and figures from the
 #                                  deposited result files (minutes, no GPU)
-#   bash reproduce_all.sh full     re-run every experiment from the two CSV
-#                                  files, then regenerate tables and figures
+#   bash reproduce_all.sh full     re-run every experiment from the Mendeley
+#                                  release, then regenerate tables and figures
 #
 # Run from the repository root inside the environment of requirements-lock.txt.
 # Latency must be measured on an otherwise idle machine.
@@ -18,6 +18,11 @@ if [[ "$MODE" == "full" ]]; then
     mv outputs/results "outputs/results_deposited_$(date +%Y%m%d_%H%M%S)"
   fi
   mkdir -p outputs/results outputs/logs
+
+  # Training and test files of the row-level split, from data/mixalldata_clean.csv
+  if [[ ! -f data/VeReMi_train_data.csv || ! -f data/VeReMi_test_data.csv ]]; then
+    python -m src.prepare_data
+  fi
 
   # Data accounting and leakage audit (Tables 1 and 2)
   python -m src.data_audit            | tee outputs/logs/data_audit.log

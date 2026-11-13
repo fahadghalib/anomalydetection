@@ -1,4 +1,4 @@
-### Table 6. Paired comparisons with the proposed model on the five development folds
+### Table 6. Paired comparisons with the proposed model
 
 | Configuration | Metric | Mean difference (points) | 95% CI | t(4) | p (naive) | p (corrected) | Cohen's d | Folds with same sign |
 |---|---|---|---|---|---|---|---|---|

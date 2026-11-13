@@ -36,7 +36,8 @@ WHAT CHANGES
 
   * POOLING. The two supplied CSVs share 99.92% of their senders, so the
     supplied "test" file cannot serve as an independent test set under this
-    protocol. Both files are pooled and re-partitioned by sender.
+    protocol. Both files of the 70/30 row-level split are pooled, which restores the
+    released file, and re-partitioned by sender.
 
 Temporal features are computed per-sender before partitioning, which is safe:
 they depend only on rows from the same sender, so they cannot carry

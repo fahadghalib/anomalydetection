@@ -1,7 +1,7 @@
 Stage,Messages,Senders
-Training file,"2,236,367","24,644"
-Test file,"958,441","24,553"
-Pooled corpus,"3,194,808","24,663"
+Training file (70% row-level split),"2,236,367","24,644"
+Test file (30% row-level split),"958,441","24,553"
+Pooled corpus (= released file),"3,194,808","24,663"
 Exact duplicate rows removed,0,-
 Rows removed for missing or infinite values,0,-
 Development partition,"2,129,867","16,441"

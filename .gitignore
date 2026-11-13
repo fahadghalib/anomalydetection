@@ -1,5 +1,6 @@
 # data files are distributed separately (see data/README.md)
 data/*.csv
+data/*.tar.xz
 data/cache/
 outputs/results_deposited_*/
 __pycache__/

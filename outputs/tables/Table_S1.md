@@ -1,4 +1,4 @@
-### Table S1. Class distribution of the pooled corpus and its partitions; fold 1 training counts before and after ADASYN
+### Table S1. Class distribution of the corpus and its partitions
 
 | ID | Class | Pooled | Held-out | Development | Fold 1 training, before | Fold 1 training, after |
 |---|---|---|---|---|---|---|

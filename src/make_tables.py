@@ -93,8 +93,9 @@ def table_1():
     runs = cv["cnn"]
     tr = [r["n_train_rows"] for r in runs]
     va = [r["n_val_rows"] for r in runs]
-    rows = [["Training file", "2,236,367", "24,644"], ["Test file", "958,441", "24,553"],
-            ["Pooled corpus", "3,194,808", "24,663"], ["Exact duplicate rows removed", "0", "-"],
+    rows = [["Training file (70% row-level split)", "2,236,367", "24,644"],
+            ["Test file (30% row-level split)", "958,441", "24,553"],
+            ["Pooled corpus (= released file)", "3,194,808", "24,663"], ["Exact duplicate rows removed", "0", "-"],
             ["Rows removed for missing or infinite values", "0", "-"],
             ["Development partition", "2,129,867", "16,441"],
             ["CV validation portion (each fold)", f"{min(va):,}-{max(va):,}", "3,285-3,290"],
@@ -106,7 +107,7 @@ def table_1():
         rows[0][1] = f"{d['train']['raw_records']:,}"
         rows[1][1] = f"{d['test']['raw_records']:,}"
         rows[2][1] = f"{d['combined_raw_records']:,}"
-    _emit("Table 1", "Data flow from the distributed files to the analyzed corpus and its partitions",
+    _emit("Table 1", "Data flow from the released file to the partitions",
           ["Stage", "Messages", "Senders"], rows)
 
 
@@ -129,7 +130,7 @@ def table_2():
              f"{min(leak)}%-{max(leak)}%"],
             ["Sender-to-class lookup accuracy on the test file (no model)", f"{a['accuracy_full_test_set_pct']}%"],
             ["Pseudonym-to-class lookup accuracy on the test file", f"{a['accuracy_via_senderPseudo_pct']}%"]]
-    _emit("Table 2", "Identifier leakage in the public release", ["Finding", "Value (training / test file)"], rows)
+    _emit("Table 2", "Identifier leakage in the public release", ["Finding", "Value (training / test file of the row-level split)"], rows)
 
 
 def table_4():
@@ -147,7 +148,7 @@ def table_4():
                      f"{config.CLASS_NAMES[j]} ({off[j]:.1f})" if off[j] >= 1 else "-"])
     rows.append(["", "Macro average", "", f"{m['mp']:.1f}", f"{m['mr']:.1f}", f"{m['mf1']:.1f}", "", "", ""])
     rows.append(["", "Weighted average", "", f"{m['wp']:.1f}", f"{m['wr']:.1f}", f"{m['wf1']:.1f}", "", "", ""])
-    _emit("Table 4", "Per-class performance of the proposed model on the sender-disjoint held-out partition",
+    _emit("Table 4", "Per-class held-out performance of the proposed model",
           ["ID", "Class", "Type", "Precision (%)", "Recall (%)", "F1 (%)", "Messages",
            "Classified as genuine (%)", "Most frequent other class (%)"], rows,
           note=f"Accuracy {m['acc']:.2f}%; FAR {m['far']:.2f}%; missed detections {m['miss']:.2f}%.")
@@ -166,10 +167,10 @@ def tables_5_s2():
                      ms(vals["val_macro_f1"]), f"{np.median([r['elapsed_sec'] for r in runs]) / 60:.1f}"])
         for mm, lab in (("val_accuracy", "Accuracy"), ("val_macro_f1", "Macro F1")):
             rows_s2.append([LABELS[key], lab] + [f"{x:.2f}" for x in vals[mm]] + [ms(vals[mm])])
-    _emit("Table 5", "Five-fold cross-validation results on identical sender-disjoint folds (mean ± SD, %)",
+    _emit("Table 5", "Five-fold cross-validation results (mean ± SD, %)",
           ["Configuration", "Parameters", "Accuracy", "Macro precision", "Macro recall", "Macro F1",
            "Training time per fold (min)"], rows)
-    _emit("Table S2", "Fold-level validation results (%) used for the paired comparisons",
+    _emit("Table S2", "Fold-level validation results (%)",
           ["Configuration", "Metric", "Fold 1", "Fold 2", "Fold 3", "Fold 4", "Fold 5", "Mean ± SD"], rows_s2)
 
 
@@ -188,7 +189,7 @@ def table_6():
                          f"{b['paired_t_test']['p_value']:.4f}",
                          f"{b['corrected_resampled_t_test']['p_value']:.4f}", f"{b['cohens_d_paired']:.2f}",
                          f"{b['folds_with_same_sign']}/5"])
-    _emit("Table 6", "Paired comparisons with the proposed model on the five development folds",
+    _emit("Table 6", "Paired comparisons with the proposed model",
           ["Configuration", "Metric", "Mean difference (points)", "95% CI", "t(4)", "p (naive)", "p (corrected)",
            "Cohen's d", "Folds with same sign"], rows,
           note="Corrected p: Nadeau-Bengio corrected resampled t-test; naive p assumes independent folds.")
@@ -206,7 +207,7 @@ def table_7():
              ("Missed detections (%)", "miss"))]
     rows.append(["Training epochs", ep["cnn"]["final_epochs"], ep["mlp_cap"]["final_epochs"],
                  ep["mlp_matched"]["final_epochs"], "400 rounds"])
-    _emit("Table 7", "Held-out results of the final models (single evaluation, 1,064,941 messages)",
+    _emit("Table 7", "Held-out results of the final models",
           ["Metric", "Proposed", "FF, matched", "FF, reduced", "GBT"], rows)
 
 
@@ -218,7 +219,7 @@ def table_8():
         m = _metrics(cm)
         rows.append(["This work (proposed model)", "VeReMi Extension", 20, "sender-disjoint held-out partition",
                      f"{m['acc']:.2f}", f"{m['wf1']:.2f} (weighted); {m['mf1']:.2f} (macro)"])
-    _emit("Table 8", "Literature context: results obtained on different datasets, class taxonomies, and partitions",
+    _emit("Table 8", "Context of previously reported results",
           ["Method", "Dataset", "Classes", "Partitioning", "Accuracy (%)", "F-measure (%)"], rows,
           note="Not comparable across rows; no ranking or significance test is implied.")
 
@@ -233,7 +234,7 @@ def table_9():
         e, g = d["latency_ms_per_message"], d.get("latency_ms_per_message_graph", {})
         rows.append([lab, f"{e['median']:.0f}", f"{e['p95']:.0f}", f"{g.get('median', float('nan')):.2f}",
                      f"{g.get('p95', float('nan')):.2f}", f"{d['batched_throughput']['ms_per_sample']:.4f}"])
-    _emit("Table 9", "Single-message latency and batched throughput of the proposed model",
+    _emit("Table 9", "Single-message latency and batched throughput",
           ["Platform", "Eager median (ms)", "Eager p95 (ms)", "Graph median (ms)", "Graph p95 (ms)",
            "Batched (ms/msg)"], rows)
 
@@ -247,8 +248,7 @@ def table_s1():
     rows = [[c, config.CLASS_NAMES[c], f"{fd['pooled'][str(c)]:,}", f"{int(held[c]):,}",
              f"{fd['pooled'][str(c)] - int(held[c]):,}", f"{fd['before']['1'][str(c)]:,}",
              f"{fd['after']['1'][str(c)]:,}"] for c in range(config.N_CLASSES)]
-    _emit("Table S1", "Class distribution of the pooled corpus and its partitions; fold 1 training counts before "
-                      "and after ADASYN",
+    _emit("Table S1", "Class distribution of the corpus and its partitions",
           ["ID", "Class", "Pooled", "Held-out", "Development", "Fold 1 training, before", "Fold 1 training, after"],
           rows)
 

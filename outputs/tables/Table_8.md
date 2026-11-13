@@ -1,4 +1,4 @@
-### Table 8. Literature context: results obtained on different datasets, class taxonomies, and partitions
+### Table 8. Context of previously reported results
 
 | Method | Dataset | Classes | Partitioning | Accuracy (%) | F-measure (%) |
 |---|---|---|---|---|---|

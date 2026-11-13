@@ -1,4 +1,4 @@
-### Table S2. Fold-level validation results (%) used for the paired comparisons
+### Table S2. Fold-level validation results (%)
 
 | Configuration | Metric | Fold 1 | Fold 2 | Fold 3 | Fold 4 | Fold 5 | Mean ± SD |
 |---|---|---|---|---|---|---|---|

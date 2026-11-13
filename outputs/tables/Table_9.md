@@ -1,4 +1,4 @@
-### Table 9. Single-message latency and batched throughput of the proposed model
+### Table 9. Single-message latency and batched throughput
 
 | Platform | Eager median (ms) | Eager p95 (ms) | Graph median (ms) | Graph p95 (ms) | Batched (ms/msg) |
 |---|---|---|---|---|---|

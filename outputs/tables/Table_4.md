@@ -1,4 +1,4 @@
-### Table 4. Per-class performance of the proposed model on the sender-disjoint held-out partition
+### Table 4. Per-class held-out performance of the proposed model
 
 | ID | Class | Type | Precision (%) | Recall (%) | F1 (%) | Messages | Classified as genuine (%) | Most frequent other class (%) |
 |---|---|---|---|---|---|---|---|---|

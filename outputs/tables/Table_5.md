@@ -1,4 +1,4 @@
-### Table 5. Five-fold cross-validation results on identical sender-disjoint folds (mean ± SD, %)
+### Table 5. Five-fold cross-validation results (mean ± SD, %)
 
 | Configuration | Parameters | Accuracy | Macro precision | Macro recall | Macro F1 | Training time per fold (min) |
 |---|---|---|---|---|---|---|

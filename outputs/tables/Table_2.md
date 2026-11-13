@@ -1,6 +1,6 @@
 ### Table 2. Identifier leakage in the public release
 
-| Finding | Value (training / test file) |
+| Finding | Value (training / test file of the row-level split) |
 |---|---|
 | Senders whose messages carry a single class label | 100.0% / 100.0% |
 | Pseudonyms whose messages carry a single class label | 100.0% / 100.0% |

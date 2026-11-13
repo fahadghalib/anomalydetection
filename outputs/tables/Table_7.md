@@ -1,4 +1,4 @@
-### Table 7. Held-out results of the final models (single evaluation, 1,064,941 messages)
+### Table 7. Held-out results of the final models
 
 | Metric | Proposed | FF, matched | FF, reduced | GBT |
 |---|---|---|---|---|
